@@ -7,7 +7,7 @@ minutes: 10
 > ## Learning Objectives {.objectives}
 >
 > *   Introduction to Python variables
-> *   Creating and Assigning values to variables.
+> *   Creating and Assigning values to variables
 > *   Lists and Arrays in Python
 > *   Indexing and slicing
 

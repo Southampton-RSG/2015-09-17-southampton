@@ -16,6 +16,11 @@
     Because any particular user can only have one fork of a repository,
     but instructors frequently need to work on several workshops at once.
 
+*   *Why use the `gh-pages` branch instead of `master`?
+
+    Because [GitHub automatically publishes `gh-pages`](https://help.github.com/articles/creating-project-pages-manually/)
+    as a website.
+
 *   *Why use Jekyll?  Why not some other markup language and some other converter?*
 
     Because it's the default on GitHub.
@@ -38,7 +43,7 @@
 *   *What is the "Windows installer"?*
 
     We have built a small installation helper for Windows
-    that installs `nano` and `sqlite`, adds R to the path, and so on.
+    that installs nano and SQLite, adds R to the path, and so on.
     It is maintained in
     [https://github.com/swcarpentry/windows-installer](https://github.com/swcarpentry/windows-installer),
     which also has an up-to-date description of what it actually does.

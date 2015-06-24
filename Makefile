@@ -19,7 +19,7 @@ FILTERS = $(wildcard tools/filters/*.py)
 
 # Inclusions.
 INCLUDES = \
-	-Vheader="$$(cat _includes/header.html)" \
+	-Vheader="$$(cat _includes/header-md.html)" \
 	-Vbanner="$$(cat _includes/banner.html)" \
 	-Vfooter="$$(cat _includes/footer.html)" \
 	-Vjavascript="$$(cat _includes/javascript.html)"

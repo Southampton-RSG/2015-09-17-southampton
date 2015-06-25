@@ -311,7 +311,7 @@ li > ol, li > ul {
 
 /* sizes */
 .deck-container {
-  font-size: 28px;
+  font-size: 30px;
 }
 
 h1 {
@@ -369,7 +369,7 @@ h1 {
 .deck-container > .slide > ul li, .deck-container > .slide > ol li {
   margin: 0;
   padding: 0;
-  margin-top: 0.4em;
+  margin-top: 0.5em;
   padding-left: 0em;
 }
 .deck-container > .slide > ul {
@@ -431,12 +431,12 @@ a:hover, a:focus {
 
 .deck-container {
   background: white;
-  /* color: #1f2969; */
-  color: #660000;
+  color: #1f2969;
+  /* color: #660000; */
   font-weight: normal;
 }
 .deck-container:not(.no-status) > .slide {
-  background: url(../img/ssi-banner.png) bottom 10px left 10px no-repeat;
+  background: url(../img/software-carpentry-banner.png) bottom 10px left 10px no-repeat;
   background-size: 150px;
 }
 .deck-container .slide :not(h1):not(h2) {
@@ -446,7 +446,7 @@ a:hover, a:focus {
 
 .deck-container > .slide {
   margin: 0;
-  padding: 150px 50px;
+  padding: 160px 50px;
   /*        text-align: justify;*/
 }
 
@@ -662,8 +662,8 @@ figure p.caption {
 }
 
 h1, h2 {
-  /* color: #2b3990; */
-  color: #aa1111;
+  color: #2b3990;
+  /* color: #aa1111; */
   font-size: 70px;
   line-height: 1em;
   font-weight: normal;
@@ -675,7 +675,7 @@ h1, h2 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 465px;
+  bottom: 480px;
   top: auto;
 }
 

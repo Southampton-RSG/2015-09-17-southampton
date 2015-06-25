@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Building programs with Python</title>
+    <title>Software Carpentry: Building programs with Python</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
@@ -19,11 +19,9 @@
   <body class="lesson">
     <div class="container card">
       <div class="banner">
-        <!-- change to SSI logo
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
-        -->
       </div>
       <article>
       <div class="row">
@@ -32,7 +30,7 @@
           <h2 class="subtitle">Python Basics- Variables, Arrays, Lists etc</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -58,26 +56,29 @@
 <p>As the example above shows, we can print several things at once by separating them with commas.</p>
 <p>If we imagine the variable as a sticky note with a name written on it, assignment is like putting the sticky note on a particular value:</p>
 <div class="figure">
-<img src="img/python-sticky-note-variables-01.svg" alt="Variables as Sticky Notes" /><p class="caption">Variables as Sticky Notes</p>
+<img src="img/python-sticky-note-variables-01.svg" alt="Variables as Sticky Notes" />
+<p class="caption">Variables as Sticky Notes</p>
 </div>
 <p>This means that assigning a value to one variable does <em>not</em> change the values of other variables. For example, let’s store the subject’s weight in pounds in a variable:</p>
 <pre class="sourceCode python"><code class="sourceCode python">weight_lb = <span class="fl">2.2</span> * weight_kg
 <span class="dt">print</span> <span class="st">&#39;weight in kilograms:&#39;</span>, weight_kg, <span class="st">&#39;and in pounds:&#39;</span>, weight_lb</code></pre>
 <pre class="output"><code>weight in kilograms: 57.5 and in pounds: 126.5</code></pre>
 <div class="figure">
-<img src="img/python-sticky-note-variables-02.svg" alt="Creating Another Variable" /><p class="caption">Creating Another Variable</p>
+<img src="img/python-sticky-note-variables-02.svg" alt="Creating Another Variable" />
+<p class="caption">Creating Another Variable</p>
 </div>
 <p>and then change <code>weight_kg</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python">weight_kg = <span class="fl">100.0</span>
 <span class="dt">print</span> <span class="st">&#39;weight in kilograms is now:&#39;</span>, weight_kg, <span class="st">&#39;and weight in pounds is still:&#39;</span>, weight_lb</code></pre>
 <pre class="output"><code>weight in kilograms is now: 100.0 and weight in pounds is still: 126.5</code></pre>
 <div class="figure">
-<img src="img/python-sticky-note-variables-03.svg" alt="Updating a Variable" /><p class="caption">Updating a Variable</p>
+<img src="img/python-sticky-note-variables-03.svg" alt="Updating a Variable" />
+<p class="caption">Updating a Variable</p>
 </div>
 <p>Since <code>weight_lb</code> doesn’t “remember” where its value came from, it isn’t automatically updated when <code>weight_kg</code> changes. This is different from the way spreadsheets work.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>What’s inside the box?</h2>
+<h2 id="whats-inside-the-box"><span class="glyphicon glyphicon-pencil"></span>What’s inside the box?</h2>
 </div>
 <div class="panel-body">
 <p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
@@ -90,7 +91,7 @@ age = age + <span class="dv">20</span></code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
+<h2 id="sorting-out-references"><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
 </div>
 <div class="panel-body">
 <p>What does the following program print out?</p>
@@ -100,11 +101,11 @@ third, fourth = second, first
 </div>
 </section>
 <blockquote>
-<h3>Arrays in Python</h3>
+<h3 id="arrays-in-python">Arrays in Python</h3>
 </blockquote>
 <p>One of the most fundamental data structures in any language is the array. Python doesn’t have a native array data structure, but it has the list which is much more general and can be used as a multidimensional array quite easily.</p>
 <blockquote>
-<h4>List basics</h4>
+<h4 id="list-basics">List basics</h4>
 </blockquote>
 <p>A list in python is just an ordered collection of items which can be of any type. By comparison an array is an ordered collection of items of a single type - so a list is more flexible than an array.</p>
 <p>A list is also a dynamic mutable type and this means we can add and delete elements from the list at any time.</p>
@@ -140,7 +141,7 @@ third, fourth = second, first
 <p>is the entire list.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
+<h2 id="slicing-strings"><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
 </div>
 <div class="panel-body">
 <p>A section of an array is called a <a href="../../reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
@@ -165,14 +166,14 @@ myList[<span class="dv">1</span>]=<span class="dv">1</span></code></pre>
 <p>Finally is it worth knowing that the list we assign to a slice doesn’t have to be the same size as the slice - it simply replaces it even if it is a different size.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
+<h2 id="thin-slices"><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
 </div>
 <div class="panel-body">
 <p>The expression <code>element[3:3]</code> produces an <a href="../../reference.html#empty-string">empty string</a>, i.e., a string that contains no characters.</p>
 </div>
 </section>
 <blockquote>
-<h3>Basic array operations</h3>
+<h3 id="basic-array-operations">Basic array operations</h3>
 </blockquote>
 <p>So far so good, and it looks as if using a list is as easy as using an array.</p>
 <p>Where things start to go wrong just a little is when we attempt to push the similarities between lists and arrays one step too far. For example, suppose we want to create an array initialised to a particular value. Following the general array idiom in most languages we might write:</p>

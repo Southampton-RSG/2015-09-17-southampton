@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Version Control with Git</title>
+    <title>Software Carpentry: Version Control with Git</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
@@ -19,11 +19,9 @@
   <body class="lesson">
     <div class="container card">
       <div class="banner">
-        <!-- change to SSI logo
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
-        -->
       </div>
       <article>
       <div class="row">
@@ -32,7 +30,7 @@
           <h2 class="subtitle">Collaborating</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -58,15 +56,18 @@
 <h3 id="to-github">To GitHub</h3>
 <p>Let’s start by sharing the changes we’ve made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a new repository called <code>planets</code>:</p>
 <div class="figure">
-<img src="img/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" /><p class="caption">Creating a Repository on GitHub (Step 1)</p>
+<img src="img/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" />
+<p class="caption">Creating a Repository on GitHub (Step 1)</p>
 </div>
 <p>Name your repository “planets” and then click “Create Repository”:</p>
 <div class="figure">
-<img src="img/github-create-repo-02.png" alt="Creating a Repository on GitHub (Step 2)" /><p class="caption">Creating a Repository on GitHub (Step 2)</p>
+<img src="img/github-create-repo-02.png" alt="Creating a Repository on GitHub (Step 2)" />
+<p class="caption">Creating a Repository on GitHub (Step 2)</p>
 </div>
 <p>As soon as the repository is created, GitHub displays a page with a URL and some information on how to configure your local repository:</p>
 <div class="figure">
-<img src="img/github-create-repo-03.png" alt="Creating a Repository on GitHub (Step 3)" /><p class="caption">Creating a Repository on GitHub (Step 3)</p>
+<img src="img/github-create-repo-03.png" alt="Creating a Repository on GitHub (Step 3)" />
+<p class="caption">Creating a Repository on GitHub (Step 3)</p>
 </div>
 <p>This effectively does the following on GitHub’s servers:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
@@ -79,7 +80,8 @@ $ <span class="kw">git</span> init</code></pre>
 <p>We do this by making the GitHub repository a <a href="reference.html#remote">remote</a> for the local repository. A <strong>remote</strong> is a repository conected to another in such way that both can be kept in sync exchanging commits.</p>
 <p>The home page of the repository on GitHub includes the string we need to identify it:</p>
 <div class="figure">
-<img src="img/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" /><p class="caption">Where to Find Repository URL on GitHub</p>
+<img src="img/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" />
+<p class="caption">Where to Find Repository URL on GitHub</p>
 </div>
 <p>Copy that URL from the browser, go into the local <code>planets</code> repository, and run this command:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/vlad/planets.git</code></pre>
@@ -118,7 +120,8 @@ Already up-to-date.</code></pre>
 $ <span class="kw">git</span> clone https://github.com/vlad/planets.git</code></pre>
 <p><code>git clone</code> creates a fresh local copy of a remote repository.</p>
 <div class="figure">
-<img src="img/github-collaboration.svg" alt="After Creating Clone of Repository" /><p class="caption">After Creating Clone of Repository</p>
+<img src="img/github-collaboration.svg" alt="After Creating Clone of Repository" />
+<p class="caption">After Creating Clone of Repository</p>
 </div>
 <p>You can now start work on your desktop machine:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets

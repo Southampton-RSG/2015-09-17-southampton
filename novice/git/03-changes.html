@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Version Control with Git</title>
+    <title>Software Carpentry: Version Control with Git</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
@@ -19,11 +19,9 @@
   <body class="lesson">
     <div class="container card">
       <div class="banner">
-        <!-- change to SSI logo
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
-        -->
       </div>
       <article>
       <div class="row">
@@ -32,7 +30,7 @@
           <h2 class="subtitle">Tracking Changes</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -107,7 +105,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 <p>The listing for each revision includes the revision’s full identifier (which starts with the same characters as the short identifier printed by the <code>git commit</code> command earlier), the revision’s author, when it was created, and the log message Git was given when the revision was created.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>Where Are My Changes?</h2>
+<h2 id="where-are-my-changes"><span class="glyphicon glyphicon-pushpin"></span>Where Are My Changes?</h2>
 </div>
 <div class="panel-body">
 <p>If we run <code>ls</code> at this point, we will still see just one file called <code>mars.txt</code>. That’s because Git saves information about files’ history in the special <code>.git</code> directory mentioned earlier so that our filesystem doesn’t become cluttered (and so that we can’t accidentally edit or delete an old version).</p>
@@ -169,7 +167,8 @@ $ <span class="kw">git</span> commit -m <span class="st">&quot;Add concerns abou
 <p>To allow for this, Git has a special <strong>staging</strong> area where it keeps track of things that have been <strong>added</strong> to the current <a href="reference.html#change-set">change set</a> but <strong>not yet committed</strong>. <code>git add</code> puts things in this area, and <code>git commit</code> then copies them to long-term storage (as a commit):</p>
 <p><strong>( SLIDE 14 - Git Add / Commit)</strong></p>
 <div class="figure">
-<img src="img/git-committing.svg" alt="The Git Staging Area" /><p class="caption">The Git Staging Area</p>
+<img src="img/git-committing.svg" alt="The Git Staging Area" />
+<p class="caption">The Git Staging Area</p>
 </div>
 <h3 id="one-more-addition">One more addition</h3>
 <p>Let’s add another line to the file:</p>

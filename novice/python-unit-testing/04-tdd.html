@@ -30,8 +30,19 @@
         <div class="col-md-10 col-md-offset-1">
                     <a href="index.html"><h1 class="title">Writing Robust Code and Unit Testing</h1></a>
           <h2 class="subtitle">Test-Driven Development</h2>
-          <p>Libraries like <code>nose</code> can’t think of test cases for us. We still have to decide what to test and how many tests to run. Our best guide here is economics: we want the tests that are most likely to give us useful information that we don’t already have. For example, if <code>rectangle_area([0, 0, 1, 1])</code> works, there’s probably not much point testing <code>rectangle_area((0, 0, 2, 2))</code>, since it’s hard to think of a bug that would show up in one case but not in the other.</p>
-<p>We should therefore try to choose tests that are as different from each other as possible, so that we force the code we’re testing to execute in all the different ways it can. Another way of thinking about this is that we should try to find <em>boundary cases</em>. If a function works for zero, one, and a million values, it will probably work for eighteen values.</p>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>How to choose which unit tests to write to test as much of the code as possible</li>
+<li>Using tests to drive the development of the code, through Test-Driven Development (TDD)</li>
+</ul>
+</div>
+</section>
+<p>Libraries like <code>nose</code> can’t think of test cases for us. We still have to decide what to test and how many tests to run. Our best guide here is economics: we want the tests that are most likely to give us useful information that we don’t already have. For example, if <code>rectangle_area([0, 0, 1, 1])</code> works, there’s probably not much point testing <code>rectangle_area((0, 0, 2, 2))</code>, since it’s hard to think of a bug that would show up in one case but not in the other.</p>
+<p>We should therefore try to choose tests that are as different from each other as possible, so that we force the code we’re testing to execute in all the different ways it can - to ensure our tests have a high degree of <em>code coverage</em>. Another way of thinking about this is that we should try to find <em>boundary cases</em>. If a function works for zero, one, and a million values, it will probably work for eighteen values.</p>
 <p>Using boundary values as tests has another advantage: it can help us design our software. To see how, consider this test case for our rectangle area function, adding it to test_rectangle2.py and re-running <code>nosetests</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> test_inverted_rectangle():
     <span class="kw">assert</span> rectangle_area([<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>]) == -<span class="fl">12.0</span></code></pre>

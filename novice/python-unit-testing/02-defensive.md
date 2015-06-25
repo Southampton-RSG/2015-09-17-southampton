@@ -5,6 +5,11 @@ subtitle: Defensive Programming
 minutes: 20
 ---
 
+> ## Learning Objectives {.objectives}
+>
+> * Using assertions to ensure correct behaviour within a program
+> * Understanding the different types of assertions you can use and where to use them
+
 We made several mistakes while writing the programs in our first few lessons:
 
 -   Are there still errors lurking in the code we have?

@@ -5,6 +5,11 @@ subtitle: Unit Testing
 minutes: 20
 ---
 
+> ## Learning Objectives {.objectives}
+>
+> * Understand what a unit test is
+> * How to use the Nose unit testing framework to structure and run Python unit tests
+
 Most people don't enjoy writing tests, so if we want them to actually do it, it must be easy to:
 
 - add or change tests,

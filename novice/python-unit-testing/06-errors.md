@@ -5,6 +5,12 @@ subtitle: Handling Errors
 minutes: 15
 ---
 
+> ## Learning Objectives {.objectives}
+>
+> * Understand how programs can catch abnormal behaviour through exceptions
+> * How exceptions can be written in Python, and when to use them
+> * How to generate your own exceptions
+
 Assertions help us catch errors in our code, but things can go wrong for other reasons, like missing or badly-formatted files. Most modern programming languages allow programmers to use **exceptions** to separate what the program should do if everything goes right from what it should do if something goes wrong. Doing this makes both cases easier to read and understand.
 
 For example, here's a small piece of code that tries to read parameters and a grid from two separate files, and reports an error if either goes wrong:

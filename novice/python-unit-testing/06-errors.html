@@ -30,7 +30,19 @@
         <div class="col-md-10 col-md-offset-1">
                     <a href="index.html"><h1 class="title">Writing Robust Code and Unit Testing</h1></a>
           <h2 class="subtitle">Handling Errors</h2>
-          <p>Assertions help us catch errors in our code, but things can go wrong for other reasons, like missing or badly-formatted files. Most modern programming languages allow programmers to use <strong>exceptions</strong> to separate what the program should do if everything goes right from what it should do if something goes wrong. Doing this makes both cases easier to read and understand.</p>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Understand how programs can catch abnormal behaviour through exceptions</li>
+<li>How exceptions can be written in Python, and when to use them</li>
+<li>How to generate your own exceptions</li>
+</ul>
+</div>
+</section>
+<p>Assertions help us catch errors in our code, but things can go wrong for other reasons, like missing or badly-formatted files. Most modern programming languages allow programmers to use <strong>exceptions</strong> to separate what the program should do if everything goes right from what it should do if something goes wrong. Doing this makes both cases easier to read and understand.</p>
 <p>For example, here’s a small piece of code that tries to read parameters and a grid from two separate files, and reports an error if either goes wrong:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">try</span>:
     params = read_params(param_file)

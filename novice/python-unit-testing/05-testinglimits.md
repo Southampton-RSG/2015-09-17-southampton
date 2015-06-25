@@ -5,6 +5,10 @@ subtitle: Limits to Testing
 minutes: 10
 ---
 
+> ## Learning Objectives {.objectives}
+>
+> * Understand the limits and value of unit testing
+
 Like any other piece of experimental apparatus, a complex program requires a much higher investment in testing than a simple one. Putting it another way,
 a small script that is only going to be used once, to produce one figure,
 probably doesn't need separate testing: its output is either correct or not. A linear algebra library that will be used by thousands of people in twice that number of applications over the course of a decade, on the other hand, definitely does.

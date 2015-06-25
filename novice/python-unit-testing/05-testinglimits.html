@@ -30,7 +30,17 @@
         <div class="col-md-10 col-md-offset-1">
                     <a href="index.html"><h1 class="title">Writing Robust Code and Unit Testing</h1></a>
           <h2 class="subtitle">Limits to Testing</h2>
-          <p>Like any other piece of experimental apparatus, a complex program requires a much higher investment in testing than a simple one. Putting it another way, a small script that is only going to be used once, to produce one figure, probably doesn’t need separate testing: its output is either correct or not. A linear algebra library that will be used by thousands of people in twice that number of applications over the course of a decade, on the other hand, definitely does.</p>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Understand the limits and value of unit testing</li>
+</ul>
+</div>
+</section>
+<p>Like any other piece of experimental apparatus, a complex program requires a much higher investment in testing than a simple one. Putting it another way, a small script that is only going to be used once, to produce one figure, probably doesn’t need separate testing: its output is either correct or not. A linear algebra library that will be used by thousands of people in twice that number of applications over the course of a decade, on the other hand, definitely does.</p>
 <p>Unfortunately, it’s practically impossible to prove that a program will always do what it’s supposed to. To see why, consider a function that checks whether a character strings contains only the letters ‘A’, ‘C’, ‘G’, and ‘T’. These four tests clearly aren’t sufficient:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">assert</span> is_all_bases(<span class="st">&#39;A&#39;</span>)
 <span class="kw">assert</span> is_all_bases(<span class="st">&#39;C&#39;</span>)

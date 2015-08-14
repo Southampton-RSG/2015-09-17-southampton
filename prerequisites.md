@@ -109,4 +109,4 @@ You should see eight passes and no failures.  If anything fails, please contact 
 
 ## During the workshop
 
-We will make use of this etherpad during the workshop (Etherpad allows a group to edit documents online collaboratively in real-time). Please use this to keep collaborative notes and ask (and answer!) each others questions.
+We will make use of the etherpad during the workshop (Etherpad allows a group to edit documents online collaboratively in real-time). Please use this to keep collaborative notes and ask (and answer!) each others questions.

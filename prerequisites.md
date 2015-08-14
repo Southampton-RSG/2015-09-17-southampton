@@ -105,7 +105,7 @@ We provide a simple Python script to test that the prerequisites have been corre
 curl -L http://goo.gl/HuPJu3 | python
 ~~~
 
-You should see eight passes and no failures.  If anything fails, please contact us (emailing both s.crouch@software.ac.uk and j.robinson@software.ac.uk) with details by Thursday 18 June at the latest.
+You should see eight passes and no failures.  If anything fails, please contact us (emailing s.crouch@software.ac.uk, j.robinson@software.ac.uk and d.inupakutika@software.ac.uk) with details by Thursday 10 September at the latest.
 
 ## During the workshop
 

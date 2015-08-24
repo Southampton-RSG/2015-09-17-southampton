@@ -82,6 +82,13 @@ for char in word:
 
 ~~~
 
+~~~
+l
+e
+a
+d
+~~~
+
 This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and
 more robust as well:
 
@@ -91,7 +98,16 @@ for char in word:
     print char
 ~~~
 
-The improved version of `print_characters` uses a [for loop](../../reference.html#for-loop)
+~~~
+o
+x
+y
+g
+e
+n
+~~~
+
+The improved version of code for printing characters uses a [for loop](../../reference.html#for-loop)
 to repeat an operation---in this case, printing---once for each thing in a collection.
 The general form of a loop is:
 
@@ -112,6 +128,10 @@ length = 0
 for vowel in 'aeiou':
     length = length + 1
 print 'There are', length, 'vowels'
+~~~
+
+~~~
+There are 5 vowels
 ~~~
 
 It's worth tracing the execution of this little program step by step.
@@ -143,11 +163,22 @@ for letter in 'abc':
 print 'after the loop, letter is', letter
 ~~~
 
+~~~
+a
+b
+c
+after the loop, letter is c
+~~~
+
 Note also that finding the length of a string is such a common operation
 that Python actually has a built-in function to do it called `len`:
 
 ~~~ {.python}
 print len('aeiou')
+~~~
+
+~~~
+5
 ~~~
 
 `len` is much faster than any function we could write ourselves,
@@ -168,5 +199,20 @@ so we should always use it when we can.
 > 2
 > 3
 > ~~~
+
+> ## Computing powers with loops {.challenge}
+>
+> Exponentiation is built into Python:
+>
+> ~~~ {.python}
+> print 5 ** 3
+>125
+> ~~~
+>
+>Write a loop that calculates the same result as `5 ** 3` using multiplication (and without exponentiation).
+
+>## Reverse a string {.challenge}
+>
+> Write a loop that takes a string, and produces a new string with the characters in reverse order, so `Newton` becomes `notweN`.
 
 

@@ -27,11 +27,11 @@ Whilst in Nano, press CTRL+X to exit (this will prompt you to save or discard an
 
 ## Python
 
-We teach with Python 2.7, since it is still the most widely used version. We will also employ the numpy and matplotlib libraries and the nose unit testing framework.
+We teach with Python 3.4 since it's nearly a superset of 2.7, although 2.7 is still the most widely used version. [All major Python libraries work on 3.x, or on both major versions](https://python3wos.appspot.com/). We will also employ the numpy and matplotlib libraries and the nose unit testing framework.
 
 #### Windows
 
-We recommend the [Anaconda Python distribution](http://continuum.io/downloads). This provides Python plus the required libraries and frameworks
+We recommend the [Anaconda Python distribution](http://continuum.io/downloads#py34). This provides Python plus the required libraries and frameworks
 
 #### Mac OS X
 

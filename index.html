@@ -1,38 +1,176 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1265.19">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times}
-    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times}
-    p.p4 {margin: 0.0px 0.0px 12.0px 0.0px; text-align: center; font: 12.0px Times}
-    p.p5 {margin: 0.0px 0.0px 6.0px 0.0px; font: 12.0px Times; min-height: 14.0px}
-    span.s1 {text-decoration: underline ; color: #0000ee}
-  </style>
-</head>
-<body>
-<p class="p1">--- layout: workshop root: . venue: University of Southampton # brief name of host site address: School of Electronics and Computer Science, University Road, Southampton, SO17 1BJ # street address of home location country: United-Kingdom # country (hyphenated if need be, like 'United-Kingdom') language: en # language code like 'en' or 'fr' latlng: 50.934039,-1.396167 # fractional latitude and longitude like 41.7901128,-87.6007318 humandate: Sep 17-18, 2015 # use the format 'Feb 17-18, 2020' (without the quotes) humantime: 9:00 am - 4:30 pm # use the format '9:00 am - 4:30 pm' (without the quotes) startdate: 2015-09-17 # use YYYY-MM-DD format like 2015-01-01 enddate: 2015-09-18 # use YYYY-MM-DD format like 2015-01-02 instructor: ["Steve Crouch", "John Robinson", "Devasena Inupakutika"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"] helper: ["Olivier Philippe","Don Cruickshank"] # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"] contact: s.hettrick@software.ac.uk # contact email address for workshop organizer etherpad: https://etherpad.mozilla.org/SWC-Soton-Sep2015 --- {% if page.eventbrite %} {% endif %}</p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times"><b>General Information</b></h2>
-<p class="p3"><span class="s1"><a href="file:///Users/user/Work/2015-09-17-southampton/%7B%7Bsite.swc_site%7D%7D">Software Carpentry</a></span>'s mission is to help scientists and engineers get more research done in less time and with less pain by teaching them basic lab skills for scientific computing. This hands-on workshop will cover basic concepts and tools, including building and designing programs in Python, managing the development of code with version control in Git, and testing the correctness of Python code using the Nose unit test framework. Participants will be encouraged to help one another.</p>
-<p class="p4"><i>For more information on what we teach and why, please see our paper "</i><a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745"><span class="s1"><i>Best Practices for Scientific Computing</i></span></a><i>".</i></p>
-<p class="p3"><b>Who:</b> The course is aimed at postgraduate students and postdoctoral scientists who are familiar with basic programming concepts (like loops, conditionals, arrays, and functions) and would like to learn best practice techniques and tools to develop their software more effectively and productively.</p>
-<p class="p1">{% if page.latlng %}</p>
-<p class="p3"><b>Where:</b> {{page.address}}. Get directions with <a href="file://www.openstreetmap.org/?mlat=%7B%7Bpage.latlng%20%7C%20replace:',','&amp;mlon='%7D%7D&amp;zoom=16"><span class="s1">OpenStreetMap</span></a> or <a href="file://maps.google.com/maps?q=%7B%7Bpage.latlng%7D%7D"><span class="s1">Google Maps</span></a>.</p>
-<p class="p1">{% endif %}</p>
-<p class="p3"><b>Requirements:</b> Participants <b>must</b> bring a laptop with a few specific software packages installed (listed <a href="file:///Users/user/Work/2015-09-17-southampton/prerequisites.html"><span class="s1">here</span></a>). They are also required to abide by Software Carpentry's <a href="file:///Users/user/Work/2015-09-17-southampton/%7B%7Bsite.swc_site%7D%7D/conduct.html"><span class="s1">Code of Conduct</span></a>.</p>
-<p class="p3"><b>Contact</b>: Please mail {% if page.contact %} <a href="mailto:%7B%7Bpage.contact%7D%7D"><span class="s1">{{page.contact}}</span></a> {% else %} <a href="mailto:%7B%7Bsite.contact%7D%7D"><span class="s1">{{site.contact}}</span></a> {% endif %} for more information.</p>
-<p class="p5"><br></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times"><b>Schedule</b></h2>
-<p class="p3">Workshop schedule can be found at the <a href="file:///Users/user/Work/2015-09-17-southampton/schedule.html"><span class="s1">schedule page</span></a>.</p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times"><b>Setup</b></h2>
-<p class="p3">To participate in a Software Carpentry workshop, you will need access to the software described <a href="file:///Users/user/Work/2015-09-17-southampton/prerequisites.html"><span class="s1">here</span></a>. In addition, you will need an up-to-date web browser. We maintain a list of common issues that occur during installation as a reference for instructors that may be useful on the <a href="https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions"><span class="s1">Configuration Problems and Solutions wiki page</span></a>.</p>
-<p class="p1">{% if page.etherpad %}</p>
-<p class="p3"><b>Etherpad:</b> <a href="file:///Users/user/Work/2015-09-17-southampton/%7B%7Bpage.etherpad%7D%7D"><span class="s1">{{page.etherpad}}</span></a>. <br>
-We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code.</p>
-<p class="p1">{% endif %}</p>
-</body>
-</html>
+---
+layout: workshop
+root: .
+venue: University of Southampton      # brief name of host site
+address: School of Electronics and Computer Science, University Road, Southampton, SO17 1BJ    # street address of home location
+country: United-Kingdom    # country (hyphenated if need be, like 'United-Kingdom')
+language: en   # language code like 'en' or 'fr'
+latlng: 50.934039,-1.396167     # fractional latitude and longitude like 41.7901128,-87.6007318
+humandate: Sep 17-18, 2015  # use the format 'Feb 17-18, 2020' (without the quotes)
+humantime: 9:00 am - 4:30 pm  # use the format '9:00 am - 4:30 pm' (without the quotes)
+startdate: 2015-09-17  # use YYYY-MM-DD format like 2015-01-01
+enddate: 2015-09-18    # use YYYY-MM-DD format like 2015-01-02
+instructor: ["Steve Crouch", "John Robinson", "Devasena Inupakutika"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+helper: ["Olivier Philippe","Don Cruickshank"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+contact: s.hettrick@software.ac.uk    # contact email address for workshop organizer
+etherpad: https://etherpad.mozilla.org/SWC-Soton-Sep2015
+
+---
+<!--
+  HEADER
+  Edit the values in the block above to be appropriate for your
+  workshop.  Run 'tools/check' *before* committing to make sure that
+  changes are good.
+-->
+
+<!--
+  EVENTBRITE
+  This block includes the Eventbrite registration widget if
+  'eventbrite' has been set in the header.  You can delete it if you
+  are not using Eventbrite, or leave it in, since it will not be
+  displayed if the 'eventbrite' field in the header is not set.
+-->
+{% if page.eventbrite %}
+<iframe
+  src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
+  frameborder="0"
+  width="100%"
+  height="206px"
+  scrolling="auto">
+</iframe>
+{% endif %}
+
+<h2>General Information</h2>
+
+<!--
+  INTRODUCTION
+  Edit the general explanatory paragraph below if you want to change
+  the pitch.
+-->
+<p>
+  <a href="{{site.swc_site}}">Software Carpentry</a>'s mission
+  is to help scientists and engineers get more research done in less
+  time and with less pain by teaching them basic lab skills for
+  scientific computing.  This hands-on workshop will cover basic
+  concepts and tools, including building and designing programs in Python, 
+  managing the development of code with version control in Git, and testing 
+  the correctness of Python code using the Nose unit test framework. Participants will be encouraged to help one another.
+</p>
+<p align="center">
+  <em>
+    For more information on what we teach and why,
+    please see our paper
+    "<a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a>".
+  </em>
+</p>
+
+<!--
+  AUDIENCE
+  Explain who your audience is.  (In particular, tell readers if the
+  workshop is only open to people from a particular institution.
+-->
+<p>
+  <strong>Who:</strong>
+  The course is aimed at postgraduate students and postdoctoral scientists who are familiar with basic programming concepts (like loops, conditionals, arrays, and functions) and would like to learn best 
+  practice techniques and tools to develop their software more effectively and productively.
+</p>
+
+<!--
+  LOCATION
+  This block displays the address and links to maps showing directions
+  if the latitude and longitude of the workshop have been set.  You
+  can use http://itouchmap.com/latlong.html to find the lat/long of an
+  address.
+-->
+{% if page.latlng %}
+<p>
+  <strong>Where:</strong>
+  {{page.address}}.
+  Get directions with
+  <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
+  or
+  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>.
+</p>
+{% endif %}
+
+<!--
+  SPECIAL REQUIREMENTS
+  Modify the block below if there are any special requirements.
+-->
+<p>
+  <strong>Requirements:</strong> Participants <strong>must</strong> bring a laptop with
+  a few specific software packages installed (listed
+  <a href="prerequisites.html">here</a>). They are also required to abide by
+  Software Carpentry's
+  <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
+</p>
+
+<!--
+  CONTACT EMAIL ADDRESS
+  Display the contact email address set in the header.  If an address
+  isn't set in the header, the Software Carpentry admin address is
+  used.
+-->
+<p>
+  <strong>Contact</strong>:
+  Please mail
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information.
+</p>
+
+<hr/>
+
+<!--
+  SCHEDULE
+  Show the workshop's schedule.  Edit the items and times in the table
+  to match your plans.  You may also want to change 'Day 1' and 'Day
+  2' to be actual dates or days of the week.
+-->
+<h2>Schedule</h2>
+
+<p>
+  Workshop schedule can be found at the <a href = "schedule.html">schedule page</a>. 
+</p>
+</hr>
+
+<!--
+  SETUP
+  Delete irrelevant sections from the setup instructions.  Each
+  section is inside a 'div' without any classes to make the beginning
+  and end easier to find.
+  This is the other place where people frequently make mistakes, so
+  please preview your site before committing, and make sure to run
+  'tools/check' as well.
+-->
+
+<h2 id="setup">Setup</h2>
+
+<p>
+  To participate in a Software Carpentry workshop, you will need
+  access to the software described <a href = "prerequisites.html">here</a>. In addition, you will
+  need an up-to-date web browser.
+  We maintain a list of common issues that occur during installation as a reference for instructors
+  that may be useful on the
+  <a href = "https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+</p>
+<!--
+  ETHERPAD
+  Display the Etherpad for the workshop.  You can set this up in
+  advance or on the first day; either way, make sure you push changes
+  to GitHub after you have its URL.  To create an Etherpad, go to
+      http://etherpad.mozilla.org/YYYY-MM-DD-site
+  where 'YYYY-MM-DD-site' is the identifier for your workshop (e.g.,
+  '2015-06-10-esu'.
+-->
+{% if page.etherpad %}
+<p>
+  <strong>Etherpad:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.
+  <br/>
+  We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code.
+</p>
+{% endif %}
+

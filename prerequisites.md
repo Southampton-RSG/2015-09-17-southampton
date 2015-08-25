@@ -29,7 +29,7 @@ Whilst in Nano, press CTRL+X to exit (this will prompt you to save or discard an
 
 We teach with Python 3.4 since it's nearly a superset of 2.7, although 2.7 is still the most widely used version. [All major Python libraries work on 3.x, or on both major versions](https://python3wos.appspot.com/). 
 
-Based on the operating system ( Windows, Linux and MAC OS X) and corresponding architectures (34-bit or 64-bit), you need to select icons for operating systems followed by `I WANT PYTHON 3.4*` on the right hand top corner of `CHOOSE YOUR INSTALLER` section on [Anaconda Python distribution](http://continuum.io/downloads#34) site.
+Based on the operating system ( Windows, Linux or MAC OS X) and corresponding architectures (34-bit or 64-bit), you need to select icons for operating systems followed by `I WANT PYTHON 3.4*` on the right hand top corner of `CHOOSE YOUR INSTALLER` section on [Anaconda Python distribution](http://continuum.io/downloads#34) site.
 
 Follow the instructions on the screen as well as `CHOOSE YOUR INSTALLER` section as you click on the installed version of Python 3.4 Anaconda installation.
 

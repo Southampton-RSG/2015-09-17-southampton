@@ -27,38 +27,14 @@ Whilst in Nano, press CTRL+X to exit (this will prompt you to save or discard an
 
 ## Python
 
-We teach with Python 3.4 since it's nearly a superset of 2.7, although 2.7 is still the most widely used version. [All major Python libraries work on 3.x, or on both major versions](https://python3wos.appspot.com/). We will also employ the numpy and matplotlib libraries and the nose unit testing framework.
+We teach with Python 3.4 since it's nearly a superset of 2.7, although 2.7 is still the most widely used version. [All major Python libraries work on 3.x, or on both major versions](https://python3wos.appspot.com/). 
 
-#### Windows
+Based on the operating system ( Windows, Linux and MAC OS X) and corresponding architectures (34-bit or 64-bit), you need to select icons for operating systems followed by `I WANT PYTHON 3.4*` on the right hand top corner of `CHOOSE YOUR INSTALLER` section on [Anaconda Python distribution] (http://continuum.io/downloads#34) site.
 
-We recommend the [Anaconda Python distribution](http://continuum.io/downloads#py34). This provides Python plus the required libraries and frameworks
+Follow the instructions on the screen as well as `CHOOSE YOUR INSTALLER` section as you click on the installed version of Python 3.4 Anaconda installation.
 
-#### Mac OS X
+We will also employ the `numpy` and `matplotlib` libraries and the `nose` unit testing framework. Above installation provides `Python` plus `numpy`, `matplotlib` libraries and the `nose` framework required for the workshop.
 
-Mac OS 10.9 Mavericks and 10.10 Yosemite ship with Python 2.7, numpy and matplotlib installed by default. You will need to install nose. Open a terminal and enter the following command:
-
-~~~ {.code}
-sudo easy_install nose
-~~~
-
-If you intend to use an earlier version of Mac OS X, please contact us before the event (emailing both s.crouch@software.ac.uk and j.robinson@software.ac.uk).
-
-#### Linux
-
-Most distros include Python 2.7 by default. Install the libraries in a terminal like this:
-
-Ubuntu 14.04LTS and derivatives:
-
-~~~ {.code}
-sudo apt-get install python-numpy python-matplotlib python-nose
-~~~
-
-Fedora 22:
-
-~~~ {.code}
-su -
-dnf install numpy python-matplotlib python-nose
-~~~
 
 ## Git
 

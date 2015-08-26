@@ -8,6 +8,7 @@ minutes: 20
 >
 > *   Define a function that takes parameters.
 > *   Return a value from a function.
+> *   Documenting a function
 > *   Set default values for function parameters.
 > *   Explain why we should divide programs into small, single-purpose functions.
 
@@ -107,7 +108,7 @@ or the next person who reads it won't be able to understand what's going on.
 ## Tidying up
 
 Now that we know how to wrap bits of code up in functions,
-we can make our inflammation analyasis easier to read and easier to reuse.
+we can make our inflammation analysis easier to read and easier to reuse.
 First, let's make an `analyze` function that generates our plots:
 
 ~~~ {.python}
@@ -143,11 +144,11 @@ def detect_problems(filename):
     data = np.loadtxt(fname=filename, delimiter=',')
 
     if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
-        print 'Suspicious looking maxima!'
+        print("Suspicious looking maxima!")
     elif data.min(axis=0).sum() == 0:
-        print 'Minima add up to zero!'
+        print("Minima add up to zero!")
     else:
-        print 'Seems OK!'
+        print("Seems OK!")
 ~~~
 
 Notice that rather than jumbling this code together in one giant `for` loop,
@@ -156,7 +157,7 @@ We can reproduce the previous analysis with a much simpler `for` loop:
 
 ~~~ {.python}
 for f in filenames[:3]:
-    print f
+    print(f)
     analyze(f)
     detect_problems(f)
 ~~~
@@ -187,7 +188,7 @@ and then center that around 3:
 
 ~~~ {.python}
 z = numpy.zeros((2,2))
-print center(z, 3)
+print(center(z, 3))
 ~~~
 ~~~ {.output}
 [[ 3.  3.]
@@ -199,7 +200,7 @@ so let's try `center` on our real data:
 
 ~~~ {.python}
 data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
-print center(data, 0)
+print(center(data, 0))
 ~~~
 ~~~ {.output}
 [[-6.14875 -6.14875 -5.14875 ..., -3.14875 -6.14875 -6.14875]
@@ -215,12 +216,12 @@ It's hard to tell from the default output whether the result is correct,
 but there are a few simple tests that will reassure us:
 
 ~~~ {.python}
-print 'original min, mean, and max are:', data.min(), data.mean(), data.max()
+print("original min, mean, and max are: ", data.min(), data.mean(), data.max())
 centered = center(data, 0)
-print 'min, mean, and and max of centered data are:', centered.min(), centered.mean(), centered.max()
+print("min, mean, and and max of centered data are: ", centered.min(), centered.mean(), centered.max())
 ~~~
 ~~~ {.output}
-original min, mean, and max are: 0.0 6.14875 20.0
+Original min, mean, and max are: 0.0 6.14875 20.0
 min, mean, and and max of centered data are: -6.14875 -3.49054118942e-15 13.85125
 ~~~
 
@@ -231,7 +232,7 @@ The mean of the centered data isn't quite zero --- we'll explore why not in the 
 We can even go further and check that the standard deviation hasn't changed:
 
 ~~~ {.python}
-print 'std dev before and after:', data.std(), centered.std()
+print("std dev before and after: ", data.std(), centered.std())
 ~~~
 ~~~ {.output}
 std dev before and after: 4.61383319712 4.61383319712
@@ -242,7 +243,7 @@ but we probably wouldn't notice if they were different in the sixth decimal plac
 Let's do this instead:
 
 ~~~ {.python}
-print 'difference in standard deviations before and after:', data.std() - centered.std()
+print("difference in standard deviations before and after: ", data.std() - centered.std())
 ~~~
 ~~~ {.output}
 difference in standard deviations before and after: -3.5527136788e-15
@@ -336,18 +337,10 @@ but we still need to say `delimiter=`:
 numpy.loadtxt('data/inflammation-01.csv', ',')
 ~~~
 ~~~ {.error}
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-<ipython-input-26-e3bc6cf4fd6a> in <module>()
-----> 1 numpy.loadtxt('data/inflammation-01.csv', ',')
-
-/Users/user/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.pyc in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin)
-    775     try:
-    776         # Make sure we're dealing with a proper dtype
---> 777         dtype = np.dtype(dtype)
-    778         defconv = _getconv(dtype)
-    779
-
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/swc/anaconda3/lib/python3.4/site-packages/numpy/lib/npyio.py", line 805, in loadtxt
+    dtype = np.dtype(dtype)
 TypeError: data type "," not understood
 ~~~
 
@@ -368,7 +361,7 @@ it works as it did before:
 
 ~~~ {.python}
 test_data = numpy.zeros((2, 2))
-print center(test_data, 3)
+print(center(test_data, 3))
 ~~~
 ~~~ {.output}
 [[ 3.  3.]
@@ -380,10 +373,10 @@ in which case `desired` is automatically assigned the [default value](reference.
 
 ~~~ {.python}
 more_data = 5 + numpy.zeros((2, 2))
-print 'data before centering:'
-print more_data
-print 'centered data:'
-print center(more_data)
+print("data before centering: ")
+print(more_data)
+print("centered data: ")
+print(center(more_data))
 ~~~
 ~~~ {.output}
 data before centering:
@@ -403,13 +396,13 @@ The example below shows how Python matches values to parameters:
 
 ~~~ {.python}
 def display(a=1, b=2, c=3):
-    print 'a:', a, 'b:', b, 'c:', c
+    print("a:", a, "b:", b, "c:", c)
 
-print 'no parameters:'
+print("no parameters:")
 display()
-print 'one parameter:'
+print("one parameter:")
 display(55)
-print 'two parameters:'
+print("two parameters:")
 display(55, 66)
 ~~~
 ~~~ {.output}
@@ -424,10 +417,10 @@ a: 55 b: 66 c: 3
 As this example shows,
 parameters are matched up from left to right,
 and any that haven't been given a value explicitly get their default value.
-We can override this behavior by naming the value as we pass it in:
+We can override this behaviour by naming the value as we pass it in:
 
 ~~~ {.python}
-print 'only setting the value of c'
+print("only setting the value of c")
 display(c=77)
 ~~~
 ~~~ {.output}

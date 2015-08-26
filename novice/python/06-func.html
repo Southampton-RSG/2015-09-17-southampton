@@ -36,76 +36,81 @@
 <ul>
 <li>Define a function that takes parameters.</li>
 <li>Return a value from a function.</li>
-<li>Test and debug a function.</li>
 <li>Set default values for function parameters.</li>
 <li>Explain why we should divide programs into small, single-purpose functions.</li>
 </ul>
 </div>
 </section>
-<p>At this point, we’ve written code to draw some interesting features in our inflammation data, loop over all our data files to quickly draw these plots for each of them, and have Python make decisions based on what it sees in our data. But, our code is getting pretty long and complicated; what if we had thousands of datasets, and didn’t want to generate a figure for every single one? Commenting out the figure-drawing code is a nuisance. Also, what if we want to use that code again, on a different dataset or at a different point in our program? Cutting and pasting it is going to make our code get very long and very repetetive, very quickly. We’d like a way to package our code so that it is easier to reuse, and Python provides for this by letting us define things called ‘functions’ - a shorthand way of re-executing longer pieces of code.</p>
+<p>At this point, we’ve written code to draw some interesting features in our inflammation data, loop over all our data files to quickly draw these plots for each of them, and have Python makes decisions based on what it sees in our data. But, our code is getting pretty long and complicated; what if we had thousands of datasets, and didn’t want to generate a figure for every single one? Commenting out the figure-drawing code is a nuisance. Also, what if we want to use that code again, on a different dataset or at a different point in our program? Cutting and pasting it is going to make our code get very long and very repetitive, very quickly. We’d like a way to package our code so that it is easier to reuse, and Python provides for this by letting us define things called ‘functions’ - a shorthand way of re-executing longer pieces of code.</p>
 <p>Let’s start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
     <span class="kw">return</span> ((temp - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre>
 <p>The definition opens with the word <code>def</code>, which is followed by the name of the function and a parenthesized list of parameter names. The <a href="../../reference.html#function-body">body</a> of the function — the statements that are executed when it runs — is indented below the definition line, typically by four spaces.</p>
 <p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function. Inside the function, we use a <a href="../../reference.html#return-statement">return statement</a> to send a result back to whoever asked for it.</p>
 <p>Let’s try running our function. Calling our own function is no different from calling any other function:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;freezing point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">32</span>)
-<span class="dt">print</span> <span class="st">&#39;boiling point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">212</span>)</code></pre>
-<pre class="output"><code>freezing point of water: 273.15
-boiling point of water: 273.15</code></pre>
-<p>We’ve successfully called the function that we defined, and we have access to the value that we returned. Unfortunately, the value returned doesn’t look right. What went wrong?</p>
-<h3 id="debugging-a-function">Debugging a Function</h3>
-<p><em>Debugging</em> is when we fix a piece of code that we know is working incorrectly. In this case, we know that <code>fahr_to_kelvin</code> is giving us the wrong answer, so let’s find out why.</p>
-<p>For big pieces of code, there are tools called <em>debuggers</em> that aid in this process. Since we just have a short function, we’ll debug by choosing some parameter value, breaking our function into small parts, and printing out the value of each part.</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># We&#39;ll use temp = 212, the boiling point of water, which was incorrect</span>
-<span class="dt">print</span> <span class="st">&quot;212 - 32:&quot;</span>, <span class="dv">212</span> - <span class="dv">32</span></code></pre>
-<pre class="output"><code>212 - 32: 180</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&quot;(212 - 32) * (5/9):&quot;</span>, (<span class="dv">212</span> - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)</code></pre>
-<pre class="output"><code>(212 - 32) * (5/9): 0</code></pre>
-<p>Aha! The problem comes when we multiply by <code>5/9</code>. This is because <code>5/9</code> is actually 0.</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">5</span>/<span class="dv">9</span></code></pre>
-<pre class="output"><code>0</code></pre>
-<p>Computers store numbers in one of two ways: as <a href="../../reference.html#integer">integers</a> or as <a href="../../reference.html#floating-point-number">floating-point numbers</a> (or floats). The first are the numbers we usually count with; the second have fractional parts. Addition, subtraction and multiplication work on both as we’d expect, but division works differently. If we divide one integer by another, we get the quotient without the remainder:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;10/3 is:&#39;</span>, <span class="dv">10</span>/<span class="dv">3</span></code></pre>
-<pre class="output"><code>10/3 is: 3</code></pre>
-<p>If either part of the division is a float, on the other hand, the computer creates a floating-point answer:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;10.0/3 is:&#39;</span>, <span class="fl">10.0</span>/<span class="dv">3</span></code></pre>
-<pre class="output"><code>10.0/3 is: 3.33333333333</code></pre>
-<p>The computer does this for historical reasons: integer operations were much faster on early machines, and this behavior is actually useful in a lot of situations. It’s still confusing, though, so Python 3 produces a floating-point answer when dividing integers if it needs to. We’re still using Python 2.7 in this class, though, so if we want <code>5/9</code> to give us the right answer, we have to write it as <code>5.0/9</code>, <code>5/9.0</code>, or some other variation.</p>
-<p>Another way to create a floating-point answer is to explicitly tell the computer that you desire one. This is achieved by <a href="../../reference.html#typecast">casting</a> one of the numbers:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;float(10)/3 is:&#39;</span>, <span class="dt">float</span>(<span class="dv">10</span>)/<span class="dv">3</span></code></pre>
-<pre class="output"><code>float(10)/3 is: 3.33333333333</code></pre>
-<p>The advantage to this method is it can be used with existing variables. Let’s take a look:</p>
-<pre class="sourceCode python"><code class="sourceCode python">a = <span class="dv">10</span>
-b = <span class="dv">3</span>
-<span class="dt">print</span> <span class="st">&#39;a/b is:&#39;</span>, a/b
-<span class="dt">print</span> <span class="st">&#39;float(a)/b is:&#39;</span>, <span class="dt">float</span>(a)/b</code></pre>
-<pre class="output"><code>a/b is: 3
-float(a)/b is: 3.33333333333</code></pre>
-<p>Let’s fix our <code>fahr_to_kelvin</code> function with this new knowledge:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
-    <span class="kw">return</span> ((temp - <span class="dv">32</span>) * (<span class="fl">5.0</span>/<span class="fl">9.0</span>)) + <span class="fl">273.15</span>
-
-<span class="dt">print</span> <span class="st">&#39;freezing point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">32</span>)
-<span class="dt">print</span> <span class="st">&#39;boiling point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">212</span>)</code></pre>
-<pre class="output"><code>freezing point of water: 273.15
-boiling point of water: 373.15</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> (<span class="st">&quot;Freezing point of water: &quot;</span>, fahr_to_kelvin(<span class="dv">32</span>))
+<span class="dt">print</span> (<span class="st">&quot;Boiling point of water: &quot;</span>, fahr_to_kelvin(<span class="dv">212</span>))</code></pre>
+<pre class="output"><code>Freezing point of water: 273.15
+Boiling point of water: 373.15</code></pre>
+<p>We’ve successfully called the function that we defined, and we have access to the value that we returned. The value returned looks right.</p>
 <h3 id="composing-functions">Composing Functions</h3>
 <p>Now that we’ve seen how to turn Fahrenheit into Kelvin, it’s easy to turn Kelvin into Celsius:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> kelvin_to_celsius(temp):
     <span class="kw">return</span> temp - <span class="fl">273.15</span>
 
-<span class="dt">print</span> <span class="st">&#39;absolute zero in Celsius:&#39;</span>, kelvin_to_celsius(<span class="fl">0.0</span>)</code></pre>
-<pre class="output"><code>absolute zero in Celsius: -273.15</code></pre>
+<span class="dt">print</span> (<span class="st">&quot;Absolute zero in Celsius: &quot;</span>, kelvin_to_celsius(<span class="dv">0</span>))</code></pre>
+<pre class="output"><code>Absolute zero in Celsius: -273.15</code></pre>
 <p>What about converting Fahrenheit to Celsius? We could write out the formula, but we don’t need to. Instead, we can <a href="../../reference.html#function-composition">compose</a> the two functions we have already created:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_celsius(temp):
     temp_k = fahr_to_kelvin(temp)
     result = kelvin_to_celsius(temp_k)
     <span class="kw">return</span> result
 
-<span class="dt">print</span> <span class="st">&#39;freezing point of water in Celsius:&#39;</span>, fahr_to_celsius(<span class="fl">32.0</span>)</code></pre>
-<pre class="output"><code>freezing point of water in Celsius: 0.0</code></pre>
+<span class="dt">print</span> (<span class="st">&quot;Freezing point of water in Celsius: &quot;</span>, fahr_to_celsius(<span class="dv">32</span>))</code></pre>
+<pre class="output"><code>Freezing point of water in Celsius: 0.0</code></pre>
 <p>This is our first taste of how larger programs are built: we define basic operations, then combine them in ever-large chunks to get the effect we want. Real-life functions will usually be larger than the ones shown here — typically half a dozen to a few dozen lines — but they shouldn’t ever be much longer than that, or the next person who reads it won’t be able to understand what’s going on.</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Combining strings</h2>
+</div>
+<div class="panel-body">
+<p>“Adding” two strings produces their concatenation: <code>'a' + 'b'</code> is <code>'ab'</code>. Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code> and returns a new string that has the wrapper character at the beginning and end of the original. A call to your function should look like this:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(fence(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;*&#39;</span>))
+*name*</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Variables inside and outside functions</h2>
+</div>
+<div class="panel-body">
+<p>What does the following piece of code display when run - and why?</p>
+<pre class="sourceCode python"><code class="sourceCode python">f = <span class="dv">0</span>
+k = <span class="dv">0</span>
+
+<span class="kw">def</span> f2k(f):
+  k = ((f<span class="dv">-32</span>)*(<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span>
+  <span class="kw">return</span> k
+
+f2k(<span class="dv">8</span>)
+f2k(<span class="dv">41</span>)
+f2k(<span class="dv">32</span>)
+
+<span class="dt">print</span>(k)</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Palindrome String check</h2>
+</div>
+<div class="panel-body">
+<p>A “Palindrome” is a word, phrase, number, or other sequence of characters which reads the same backward or forward. Write a function (any name of your choice) that takes <code>input_string</code> as a parameter and returns either <code>True</code> or <code>False</code> based on whether the input string is a palindrome or not respectively. Try to make it case insensitive.<br />Following the function definition, a call to your function should look like this:</p>
+<pre class="sourceCode python"><code class="sourceCode python">is_palindrome(<span class="st">&quot;hello&quot;</span>)
+<span class="ot">False</span>
+is_palindrome(<span class="st">&quot;Deed&quot;</span>)
+<span class="ot">True</span></code></pre>
+</div>
+</section>
         </div>
       </div>
       </article>

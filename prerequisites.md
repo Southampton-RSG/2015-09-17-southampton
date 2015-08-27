@@ -34,7 +34,7 @@ Whilst in Nano, press CTRL+X to exit (this will prompt you to save or discard an
 
 We teach with Python 3.4, since it is on a clear path to becoming the most widely used version. 
 
-Go to the [Anaconda Python distribution](http://continuum.io/downloads#34) site. Based on your operating system ( Windows, Linux or MAC OS X) and corresponding architectures (34-bit or 64-bit), you need to select icons for operating systems followed by `I WANT PYTHON 3.4*` on the right hand top corner of `CHOOSE YOUR INSTALLER` section.
+Go to the [Anaconda Python distribution](http://continuum.io/downloads#34) site. Based on your operating system ( Windows, Linux or MAC OS X) and corresponding architecture (34-bit or 64-bit), you need to select the icon for your operating system followed by `I WANT PYTHON 3.4*` on the right hand top corner of `CHOOSE YOUR INSTALLER` section.
 
 Make a note of the location of the downloaded version of Python 3.4 Anaconda installation. Follow the instructions on the screen as well as `CHOOSE YOUR INSTALLER` section. 
 

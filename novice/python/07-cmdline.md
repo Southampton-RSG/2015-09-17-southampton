@@ -20,7 +20,7 @@ we may want a program that reads a data set
 and prints the average inflammation per patient:
 
 ~~~
-$ python readings.py --mean ../data/inflammation-01.csv
+$ python3.4 readings.py --mean ../data/inflammation-01.csv
 5.45
 5.425
 6.1
@@ -33,13 +33,13 @@ $ python readings.py --mean ../data/inflammation-01.csv
 but we might also want to look at the minimum of the first four lines
 
 ~~~
-$ head -4 ../data/inflammation-01.csv | python readings.py --min
+$ head -4 ../data/inflammation-01.csv | python3.4 readings.py --min
 ~~~
 
 or the maximum inflammations in several files one after another:
 
 ~~~
-$ python readings.py --max ../data/inflammation-*.csv
+$ python3.4 readings.py --max ../data/inflammation-*.csv
 ~~~
 
 Our overall requirements are:

@@ -32,14 +32,23 @@ Whilst in Nano, press CTRL+X to exit (this will prompt you to save or discard an
 
 ## Python
 
-We teach with Python 3.4, since it is on a clear path to becoming the most widely used version. 
+We teach with Python 3.4, since it is on a clear path to becoming the most widely used version. We will also employ the numpy and matplotlib libraries and the nose unit testing framework. Python3.4 Anaconda Installation comes with all of these required libraries and frameworks.
 
-Go to the [Anaconda Python distribution](http://continuum.io/downloads#34) site. Based on your operating system ( Windows, Linux or MAC OS X) and corresponding architecture (34-bit or 64-bit), you need to select the icon for your operating system followed by `I WANT PYTHON 3.4*` on the right hand top corner of `CHOOSE YOUR INSTALLER` section.
+#### Windows
 
-Follow the instructions on the screen as well as `CHOOSE YOUR INSTALLER` section. 
+Download the [Python3.4 Anaconda installer](https://repo.continuum.io/archive/Anaconda3-2.2.0-Windows-x86_64.exe). Double click the installer and follow the instructions on the screen.
 
-The above installation provides `Python` plus `numpy`, `matplotlib` libraries and the `nose` framework required for the workshop.
+#### Mac OS X
 
+Download the [Python 3.4 Anaconda MAC OS X Graphical installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda3-2.3.0-MacOSX-x86_64.pkg). After downloading the installer, double click the `.pkg` file and follow the instructions  on the screen.
+
+#### Linux
+
+Download the [Python3.4 Anaconda installation script](https://repo.continuum.io/archive/Anaconda3-2.3.0-Linux-x86_64.sh). Install via terminal like this:
+
+~~~{.code}
+bash Anaconda3-2.3.0-Linux-x86_64.sh
+~~~
 
 ## Git
 

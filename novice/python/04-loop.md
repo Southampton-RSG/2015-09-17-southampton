@@ -27,10 +27,10 @@ One way is to use four `print` statements:
 
 ~~~ {.python}
 word = 'lead'
-print word[0]
-print word[1]
-print word[2]
-print word[3]
+print(word[0])
+print(word[1])
+print(word[2])
+print(word[3])
 
 ~~~
 ~~~ {.output}
@@ -54,10 +54,10 @@ but that's a bad approach for two reasons:
 
 ~~~ {.python}
 word = 'tin'
-print word[0]
-print word[1]
-print word[2]
-print word[3]
+print(word[0])
+print(word[1])
+print(word[2])
+print(word[3])
 
 ~~~
 ~~~ {.output}
@@ -67,8 +67,8 @@ n
 ~~~
 ~~~ {.error}
 Traceback (most recent call last):
-  File "loop_test.py", line 7, in <module>
-    print word[3]
+  File "loop_test.py", line 6, in <module>
+    print(word[3])
 IndexError: string index out of range
 ~~~
 
@@ -78,8 +78,7 @@ Here's a better approach:
 ~~~ {.python}
 word = 'lead'
 for char in word:
-    print char
-
+    print(char)
 ~~~
 
 ~~~
@@ -95,7 +94,7 @@ more robust as well:
 ~~~ {.python}
 word = 'oxygen'
 for char in word:
-    print char
+    print(char)
 ~~~
 
 ~~~
@@ -127,7 +126,7 @@ Here's another loop that repeatedly updates a variable:
 length = 0
 for vowel in 'aeiou':
     length = length + 1
-print 'There are', length, 'vowels'
+print('There are', length, 'vowels')
 ~~~
 
 ~~~
@@ -159,8 +158,8 @@ and we can re-use variables previously defined as loop variables as well:
 ~~~ {.python}
 letter = 'z'
 for letter in 'abc':
-    print letter
-print 'after the loop, letter is', letter
+    print(letter)
+print('after the loop, letter is', letter)
 ~~~
 
 ~~~
@@ -174,7 +173,7 @@ Note also that finding the length of a string is such a common operation
 that Python actually has a built-in function to do it called `len`:
 
 ~~~ {.python}
-print len('aeiou')
+print(len('aeiou'))
 ~~~
 
 ~~~
@@ -205,7 +204,7 @@ so we should always use it when we can.
 > Exponentiation is built into Python:
 >
 > ~~~ {.python}
-> print 5 ** 3
+> print(5 ** 3)
 >125
 > ~~~
 >

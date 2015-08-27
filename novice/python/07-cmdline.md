@@ -60,7 +60,7 @@ save the following in a text file called `sys-version.py`:
 
 ~~~ {.python}
 import sys
-print 'version is', sys.version
+print("Version is: ", sys.version)
 ~~~
 
 The first line imports a library called `sys`,
@@ -69,15 +69,15 @@ It defines values such as `sys.version`,
 which describes which version of Python we are running.
 
 ~~~ {.output}
-2.7.5 (default, Sep  2 2013, 05:24:04) 
-[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+Version is: 3.4.3 |Anaconda 2.3.0 (32-bit)| (default, Jun  4 2015, 15:28:02) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
 ~~~
 
 Here's another script called `argv-list.py` that does something more interesting:
 
 ~~~ {.python}
 import sys
-print 'sys.argv is', sys.argv
+print("sys.argv is:  ", sys.argv)
 ~~~
 
 The strange name `argv` stands for "argument values".
@@ -88,11 +88,11 @@ so that the program can determine what they were.
 If we run this program with no arguments:
 
 ~~~ 
-$ python argv-list.py
+$ python3.4 argv-list.py
 ~~~
 
 ~~~ {.output}
-sys.argv is ['argv-list.py']
+sys.argv is:  ['argv-list.py']
 ~~~
 
 the only thing in the list is the full path to our script,
@@ -100,10 +100,10 @@ which is always `sys.argv[0]`.
 If we run it with a few arguments, however:
 
 ~~~ 
-$ python argv-list.py first second third
+$ python3.4 argv-list.py first second third
 ~~~
 ~~~ {.output}
-sys.argv is ['argv-list.py', 'first', 'second', 'third']
+sys.argv is:  ['argv-list.py', 'first', 'second', 'third']
 ~~~
 
 then Python adds each of those arguments to that magic list.
@@ -128,7 +128,7 @@ def main():
     filename = sys.argv[1]
     data = np.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
-        print m
+        print(m)
 ~~~
 
 This function gets the name of the script from `sys.argv[0]`,
@@ -137,7 +137,7 @@ and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
 ~~~
-$ python readings-01.py ../data/inflammation-01.csv
+$ python3.4 readings-01.py ../data/inflammation-01.csv
 ~~~
 
 There is no output because we have defined a function,
@@ -157,7 +157,7 @@ def main():
     filename = sys.argv[1]
     data = np.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
-        print m
+        print(m)
 
 main()
 ~~~
@@ -165,7 +165,7 @@ main()
 and run that:
 
 ~~~
-$ python readings-02.py ../data/inflammation-01.csv
+$ python3.4 readings-02.py ../data/inflammation-01.csv
 ~~~
 
 ~~~ {.output}

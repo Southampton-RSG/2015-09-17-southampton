@@ -138,7 +138,7 @@ And if neither of these conditions are true, we can use `else` to give the all-c
 
 ~~~ {.python}
 else:
-    print 'Seems OK!'
+    print('Seems OK!')
 ~~~
 
 In this way,

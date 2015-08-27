@@ -3,8 +3,13 @@ layout: page-md
 title: Software Prerequisites
 ---
 
-Prior to the workshop (or using the training material yourself), you should ensure you have the following software installed on your laptop - please do this as soon as you can.
+**Prior to the workshop, it is vital that you install the following software on your laptop!** There is little time during the workshop to deal with installation problems, so it makes the day run much more smoothly if you arrive with your software already installed.
 
+## Help!
+
+We maintain a list of common problems that can occur during installation and ways of solving them. Take a look at the [Configuration Problems and Solutions wiki page](https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions) for help.
+
+If you still have trouble, we will run a **Software Installation surgery from 12.00 until 17.00 on 10 September 2015**. This will take place in room 3013 (Simon Hettrick's office), Building 32, Highfield campus. You don't need to make an appointment: just turn up. 
 
 ## Text Editor
 

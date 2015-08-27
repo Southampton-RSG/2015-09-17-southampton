@@ -22,15 +22,14 @@ We can ask Python to take different actions, depending on a condition, with an i
 ~~~ {.python}
 num = 37
 if num > 100:
-    print 'greater'
+    print("greater")
 else:
-    print 'not greater'
-print 'done'
+    print("not greater")
+print("done")
 ~~~
 ~~~ {.output}
 not greater
 done
-
 ~~~
 
 The second line of this code uses the keyword `if` to tell Python that we want to make a choice.
@@ -49,10 +48,10 @@ Python simply does nothing if the test is false:
 
 ~~~ {.python}
 num = 53
-print 'before conditional...'
+print("before conditional...")
 if num > 100:
-    print '53 is greater than 100'
-print '...after conditional'
+    print("53 is greater than 100")
+print("...after conditional")
 ~~~
 ~~~ {.output}
 before conditional...
@@ -65,15 +64,15 @@ which is short for "else if" as shown in the example code chunk below:
 ~~~ {.python}
 num = -3
     if num > 0:
-        print 'Sign of a number',num,'is:',1
+        print("Sign of a number:",num,"is:",1)
     elif num == 0:
-        print 'Sign of a number',num,'is:',0
+        print("Sign of a number",num,"is:",0)
     else:
-        print 'Sign of a number',num, 'is:',-1
+        print("Sign of a number",num, "is:",-1)
 
 ~~~
 ~~~ {.output}
-sign of a number -3 is: -1
+sign of a number -3 is:  -1
 ~~~
 
 The keyword `elif` is short for `else if`, and is useful to avoid excessive indentation. An 
@@ -92,9 +91,9 @@ We can also combine tests using `and` and `or`.
 
 ~~~ {.python}
 if (1 > 0) and (-1 > 0):
-    print 'both parts are true'
+    print("both parts are true")
 else:
-    print 'one part is not true'
+    print("one part is not true")
 ~~~
 ~~~ {.output}
 one part is not true
@@ -104,7 +103,7 @@ while `or` is true if either part is true:
 
 ~~~ {.python}
 if (1 < 0) or ('left' < 'right'):
-    print 'at least one test is true'
+    print("at least one test is true")
 ~~~
 ~~~ {.output}
 at least one test is true
@@ -123,7 +122,7 @@ We can check for this inside the `for` loop we wrote with the following conditio
 
 ~~~ {.python}
 if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
-    print 'Suspicious looking maxima!'
+    print("Suspicious looking maxima!")
 ~~~
 
 We also saw a different problem in the third dataset;
@@ -132,7 +131,7 @@ We can also check for this with an `elif` condition:
 
 ~~~{.python}
 elif data.min(axis=0).sum() == 0:
-    print 'Minima add up to zero!'
+    print("Minima add up to zero!")
 ~~~
 
 And if neither of these conditions are true, we can use `else` to give the all-clear:
@@ -161,11 +160,11 @@ or doing all manner of other things to respond to changing conditions in our dat
 > 
 > ~~~ {.python}
 > if 4 > 5:
->     print 'A'
+>     print('A')
 > elif 4 <= 5:
->     print 'B'
+>     print('B')
 > elif 4 < 5:
->     print 'C'
+>     print('C')
 > ~~~
 
 > ## What is truth? {.challenge}
@@ -177,11 +176,11 @@ or doing all manner of other things to respond to changing conditions in our dat
 > (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
 >
 > ~~~ {.python}
-> if '': print 'empty string is true'
-> if 'word': print 'word is true'
-> if []: print 'empty list is true'
-> if [1, 2, 3]: print 'non-empty list is true'
-> if 0: print 'zero is true'
-> if 1: print 'one is true'
+> if '': print('empty string is true')
+> if 'word': print('word is true')
+> if []: print('empty list is true')
+> if [1, 2, 3]: print('non-empty list is true')
+> if 0: print('zero is true')
+> if 1: print('one is true')
 > ~~~
 

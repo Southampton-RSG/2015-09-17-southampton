@@ -123,11 +123,15 @@ third, fourth = second, first
 <p><sub>~</sub> {.python} element = ‘oxygen’ print(‘first three characters:’, element[0:3]) print(‘last three characters:’, element[3:6]) <sub>~</sub></p>
 <pre class="output"><code> first three characters: oxy
  last three characters: gen</code></pre>
-<blockquote>
-<p>{.challenge}</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Slicing strings challenge</h2>
+</div>
+<div class="panel-body">
 <p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
 <p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p>
-</blockquote>
+</div>
+</section>
 <p>List slicing is more or less the same as string slicing except that we can modify a slice. For example:</p>
 <pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">0</span>:<span class="dv">2</span>]=[<span class="dv">0</span>,<span class="dv">1</span>]</code></pre>
 <p>has the same effect as</p>

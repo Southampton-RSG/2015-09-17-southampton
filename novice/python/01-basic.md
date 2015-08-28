@@ -194,7 +194,7 @@ We can take slices of character strings as well:
  last three characters: gen
 ~~~
 >
-> {.challenge}
+> ##Slicing strings challenge{.challenge}
 >
 > What is the value of `element[:4]`?
 > What about `element[4:]`?

@@ -178,21 +178,21 @@ myList[:]
 
 is the entire list.
 
-> ## Slicing strings 
->
-> A section of an array is called a [slice](../../reference.html#slice).
-> We can take slices of character strings as well:
->
-> ~~~ {.python}
-> element = 'oxygen'
-> print('first three characters:', element[0:3])
-> print('last three characters:', element[3:6])
-> ~~~
->
-> ~~~ {.output}
-> first three characters: oxy
-> last three characters: gen
-> ~~~
+## Slicing strings 
+
+ A section of an array is called a [slice](../../reference.html#slice).
+We can take slices of character strings as well:
+
+ ~~~ {.python}
+ element = 'oxygen'
+ print('first three characters:', element[0:3])
+ print('last three characters:', element[3:6])
+ ~~~
+
+~~~ {.output}
+ first three characters: oxy
+ last three characters: gen
+~~~
 >
 > {.challenge}
 >
@@ -221,12 +221,12 @@ myList[1]=1
 Finally is it worth knowing that the list we assign to a slice doesn't have to be the same size as the slice - 
 it simply replaces it even if it is a different size.
 
- ## Thin slices 
+## Thin slices 
 
- The expression `element[3:3]` produces an [empty string](../../reference.html#empty-string),
+The expression `element[3:3]` produces an [empty string](../../reference.html#empty-string),
  i.e., a string that contains no characters.
 
- ### Basic array operations
+### Basic array operations
 
 So far so good, and it looks as if using a list is as easy as using an array.
 
@@ -235,7 +235,7 @@ between lists and arrays one step too far. For example, suppose we want to creat
 initialised to a particular value. Following the general array idiom in most languages we 
 might write:
 
- ~~~ {.python}
+~~~ {.python}
 myList=[]
 for i in range(10):
     myList[i]=1
@@ -244,7 +244,7 @@ for i in range(10):
 only to discover that this doesn't work because we can't assign to a list element that doesn't already exist.
 One solution is to use the append method to add elements one by one:
 
- ~~~ {.python}
+~~~ {.python}
 myList=[]
 for i in range(10):
     myList.append(1)

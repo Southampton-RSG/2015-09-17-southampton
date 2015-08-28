@@ -118,14 +118,12 @@ third, fourth = second, first
 <p>is the list up to and not including myList[5] and</p>
 <pre class="sourceCode python"><code class="sourceCode python">myList[:]</code></pre>
 <p>is the entire list.</p>
-<blockquote>
-<h2>Slicing strings</h2>
+<h2 id="slicing-strings">Slicing strings</h2>
 <p>A section of an array is called a <a href="../../reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
-<pre class="sourceCode python"><code class="sourceCode python">element = <span class="st">&#39;oxygen&#39;</span>
-<span class="dt">print</span>(<span class="st">&#39;first three characters:&#39;</span>, element[<span class="dv">0</span>:<span class="dv">3</span>])
-<span class="dt">print</span>(<span class="st">&#39;last three characters:&#39;</span>, element[<span class="dv">3</span>:<span class="dv">6</span>])</code></pre>
-<pre class="output"><code>first three characters: oxy
-last three characters: gen</code></pre>
+<p><sub>~</sub> {.python} element = ‘oxygen’ print(‘first three characters:’, element[0:3]) print(‘last three characters:’, element[3:6]) <sub>~</sub></p>
+<pre class="output"><code> first three characters: oxy
+ last three characters: gen</code></pre>
+<blockquote>
 <p>{.challenge}</p>
 <p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
 <p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p>
@@ -136,14 +134,18 @@ last three characters: gen</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">0</span>]=<span class="dv">0</span>
 myList[<span class="dv">1</span>]=<span class="dv">1</span></code></pre>
 <p>Finally is it worth knowing that the list we assign to a slice doesn’t have to be the same size as the slice - it simply replaces it even if it is a different size.</p>
-<p>## Thin slices</p>
+<h2 id="thin-slices">Thin slices</h2>
 <p>The expression <code>element[3:3]</code> produces an <a href="../../reference.html#empty-string">empty string</a>, i.e., a string that contains no characters.</p>
-<p>### Basic array operations</p>
+<h3 id="basic-array-operations">Basic array operations</h3>
 <p>So far so good, and it looks as if using a list is as easy as using an array.</p>
 <p>Where things start to go wrong just a little is when we attempt to push the similarities between lists and arrays one step too far. For example, suppose we want to create an array initialised to a particular value. Following the general array idiom in most languages we might write:</p>
-<p><sub>~</sub> {.python} myList=[] for i in range(10): myList[i]=1 <sub>~</sub></p>
+<pre class="sourceCode python"><code class="sourceCode python">myList=[]
+<span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">10</span>):
+    myList[i]=<span class="dv">1</span></code></pre>
 <p>only to discover that this doesn’t work because we can’t assign to a list element that doesn’t already exist. One solution is to use the append method to add elements one by one:</p>
-<p><sub>~</sub> {.python} myList=[] for i in range(10): myList.append(1) <sub>~</sub></p>
+<pre class="sourceCode python"><code class="sourceCode python">myList=[]
+<span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">10</span>):
+    myList.append(<span class="dv">1</span>)</code></pre>
 <p>This works but it only works if we need to build up the list in this particular order - which most of the time you do. When the same situation arises in two- and multi-dimensioned arrays the problem often isn’t as easy to solve with append, and there is a better way.</p>
 <p>After examining such problems working with lists as arrays, we will proceed to discover the power of the NumPy arrays in the next lesson.</p>
         </div>

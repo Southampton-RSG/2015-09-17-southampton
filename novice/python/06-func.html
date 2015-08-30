@@ -110,38 +110,10 @@ Boiling point of water: 373.15</code></pre>
     analyze(f)
     detect_problems(f)</code></pre>
 <p>By giving our functions human-readable names, we can more easily read and understand what is happening in the <code>for</code> loop. Even better, if at some later date we want to use either of those pieces of code again, we can do so in a single line.</p>
-<h2 id="testing-and-documenting">Testing and Documenting</h2>
-<p>Once we start putting things in functions so that we can re-use them, we need to start testing that those functions are working correctly. To see how to do this, let’s write a function to center a dataset around a particular value:</p>
+<h2 id="documenting">Documenting</h2>
+<p>Once we start putting things in functions so that we can re-use them, we should write some <a href="reference.html#documentation">documentation</a> for our function to remind ourselves later what it’s for and how to use it. To see how to do this, let’s write a function to center a dataset around a particular value:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
     <span class="kw">return</span> (data - data.mean()) + desired</code></pre>
-<p>We could test this on our actual data, but since we don’t know what the values ought to be, it will be hard to tell if the result was correct. Instead, let’s use NumPy to create a matrix of 0’s and then center that around 3:</p>
-<pre class="sourceCode python"><code class="sourceCode python">z = numpy.zeros((<span class="dv">2</span>,<span class="dv">2</span>))
-<span class="dt">print</span>(center(z, <span class="dv">3</span>))</code></pre>
-<pre class="output"><code>[[ 3.  3.]
- [ 3.  3.]]</code></pre>
-<p>That looks right, so let’s try <code>center</code> on our real data:</p>
-<pre class="sourceCode python"><code class="sourceCode python">data = numpy.loadtxt(fname=<span class="st">&#39;data/inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
-<span class="dt">print</span>(center(data, <span class="dv">0</span>))</code></pre>
-<pre class="output"><code>[[-6.14875 -6.14875 -5.14875 ..., -3.14875 -6.14875 -6.14875]
- [-6.14875 -5.14875 -4.14875 ..., -5.14875 -6.14875 -5.14875]
- [-6.14875 -5.14875 -5.14875 ..., -4.14875 -5.14875 -5.14875]
- ...,
- [-6.14875 -5.14875 -5.14875 ..., -5.14875 -5.14875 -5.14875]
- [-6.14875 -6.14875 -6.14875 ..., -6.14875 -4.14875 -6.14875]
- [-6.14875 -6.14875 -5.14875 ..., -5.14875 -5.14875 -6.14875]]</code></pre>
-<p>It’s hard to tell from the default output whether the result is correct, but there are a few simple tests that will reassure us:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&quot;original min, mean, and max are: &quot;</span>, data.<span class="dt">min</span>(), data.mean(), data.<span class="dt">max</span>())
-centered = center(data, <span class="dv">0</span>)
-<span class="dt">print</span>(<span class="st">&quot;min, mean, and and max of centered data are: &quot;</span>, centered.<span class="dt">min</span>(), centered.mean(), centered.<span class="dt">max</span>())</code></pre>
-<pre class="output"><code>Original min, mean, and max are: 0.0 6.14875 20.0
-min, mean, and and max of centered data are: -6.14875 -3.49054118942e-15 13.85125</code></pre>
-<p>That seems almost right: the original mean was about 6.1, so the lower bound from zero is how about -6.1. The mean of the centered data isn’t quite zero — we’ll explore why not in the challenges — but it’s pretty close. We can even go further and check that the standard deviation hasn’t changed:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&quot;std dev before and after: &quot;</span>, data.std(), centered.std())</code></pre>
-<pre class="output"><code>std dev before and after: 4.61383319712 4.61383319712</code></pre>
-<p>Those values look the same, but we probably wouldn’t notice if they were different in the sixth decimal place. Let’s do this instead:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&quot;difference in standard deviations before and after: &quot;</span>, data.std() - centered.std())</code></pre>
-<pre class="output"><code>difference in standard deviations before and after: -3.5527136788e-15</code></pre>
-<p>Again, the difference is very small. It’s still possible that our function is wrong, but it seems unlikely enough that we should probably get back to doing our analysis. We have one more task first, though: we should write some <a href="reference.html#documentation">documentation</a> for our function to remind ourselves later what it’s for and how to use it.</p>
 <p>The usual way to put documentation in software is to add <a href="reference.html#comment">comments</a> like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="co"># center(data, desired): return a new array containing the original data centered around the desired value.</span>
 <span class="kw">def</span> center(data, desired):

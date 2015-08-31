@@ -104,9 +104,11 @@ fig.tight_layout()
 plt.show(fig)
 ~~~
 
-In the above code (also present under `code` directory in the file `three-plots.py`), `tight_layout` still works by falling back to the Agg renderer. This is only a warning, you can ignore it.
+Running the above code (present under `code` directory in the file `three-plots.py`) may throw the warning as below. If you see the warning, please ignore it.
 
 `/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer warnings.warn("tight_layout : falling back to Agg renderer")`
+
+`tight_layout` still works by falling back to the Agg renderer. 
 
 ![The Previous Plots as Subplots](01-numpy_files/novice/python/01-numpy_83_0.png)
 

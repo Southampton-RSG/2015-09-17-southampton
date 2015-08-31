@@ -73,7 +73,7 @@
 <img src="img/python-sticky-note-variables-03.svg" alt="Updating a Variable" /><p class="caption">Updating a Variable</p>
 </div>
 <p>Since <code>weight_lb</code> doesn’t “remember” where its value came from, it isn’t automatically updated when <code>weight_kg</code> changes. This is different from the way spreadsheets work.</p>
-<h2 id="note">NOTE</h2>
+<h3 id="note">NOTE:</h3>
 <p>Let’s consider an example for conversion of temperature from <code>Fahrenheit</code> to <code>Kelvin</code>. Kelvin temperature is stored in a variable called <code>temp_kelvin</code> and can be calculated using below expression and formula:</p>
 <pre class="sourceCode python"><code class="sourceCode python">temp_kelvin = ((temp_fah - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre>
 <p>With the current version of Python 3.4 (that we’re using in this workshop), a floating-point answer is produced when dividing integers if it needs to. However, with Python2.7, above expression and formula returns <code>zero</code> which is incorrect. So, if we want 5/9 to give us the right answer, we have to write it as 5.0/9, 5/9.0, or some other variation.</p>

@@ -91,7 +91,7 @@ Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
 
-## NOTE
+### NOTE:
 
 Let's consider an example for conversion of temperature from `Fahrenheit` to `Kelvin`. Kelvin temperature is stored in a variable called `temp_kelvin` and can be calculated using below expression and formula:
 

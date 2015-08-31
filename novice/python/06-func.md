@@ -207,7 +207,6 @@ Help on function center in module __main__:
 
 center(data, desired)
     Return a new array containing the original data centered around the desired value.
-
 ~~~
 
 A string like this is called a [docstring](reference.html#docstring).

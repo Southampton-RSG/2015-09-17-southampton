@@ -91,6 +91,16 @@ Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
 
+## NOTE
+
+Let's consider an example for conversion of temperature from `Fahrenheit` to `Kelvin`. Kelvin temperature is stored in a variable called `temp_kelvin` and can be calculated using below expression and formula:
+
+~~~{.python}
+temp_kelvin = ((temp_fah - 32) * (5/9)) + 273.15
+~~~
+
+With the current version of Python 3.4 (that we're using in this workshop), a floating-point answer is produced when dividing integers if it needs to. However, with Python2.7, above expression and formula returns `zero` which is incorrect. So, if we want 5/9 to give us the right answer, we have to write it as 5.0/9, 5/9.0, or some other variation.
+
 > ## What's inside the box? {.challenge}
 >
 > Draw diagrams showing what variables refer to what values after each statement in the following program:

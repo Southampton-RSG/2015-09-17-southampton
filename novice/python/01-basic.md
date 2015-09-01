@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Building programs with Python
-subtitle: Python Basics- Variables, Arrays, Lists etc
-minutes: 10
+subtitle: Python Basics- Variables, Objects, Arrays, Lists etc
+minutes: 15
 ---
 > ## Learning Objectives {.objectives}
 >
@@ -16,10 +16,9 @@ such as `x`, `current_temperature`, or `subject_id`.
 Python's variables must begin with a letter.
 A variable in Python is defined through assignment i.e. we can create a new variable simply by assigning a value to it using `=`.
 As an illustration,
-consider the simplest "collection" of data,
+consider the simplest `collection` of data,
 a single value.
 The line below assigns a value to a variable:
-
 
 ~~~ {.python}
 weight_kg = 55
@@ -43,7 +42,11 @@ print('weight in pounds:', 2.2 * weight_kg)
 weight in pounds: 121.0
 ~~~
 
-We can also change a variable's value by assigning it a new one:
+In the above example, a floating point number `55` object has a tag labelled `weight_kg`.
+
+If we reassign to `weight_kg`, we just move the tag to another object as shown below.
+ 
+We can change a variable's value by assigning it a new one:
 
 ~~~ {.python}
 weight_kg = 57.5
@@ -52,6 +55,11 @@ print('weight in kilograms is now:', weight_kg)
 ~~~ {.output}
 weight in kilograms is now: 57.5
 ~~~
+
+Now the name `weight_kg` is attached to another floating point number `57.5` object.
+
+Hence, in Python, a `name` or `identifier` or `variable` is like a name tag attached to an object.
+Python has `names` and everything is an `object`.
 
 As the example above shows,
 we can print several things at once by separating them with commas.
@@ -87,9 +95,11 @@ weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
 
 ![Updating a Variable](img/python-sticky-note-variables-03.svg)
 
-Since `weight_lb` doesn't "remember" where its value came from,
+Since `weight_lb` doesn't remember where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
+
+Although we commonly refer to `variables` even in Python (because it is the common terminology), we really mean `names` or `identifiers`. In Python, `variables` are name tags for values, not labelled boxes.
 
 ### NOTE:
 

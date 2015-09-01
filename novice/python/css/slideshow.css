@@ -171,8 +171,7 @@ select, input, textarea {
 }
 
 a {
-  color: #800000;
-  /*#607890;*/
+  color: #607890;
 }
 a:hover, a:focus {
   color: #036;
@@ -319,23 +318,17 @@ h1 {
   font-size: 1.75em;
 }
 
-.level2 h1, h2 {
+h2 {
   margin: 0;
   padding: 0 10px;
   font-size: 1.5em;
-  /* undoing strange thing from _reset */
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-  -o-transform: none;
-  transform: none;
 }
 
 .deck-container > .slide {
   padding-top: 3em;
 }
 
-.level1 h1, h2 {
+h2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -346,7 +339,7 @@ h1 {
   padding-top: 0;
 }
 
-.level2 h1, h2 {
+h2 {
   text-align: center;
 }
 
@@ -433,7 +426,6 @@ a:hover, a:focus {
 .deck-container {
   background: white;
   color: #1f2969;
-  /* color: #660000; */
   font-weight: normal;
 }
 .deck-container:not(.no-status) > .slide {
@@ -445,7 +437,7 @@ a:hover, a:focus {
   font-family: 'Helvetica', 'Arial', 'sans';
 }
 
-.deck-container > .slide {
+.deck-container .slide {
   margin: 0;
   padding: 160px 50px;
   /*        text-align: justify;*/
@@ -622,7 +614,7 @@ a:hover, a:focus {
   width: 50%;
 }
 
-figure p.caption {
+div.figure p.caption {
   color: #141a41;
   text-align: center;
   font-size: 80%;
@@ -632,19 +624,19 @@ figure p.caption {
   color: #141a41;
 }
 
-.slide.media-left > *:not(h2):not(h1):not(img):not(blockquote):not(pre):not(div):not(figure) {
+.slide.media-left > *:not(h2):not(img):not(blockquote):not(pre):not(div), .slide.media-left > div:not(.figure) {
   margin-left: 400px;
 }
-.slide.media-left > figure, .slide.media-left > img, .slide.media-left > blockquote, .slide.media-left > pre {
+.slide.media-left > div.figure, .slide.media-left > img, .slide.media-left > blockquote, .slide.media-left > pre {
   float: left;
   width: 50%;
   box-sizing: border-box;
 }
 
-.slide.media-right > *:not(h2):not(h1):not(img):not(blockquote):not(pre):not(div):not(figure) {
+.slide.media-right > *:not(h2):not(img):not(blockquote):not(pre):not(div), .slide.media-right > div:not(.figure) {
   margin-right: 400px;
 }
-.slide.media-right > figure, .slide.media-right > img, .slide.media-right > blockquote, .slide.media-right > pre {
+.slide.media-right > div.figure, .slide.media-right > img, .slide.media-right > blockquote, .slide.media-right > pre {
   float: right;
   width: 50%;
   box-sizing: border-box;
@@ -664,13 +656,12 @@ figure p.caption {
 
 h1, h2 {
   color: #2b3990;
-  /* color: #aa1111; */
   font-size: 70px;
   line-height: 1em;
   font-weight: normal;
 }
 
-.level2 h1, h2 {
+h2 {
   border-bottom: none;
   font-size: 60px;
   position: absolute;
@@ -707,18 +698,18 @@ a:hover {
   text-decoration: none;
 }
 
-.slide.title-slide, .slide.level1 {
+.slide.title-slide {
   text-align: center;
   padding-top: 325px;
 }
-.slide.title-slide h1, .slide.level1 h1 {
+.slide.title-slide h1 {
   padding-bottom: 50px;
   bottom: 50%;
   top: auto;
   height: auto;
   transform: none;
 }
-.slide.title-slide img.logo, .slide.level1 img.logo {
+.slide.title-slide img.logo {
   position: absolute;
   padding-top: 100px;
   left: 0;

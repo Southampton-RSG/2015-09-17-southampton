@@ -6,7 +6,7 @@ subtitle: Why Python?
 
 ## Getting ready
 
--  You need to download workshop repository files and necessary materials to follow this course. Download instructions are present at the Etherpad here: `http://mzl.la/1Svh6Qx` 
+-  You need to download workshop repository files and necessary materials to follow this course. Download instructions are present at the Etherpad here: `https://etherpad.mozilla.org/SWC-Soton-Sep2015` 
 
 ## Why Python?
 
@@ -25,10 +25,11 @@ subtitle: Why Python?
      + Battlefield2
      + ...
      
-## Basics: Variables, types and Data Structures
+## Basics: Variables, Objects, types and Data Structures
 
 - Introduction to Python variables
 - Creating and assigning values to variables
+- Everything is an object
 - Types: Built-in types and type handling
      + Built-in: String, integers, boolean and floating point
      + type(val) returns the type of a variable (also classes)  

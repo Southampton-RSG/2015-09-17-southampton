@@ -23,6 +23,7 @@ But the two most important things are to use whatever language your colleagues a
 *  [Making choices](05-cond.html)
 *  [Creating functions](06-func.html)
 *  [Command-Line Programs](07-cmdline.html)
+*  [Python Style Guide](08-Python-style-guide.html)
 
 ## Other resources
 

@@ -51,6 +51,12 @@ subtitle: Why Python?
 -  Selecting individual values and subsections of data
 -  Plotting data using `matplotlib` library
 
+## Python Control Flow
+
+- Real power of programs come from:
+      + Repetition
+      + Selection
+
 ## Control Flow: Repeating actions with loops
 
 -  What a loop does?
@@ -63,6 +69,14 @@ subtitle: Why Python?
 -  Write conditional statements including `if`, `elif` and `else` 
 -  Evaluate expressions containing `and` and `or`
 
+## Why indentation?
+
+-  Studies show that's what people actually pay attention to
+       + Every textbook on C or Java has examples where indentation and bracing don't match
+-  Doesn't matter how much indentation you use, but the whole block must be consistent     
+-  Python Style Guide (PEP 8) recommends 4 spaces 
+-  And no tab characters
+  
 ## Creating Functions
 
 -  Defining a function, the parameters that it takes, return value

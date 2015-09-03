@@ -4,10 +4,6 @@ title: Building programs with Python
 subtitle: Why Python?
 ---
 
-## Getting ready
-
--  You need to download workshop repository files and necessary materials to follow this course. Download instructions are present at the Etherpad here: `https://etherpad.mozilla.org/SWC-Soton-Sep2015` 
-
 ## Why Python?
 
 - It's free, well-documented, and runs almost everywhere

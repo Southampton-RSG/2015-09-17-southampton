@@ -27,6 +27,18 @@ subtitle: Why Python?
 
 - Interpreted, dynamically typed, object-oriented very high-level language, compiles to bytecode
 - Close to pseudocode, indentation marks block structure
+
+## Python2 to Python3
+
+- Lots of new features of Python3
+      + Advanced unpacking
+      + Matrix multiplication
+      + Chained exceptions
+      + Everything is an iterator ...
+- New syntax. New interpreter behaviour. Standard library fixes      
+- Some have been backported to Python 2.7. (like dictionary/set comprehensions or set literals,
+__future__.print_function)
+- But there's more than that.
      
 ## Basics: Variables, Objects, types and Data Structures
 

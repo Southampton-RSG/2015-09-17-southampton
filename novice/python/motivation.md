@@ -4,27 +4,44 @@ title: Building programs with Python
 subtitle: Why Python?
 ---
 
+## What is Python?	
+
+- Interpreted, dynamically typed, object-oriented very high-level language, compiles to bytecode
+- Close to pseudocode, indentation marks block structure
+
 ## Why Python?
 
 - It's free, well-documented, and runs almost everywhere
 - Large (and growing) user base among researchers and scientists
-- Easier for beginners to grasp 
+- Simple, readable and easier for beginners to grasp 
 - Goal is to teach basic programming concepts that can be applied to other programming languages
 
 ## Cont..
 
+- Can be used for the web and on the client
 - Popular for application development on its own
 - Used as scripting language in many applications and games
      + Gimp
      + Battlefield2
      + ...
 
-## Python Introduction	
+## Cont..
 
-- Interpreted, dynamically typed, object-oriented very high-level language, compiles to bytecode
-- Close to pseudocode, indentation marks block structure
+- Increased productivity:
+      + No compilation step: The edit-test-debug cycle is incredibly fast.
+      + Debugging Python programs is easy: a bad input or bug will not cause a segmentation fault.
+      
+## Why teaching Python3 (3.4)?
 
-## Python2 to Python3
+- Based on survey conducted by RSG's Policy researchers:
+       + ![alt text](https://github.com/Southampton-RSG/2015-09-17-southampton/tree/gh-pages/novice/python/img/wordle.png)
+
+## Python2.x vs Python3
+
+- Python is currently transitioning from version 2 to 3
+- Teaching will be in 3.4
+
+## Cont..
 
 - Lots of new features of Python3
       + Advanced unpacking
@@ -40,7 +57,7 @@ __future__.print_function)
 
 - Introduction to Python variables
 - Creating and assigning values to variables
-- Everything is an object
+- Everything in Python is really an object
 - Types: Built-in types and type handling
      + Built-in: String, integers, boolean and floating point
      + type(val) returns the type of a variable (also classes)  

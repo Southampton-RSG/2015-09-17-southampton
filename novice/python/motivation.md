@@ -4,11 +4,6 @@ title: Building programs with Python
 subtitle: Why Python?
 ---
 
-## What is Python?	
-
-- Interpreted, dynamically typed, object-oriented very high-level language, compiles to bytecode
-- Close to pseudocode, indentation marks block structure
-
 ## Why Python?
 
 - It's free, well-documented, and runs almost everywhere
@@ -18,8 +13,8 @@ subtitle: Why Python?
 
 ## Cont..
 
-- Can be used for the web and on the client
 - Popular for application development on its own
+- Used for development on the web and the client 
 - Used as scripting language in many applications and games
      + Gimp
      + Battlefield2
@@ -28,26 +23,30 @@ subtitle: Why Python?
 ## Cont..
 
 - Increased productivity:
-      + No compilation step: The edit-test-debug cycle is incredibly fast.
-      + Debugging Python programs is easy: a bad input or bug will not cause a segmentation fault.
+      + Debugging Python programs is easy: a bad input or bug will show a meaningful error message.
+      
+## What is Python?	
+
+- Close to pseudocode, easy to read
+- Indentation marks block structure - simplifies maintenance and aids collaboration
       
 ## Why teaching Python3 (3.4)?
 
-- Based on survey conducted by RSG's Policy researchers:
+- Based on survey conducted by SSI's Policy researchers:
   ![Software survey word cloud](img/wordle.png)
 
 ## Python2.x vs Python3
 
 - Python is currently transitioning from version 2 to 3
 - Teaching will be in 3.4
-
-## Cont..
-
 - Lots of new features of Python3
       + Advanced unpacking
       + Matrix multiplication
       + Chained exceptions
       + Everything is an iterator ...
+
+## Cont..
+
 - New syntax. New interpreter behaviour. Standard library fixes      
 - Some have been backported to Python 2.7. (like dictionary/set comprehensions or set literals,
 __future__.print_function)

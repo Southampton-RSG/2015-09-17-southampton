@@ -15,15 +15,18 @@ subtitle: Why Python?
 - Easier for beginners to grasp 
 - Goal is to teach basic programming concepts that can be applied to other programming languages
 
-## Python Introduction	
+## Cont..
 
-- Interpreted, dynamically typed, object-oriented very high-level language, compiles to bytecode
-- Close to pseudocode, indentation marks block structure
 - Popular for application development on its own
 - Used as scripting language in many applications and games
      + Gimp
      + Battlefield2
      + ...
+
+## Python Introduction	
+
+- Interpreted, dynamically typed, object-oriented very high-level language, compiles to bytecode
+- Close to pseudocode, indentation marks block structure
      
 ## Basics: Variables, Objects, types and Data Structures
 

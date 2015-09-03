@@ -34,7 +34,7 @@ subtitle: Why Python?
 ## Why teaching Python3 (3.4)?
 
 - Based on survey conducted by RSG's Policy researchers:
-       + ![Software survey word cloud](img/wordle.png)
+  ![Software survey word cloud](img/wordle.png)
 
 ## Python2.x vs Python3
 

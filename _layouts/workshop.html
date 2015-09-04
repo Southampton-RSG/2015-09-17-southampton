@@ -26,6 +26,7 @@
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <h2>{{page.venue}}</h2>
+            {% if page.address %}{{page.address}}<br/>{% endif %}
             <div class="row">
               <div class="col-md-6">
                 <p>{{page.humandate}}</p>

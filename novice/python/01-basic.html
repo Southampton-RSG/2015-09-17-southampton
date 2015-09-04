@@ -78,10 +78,6 @@
 </div>
 <p>Since <code>weight_lb</code> doesn’t remember where its value came from, it isn’t automatically updated when <code>weight_kg</code> changes. This is different from the way spreadsheets work.</p>
 <p>Although we commonly refer to <code>variables</code> even in Python (because it is the common terminology), we really mean <code>names</code> or <code>identifiers</code>. In Python, <code>variables</code> are name tags for values, not labelled boxes.</p>
-<h3 id="note">NOTE:</h3>
-<p>Let’s consider an example for conversion of temperature from <code>Fahrenheit</code> to <code>Kelvin</code>. Kelvin temperature is stored in a variable called <code>temp_kelvin</code> and can be calculated using below expression and formula:</p>
-<pre class="sourceCode python"><code class="sourceCode python">temp_kelvin = ((temp_fah - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre>
-<p>With the current version of Python 3.4 (that we’re using in this workshop), a floating-point answer is produced when dividing integers if it needs to. However, with Python2.7, above expression and formula returns <code>zero</code> which is incorrect. So, if we want 5/9 to give us the right answer, we have to write it as 5.0/9, 5/9.0, or some other variation.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-pencil"></span>What’s inside the box?</h2>
@@ -129,9 +125,11 @@ third, fourth = second, first
 <p>is the entire list.</p>
 <h2 id="slicing-strings">Slicing strings</h2>
 <p>A section of an array is called a <a href="../../reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
-<p><sub>~</sub> {.python} element = ‘oxygen’ print(‘first three characters:’, element[0:3]) print(‘last three characters:’, element[3:6]) <sub>~</sub></p>
-<pre class="output"><code> first three characters: oxy
- last three characters: gen</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">element = <span class="st">&#39;oxygen&#39;</span>
+<span class="dt">print</span>(<span class="st">&#39;first three characters:&#39;</span>, element[<span class="dv">0</span>:<span class="dv">3</span>])
+<span class="dt">print</span>(<span class="st">&#39;last three characters:&#39;</span>, element[<span class="dv">3</span>:<span class="dv">6</span>])</code></pre>
+<pre class="output"><code>first three characters: oxy
+last three characters: gen</code></pre>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-pencil"></span>Slicing strings challenge</h2>

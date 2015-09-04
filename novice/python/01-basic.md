@@ -101,15 +101,6 @@ This is different from the way spreadsheets work.
 
 Although we commonly refer to `variables` even in Python (because it is the common terminology), we really mean `names` or `identifiers`. In Python, `variables` are name tags for values, not labelled boxes.
 
-### NOTE:
-
-Let's consider an example for conversion of temperature from `Fahrenheit` to `Kelvin`. Kelvin temperature is stored in a variable called `temp_kelvin` and can be calculated using below expression and formula:
-
-~~~{.python}
-temp_kelvin = ((temp_fah - 32) * (5/9)) + 273.15
-~~~
-
-With the current version of Python 3.4 (that we're using in this workshop), a floating-point answer is produced when dividing integers if it needs to. However, with Python2.7, above expression and formula returns `zero` which is incorrect. So, if we want 5/9 to give us the right answer, we have to write it as 5.0/9, 5/9.0, or some other variation.
 
 > ## What's inside the box? {.challenge}
 >
@@ -200,18 +191,18 @@ is the entire list.
 
 ## Slicing strings 
 
- A section of an array is called a [slice](../../reference.html#slice).
+A section of an array is called a [slice](../../reference.html#slice).
 We can take slices of character strings as well:
 
- ~~~ {.python}
- element = 'oxygen'
- print('first three characters:', element[0:3])
- print('last three characters:', element[3:6])
- ~~~
+~~~ {.python}
+element = 'oxygen'
+print('first three characters:', element[0:3])
+print('last three characters:', element[3:6])
+~~~
 
 ~~~ {.output}
- first three characters: oxy
- last three characters: gen
+first three characters: oxy
+last three characters: gen
 ~~~
 >
 > ##Slicing strings challenge{.challenge}

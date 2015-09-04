@@ -468,19 +468,6 @@ first item in the list, but if we want the ',' to be assigned to the variable `d
 we *do* have to provide `delimiter=` for the second parameter since `delimiter` is not
 the second parameter in the list.
 
-> ## Combining strings {.challenge}
->
-> "Adding" two strings produces their concatenation:
-> `'a' + 'b'` is `'ab'`.
-> Write a function called `fence` that takes two parameters called `original` and `wrapper`
-> and returns a new string that has the wrapper character at the beginning and end of the original.
-> A call to your function should look like this:
->
-> ~~~ {.python}
-> print(fence('name', '*'))
-> *name*
-> ~~~
-
 > ## Variables inside and outside functions {.challenge}
 >
 > What does the following piece of code display when run - and why?
@@ -498,6 +485,19 @@ the second parameter in the list.
 > f2k(32)
 >
 > print(k)
+> ~~~
+
+> ## Combining strings {.challenge}
+>
+> "Adding" two strings produces their concatenation:
+> `'a' + 'b'` is `'ab'`.
+> Write a function called `fence` that takes two parameters called `original` and `wrapper`
+> and returns a new string that has the wrapper character at the beginning and end of the original.
+> A call to your function should look like this:
+>
+> ~~~ {.python}
+> print(fence('name', '*'))
+> *name*
 > ~~~
 
 > ## Palindrome String check {.challenge}

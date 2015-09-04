@@ -191,7 +191,7 @@ so we should always use it when we can.
 > Python has a built-in function called `range` that creates a list of numbers:
 > `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
 > Using `range`,
-> write a loop that uses `range` to print the first 3 natural numbers:
+> write a loop to print the first 3 natural numbers:
 >
 > ~~~ {.python}
 > 1

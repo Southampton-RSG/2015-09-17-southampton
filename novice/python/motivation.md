@@ -30,7 +30,7 @@ subtitle: Why Python?
 - Close to pseudocode, easy to read
 - Indentation marks block structure - simplifies maintenance and aids collaboration
       
-## Why teaching Python3 (3.4)?
+## Why teaching Python?
 
 - Based on survey conducted by SSI's Policy researchers:
   ![Software survey word cloud](img/wordle.png)

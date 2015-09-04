@@ -84,7 +84,7 @@ If we want to check that our data has been loaded,
 we can print the variable's value:
 
 ~~~ {.python}
-print data
+print(data)
 ~~~
 ~~~ {.output}
 [[ 0.  0.  1. ...,  3.  0.  0.]
@@ -102,7 +102,7 @@ First,
 let's ask what [type](../../reference.html#type) of thing `data` refers to:
 
 ~~~ {.python}
-print type(data)
+print(type(data))
 ~~~
 ~~~ {.output}
 <type 'numpy.ndarray'>
@@ -112,7 +112,7 @@ The output tells us that `data` currently refers to an N-dimensional array creat
 We can see what its [shape](../../reference.html#shape) is like this:
 
 ~~~ {.python}
-print data.shape
+print(data.shape)
 ~~~
 ~~~ {.output}
 (60, 40)
@@ -131,14 +131,14 @@ we must provide an [index](../../reference.html#index) in square brackets,
 just as we do in math:
 
 ~~~ {.python}
-print 'first value in data:', data[0, 0]
+print('first value in data:', data[0, 0])
 ~~~
 ~~~ {.output}
 first value in data: 0.0
 ~~~
 
 ~~~ {.python}
-print 'middle value in data:', data[30, 20]
+print('middle value in data:', data[30, 20])
 ~~~
 ~~~ {.output}
 middle value in data: 13.0
@@ -175,7 +175,7 @@ we can select the first ten days (columns) of values
 for the first four (rows) patients like this:
 
 ~~~ {.python}
-print data[0:4, 0:10]
+print(data[0:4, 0:10])
 ~~~
 ~~~ {.output}
 [[ 0.  0.  1.  3.  1.  2.  4.  7.  8.  3.]
@@ -193,7 +193,7 @@ but the rule is that the difference between the upper and lower bounds is the nu
 We don't have to start slices at 0:
 
 ~~~ {.python}
-print data[5:10, 0:10]
+print(data[5:10, 0:10])
 ~~~
 ~~~ {.output}
 [[ 0.  0.  1.  2.  2.  4.  2.  1.  6.  4.]
@@ -214,8 +214,8 @@ the slice includes everything:
 
 ~~~ {.python}
 small = data[:3, 36:]
-print 'small is:'
-print small
+print('small is:')
+print(small)
 ~~~
 ~~~ {.output}
 small is:
@@ -239,10 +239,10 @@ will create a new array `doubledata`
 whose elements have the value of two times the value of the corresponding elements in `data`:
 
 ~~~ {.python}
-print 'original:'
-print data[:3, 36:]
-print 'doubledata:'
-print doubledata[:3, 36:]
+print('original:')
+print(data[:3, 36:])
+print('doubledata:')
+print(doubledata[:3, 36:])
 ~~~
 ~~~ {.output}
 original:
@@ -269,8 +269,8 @@ will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus
 and so on for all other elements of the arrays.
 
 ~~~ {.python}
-print 'tripledata:'
-print tripledata[:3, 36:]
+print('tripledata:')
+print(tripledata[:3, 36:])
 ~~~
 ~~~ {.output}
 tripledata:
@@ -286,7 +286,7 @@ for example,
 we can just ask the array for its mean value
 
 ~~~ {.python}
-print data.mean()
+print(data.mean())
 ~~~
 ~~~ {.output}
 6.14875
@@ -309,9 +309,9 @@ parentheses are how we tell Python to go and do something for us.
 NumPy arrays have lots of useful methods:
 
 ~~~ {.python}
-print 'maximum inflammation:', data.max()
-print 'minimum inflammation:', data.min()
-print 'standard deviation:', data.std()
+print('maximum inflammation:', data.max())
+print('minimum inflammation:', data.min())
+print('standard deviation:', data.std())
 ~~~
 ~~~ {.output}
 maximum inflammation: 20.0
@@ -329,7 +329,7 @@ then ask it to do the calculation:
 
 ~~~ {.python}
 patient_0 = data[0, :] # 0 on the first axis, everything on the second
-print 'maximum inflammation for patient 0:', patient_0.max()
+print('maximum inflammation for patient 0:', patient_0.max())
 ~~~
 ~~~ {.output}
 maximum inflammation for patient 0: 18.0
@@ -339,7 +339,7 @@ We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the method call:
 
 ~~~ {.python}
-print 'maximum inflammation for patient 2:', data[2, :].max()
+print('maximum inflammation for patient 2:', data[2, :].max())
 ~~~
 ~~~ {.output}
 maximum inflammation for patient 2: 19.0
@@ -358,7 +358,7 @@ If we ask for the average across axis 0,
 we get:
 
 ~~~ {.python}
-print data.mean(axis=0)
+print(data.mean(axis=0))
 ~~~
 ~~~ {.output}
 [  0.           0.45         1.11666667   1.75         2.43333333   3.15
@@ -375,7 +375,7 @@ As a quick check,
 we can ask this array what its shape is:
 
 ~~~ {.python}
-print data.mean(axis=0).shape
+print(data.mean(axis=0).shape)
 ~~~
 ~~~ {.output}
 (40,)
@@ -386,7 +386,7 @@ so this is the average inflammation per day for all patients.
 If we average across axis 1, we get:
 
 ~~~ {.python}
-print data.mean(axis=1)
+print(data.mean(axis=1))
 ~~~
 ~~~ {.output}
 [ 5.45   5.425  6.1    5.9    5.55   6.225  5.975  6.65   6.625  6.525

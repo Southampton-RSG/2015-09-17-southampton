@@ -66,9 +66,9 @@ On Mac OS X 10.9 Mavericks and 10.10 Yosemite, Git will be installed automatical
 git
 ~~~
 
-If you intend to use an earlier version of Mac OS X, please contact us before the event.
-
 Follow the prompts to install the Apple command line development tools.
+
+If you intend to use an earlier version of Mac OS X, please contact us before the event.
 
 #### Linux
 

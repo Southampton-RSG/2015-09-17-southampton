@@ -11,6 +11,21 @@ We maintain a list of common problems that can occur during installation and way
 
 If you still have trouble, we will run a **Software Installation surgery from 12.00 until 17.00 on 10 September 2015**. This will take place in room 3013 (Simon Hettrick's office), Building 32, Highfield campus. You don't need to make an appointment: just turn up. 
 
+
+## Bash
+
+#### Windows
+
+Bash is provided as part of the Git for Windows installation described below. No explicit installtion is required.
+
+#### Mac OS X
+
+The Bash shell is accessible via the Terminal application under Applications -> Utilities.
+
+#### Linux
+
+The Bash shell is accessible via the Terminal application.
+
 ## Text Editor
 
 You are free to use your preferred text editor. If you don&#39;t have one, we recommend:

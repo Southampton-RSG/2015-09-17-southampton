@@ -60,11 +60,13 @@ Download and install [Git for Windows](http://git-scm.com/download/win). You can
 
 #### Mac OS X
 
-Git will be installed automatically the first time you try to run it.  Open  terminal and type:
+On Mac OS X 10.9 Mavericks and 10.10 Yosemite, Git will be installed automatically the first time you try to run it.  Open a terminal and type:
 
 ~~~ {.code}
 git
 ~~~
+
+If you intend to use an earlier version of Mac OS X, please contact us before the event.
 
 Follow the prompts to install the Apple command line development tools.
 

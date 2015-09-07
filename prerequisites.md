@@ -89,7 +89,7 @@ dnf install git
 
 All of the exercises in this workshop will take place at the command line via the Bash shell.  In Mac OS X and Linux, this is your normal terminal environment.  In Windows, the Git Bash shell has been installed and can be accessed via the Git entry in the Start Menu.
 
-We provide a simple Python script to test that the prerequisites have been correctly installed. **Close your existing terminal and reopen it**.  You can retrieve and execute the test at the Bash prompt by typing (pasting) the following command:
+We provide a simple Python script to test that the prerequisites have been correctly installed. **Close your existing terminal and reopen it**.  Now, retrieve and execute the test at the Bash prompt by typing (pasting) the following command:
 
 ~~~ {.code}
 curl -L http://goo.gl/HuPJu3 | python3.4

@@ -41,11 +41,32 @@
 </ul>
 </div>
 </section>
-<p>In the last lesson, we wrote some code that plots some values of interest from our first inflammation dataset, and reveals some suspicious features in it, such as from <code>inflammation-01.csv</code></p>
-<div class="figure">
-<img src="04-loop_files/novice/python/04-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><p class="caption">Analysis of inflammation-01.csv</p>
-</div>
-<p>but we have a dozen data sets right now and more on the way. We want to create plots for all our data sets with a single statement. To do that, we’ll have to teach the computer how to repeat things.</p>
+<p>Using the tools we’ve covered till now, repeating a simple statement many times is tedious. The only item we can currently repeat easily is printing the exact same message multiple times. For example,</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&quot;I love programming in Python!</span><span class="ch">\n</span><span class="st">&quot;</span>*<span class="dv">10</span>)</code></pre>
+<p>will produce the output:</p>
+<pre class="output"><code>I love programming in Python!
+I love programming in Python!
+I love programming in Python!
+I love programming in Python!
+I love programming in Python!
+I love programming in Python!
+I love programming in Python!
+I love programming in Python!
+I love programming in Python!
+I love programming in Python!</code></pre>
+<p>Imagine that we wanted to number this list so that we printed:</p>
+<pre class="output"><code>1. I love programming in Python!
+2. I love programming in Python!
+3. I love programming in Python!
+4. I love programming in Python!
+5. I love programming in Python!
+6. I love programming in Python!
+7. I love programming in Python!
+8. I love programming in Python!
+9. I love programming in Python!
+10. I love programming in Python!</code></pre>
+<p>Now, the times operator <code>*</code> is no longer capable of allowing us to produce this output. Fortunately, Python provides us with multiple general tools for repetition where we’ll simply specify which statements we want to be repeated and a way to determine how many times to repeat those statements.</p>
+<p>To do that, we’ll have to teach the computer how to repeat things.</p>
 <p>Suppose we want to print each character in the word “lead” on a line of its own. One way is to use four <code>print</code> statements:</p>
 <pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;lead&#39;</span>
 <span class="dt">print</span>(word[<span class="dv">0</span>])

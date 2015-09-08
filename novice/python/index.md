@@ -17,13 +17,14 @@ But the two most important things are to use whatever language your colleagues a
 ## Topics
 
 *  [Python basics: Variables, Objects, Arrays,  Lists etc](01-basic.html)
-*  [Reading and analysing Patient data using libraries](02-numpy.html)
-*  [Visualising data using libraries](03-visualisation.html)
-*  [Repeating actions with loops](04-loop.html)
-*  [Making choices](05-cond.html)
-*  [Creating functions](06-func.html)
-*  [Command-Line Programs](07-cmdline.html)
-*  [Python Style Guide](08-Python-style-guide.html)
+*  [Repeating actions with loops](02-loop.html)
+*  [Arrays and Lists](03-lists.html)
+*  [Reading and analysing Patient data using libraries](04-numpy.html)
+*  [Visualising data using libraries](05-visualisation.html)
+*  [Making choices](06-cond.html)
+*  [Creating functions](07-func.html)
+*  [Command-Line Programs](08-cmdline.html)
+*  [Python Style Guide](09-Python-style-guide.html)
 
 ## Other resources
 

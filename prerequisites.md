@@ -11,6 +11,21 @@ We maintain a list of common problems that can occur during installation and way
 
 If you still have trouble, we will run a **Software Installation surgery from 12.00 until 17.00 on 10 September 2015**. This will take place in room 3013 (Simon Hettrick's office), Building 32, Highfield campus. You don't need to make an appointment: just turn up. 
 
+
+## Bash
+
+#### Windows
+
+Bash is provided as part of the Git for Windows installation described below. No explicit installation is required.
+
+#### Mac OS X
+
+The Bash shell is accessible via the Terminal application under Applications -> Utilities.
+
+#### Linux
+
+The Bash shell is accessible via the Terminal application.
+
 ## Text Editor
 
 You are free to use your preferred text editor. If you don&#39;t have one, we recommend:
@@ -32,15 +47,15 @@ Whilst in Nano, press CTRL+X to exit (this will prompt you to save or discard an
 
 ## Python
 
-We teach with Python 3.4, since it is on a clear path to becoming the most widely used version. We will also employ the numpy and matplotlib libraries and the nose unit testing framework. Python3.4 Anaconda Installation comes with all of these required libraries and frameworks.
+We teach with Python 3.4, since it is on a clear path to becoming the most widely used version. We will also employ the numpy and matplotlib libraries and the nose unit testing framework. Python3.4 Anaconda Installation provides all of these required libraries and frameworks.
 
 #### Windows
 
-Download the [Python3.4 Anaconda installer](https://repo.continuum.io/archive/Anaconda3-2.2.0-Windows-x86_64.exe). Double click the installer and follow the instructions on the screen.
+Download the [Python3.4 Anaconda installer](https://repo.continuum.io/archive/Anaconda3-2.3.0-Windows-x86_64.exe). Double click the installer and follow the instructions.
 
 #### Mac OS X
 
-Download the [Python 3.4 Anaconda MAC OS X Graphical installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda3-2.3.0-MacOSX-x86_64.pkg). After downloading the installer, double click the `.pkg` file and follow the instructions  on the screen.
+Download the [Python 3.4 Anaconda MAC OS X Graphical installer](https://repo.continuum.io/archive/Anaconda3-2.3.0-MacOSX-x86_64.pkg). Double click the `.pkg` file and follow the instructions.
 
 #### Linux
 
@@ -56,17 +71,22 @@ In this workshop we will work with remote Git repositories hosted at Github. You
 
 #### Windows
 
-Download and install [Git for Windows](http://git-scm.com/download/win). You can accept the default installation options. In this workshop we will use Git via the Git Bash command line, installed as part of this package.
+Download and install [Git for Windows](http://git-scm.com/download/win). You can accept the default installation options, **with one exception** - at the step 'Configuring the terminal emulator to use with Git Bash' you **must** select 'Use Windows default console window'.
+In this workshop we will use Git via the Git Bash command line, installed as part of this package.
 
 #### Mac OS X
 
-Git will be installed automatically the first time you try to run it.  Open  terminal and type:
+On Mac OS X 10.9 Mavericks and 10.10 Yosemite, Git will be installed automatically the first time you try to run it.  Open a terminal and type:
 
 ~~~ {.code}
 git
 ~~~
 
 Follow the prompts to install the Apple command line development tools.
+
+On Mac OS X 10.6 Snow Leoapard, Mac OS X 10.7 Lion and 10.8 Mountain Lion, download and open the [Git installer image](http://downloads.sourceforge.net/project/git-osx-installer/git-2.3.5-intel-universal-snow-leopard.dmg?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fgit-osx-installer%2Ffiles%2F&ts=1441637770&use_mirror=kent). Double click the `.pkg` file and follow the instructions.
+
+If you intend to use an earlier version of Mac OS X, please contact us before the event.
 
 #### Linux
 
@@ -89,7 +109,21 @@ dnf install git
 
 All of the exercises in this workshop will take place at the command line via the Bash shell.  In Mac OS X and Linux, this is your normal terminal environment.  In Windows, the Git Bash shell has been installed and can be accessed via the Git entry in the Start Menu.
 
-We provide a simple Python script to test that the prerequisites have been correctly installed. You can retrieve and execute the test at the Bash prompt by typing (pasting) the following command:
+We provide a simple Python script to test that the prerequisites have been correctly installed. **Close your existing terminal and reopen it**.  Now, retrieve and execute the test at the Bash prompt by typing (pasting) the following command:
+
+#### Windows
+
+~~~ {.code}
+curl -L http://goo.gl/HuPJu3 | python
+~~~
+
+#### Mac OS X
+
+~~~ {.code}
+curl -L http://goo.gl/HuPJu3 | python3.4
+~~~
+
+#### Linux
 
 ~~~ {.code}
 curl -L http://goo.gl/HuPJu3 | python3.4
@@ -99,4 +133,4 @@ You should see eight passes and no failures.  If anything fails, please contact 
 
 ## During the workshop
 
-We will make use of the etherpad during the workshop (Etherpad allows a group to edit documents online collaboratively in real-time). Please use this to keep collaborative notes and ask (and answer!) each others questions.
+We will make use of the [Etherpad](https://etherpad.mozilla.org/SWC-Soton-Sep2015) collaboration tool during the workshop (Etherpad allows a group to edit documents online collaboratively in real-time). Please use this to keep collaborative notes and ask (and answer!) each others questions.

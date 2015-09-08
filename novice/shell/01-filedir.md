@@ -13,11 +13,10 @@ minutes: 15
 > *   Identify the actual command, flags, and filenames in a command-line call.
 > *   Demonstrate the use of tab completion, and explain its advantages.
 
-The part of the operating system responsible for managing files and directories
-is called the **file system**.
+The part of the operating system responsible for managing files and directories is called the **file system**.
 It organizes our data into files,
 which hold information,
-and directories (also called "folders"),
+and directories (also called "folders", for example, on Windows systems),
 which hold files or other directories.
 
 Several commands are frequently used to create, inspect, rename, and delete files and directories.
@@ -29,11 +28,12 @@ $
 ~~~
 
 The dollar sign is a **prompt**,
-which shows us that the shell is waiting for input;
+which represents our input interface to the shell.
+It shows us that the shell is waiting for input;
 your shell may show something more elaborate.
 
 Type the command `whoami`,
-then press the Enter key (sometimes marked Return) to send the command to the shell.
+then press the Enter key (sometimes called Return) to send the command to the shell.
 The command's output is the ID of the current user,
 i.e.,
 it shows us who the shell thinks we are:
@@ -72,12 +72,16 @@ $ pwd
 /Users/nelle
 ~~~
 
+Make a note of what is output here - it will likely come in handy later!
+
 > ## Home directory {.callout}
 >
 > The home directory path will look different on different operating systems.
 > On Linux it will look like `/home/nelle`,
-> and on Windows it will be similar to `C:\Documents and Settings\nelle`.
-> Note that it may look slightly different for different versions of Windows.
+> on Git Bash on Windows it will look like `/c/Users/nelle`,
+> and on Windows itself it will be similar to `C:\Documents and Settings\nelle`.
+> Note that it may also look slightly different for different versions of 
+> Windows.
 
 
 > ## Alphabet Soup {.callout}
@@ -93,6 +97,13 @@ $ pwd
 > its jargon. The result is as inconsistent as the roolz uv Inglish
 > speling, but we're stuck with it now.
 
+There are some helpful things to know which can save us some typing:
+
+* Using the up and down arrow keys allow you to cycle through your previous commands - plus, useful if you forget exactly what you typed earlier!
+* Ctrl-A and Ctrl-E will send the cursor to the start and end of a line respectively; much quicker than using the left/right arrow keys on a long line
+
+There are others that can also help us --- we'll look at a few later on.
+
 To understand what a "home directory" is,
 let's have a look at how the file system as a whole is organized.
 At the top is the **root directory**
@@ -100,7 +111,7 @@ that holds everything else.
 We refer to it using a slash character `/` on its own;
 this is the leading slash in `/Users/nelle`.
 
-Inside that directory are several other directories:
+Inside that directory are several other directories, e.g.:
 `bin` (which is where some built-in programs are stored),
 `data` (for miscellaneous data files),
 `Users` (where users' personal directories are located),
@@ -116,9 +127,9 @@ we know that `/Users` is stored inside the root directory `/`
 because its name begins with `/`.
 
 Underneath `/Users`,
-we find one directory for each user with an account on this machine.
-The Mummy's files are stored in `/Users/imhotep`,
-Wolfman's in `/Users/larry`,
+we find one directory for each user with an account on this machine, e.g.:
+`/Users/imhotep`,
+`/Users/larry`,
 and ours in `/Users/nelle`,
 which is why `nelle` is the last part of the directory's name.
 
@@ -131,19 +142,25 @@ which is why `nelle` is the last part of the directory's name.
 > it refers to the root directory. When it appears *inside* a name,
 > it's just a separator.
 
-Let's see what's in Nelle's home directory by running `ls`,
-which stands for "listing":
+Let's see what's in our home directory by running `ls`,
+which stands for "listing" (the `...` refers to other files and directories that have been left out for clarity):
 
 ~~~ {.bash}
 $ ls
 ~~~
 ~~~ {.output}
-creatures  molecules           pizza.cfg
-data       north-pacific-gyre  solar.pdf
-Desktop    notes.txt           writing
+2015-09-17-southampton Misc                   Solar.pdf
+Applications           Movies                 Teaching
+Desktop                Music                  ThunderbirdTemp
+Development            Notes.txt              VirtualBox VMs
+Documents              Pictures               bin
+Downloads              Pizza.cfg              mbox
+...
 ~~~
 
-![Nelle's Home Directory](fig/homedir.svg)
+Of course, this listing will depend on what you have in your own home directory.
+
+<!-- ![Nelle's Home Directory](fig/homedir.svg) -->
 
 `ls` prints the names of the files and directories in the current directory in alphabetical order,
 arranged neatly into columns.
@@ -154,13 +171,17 @@ which tells `ls` to add a trailing `/` to the names of directories:
 $ ls -F
 ~~~
 ~~~ {.output}
-creatures/  molecules/           pizza.cfg
-data/       north-pacific-gyre/  solar.pdf
-Desktop/    notes.txt            writing/
+2015-09-17-southampton/ Misc/                   Solar.pdf
+Applications/           Movies/                 Teaching/
+Desktop/                Music/                  ThunderbirdTemp/
+Development/            Notes.txt               VirtualBox VMs/
+Documents/              Pictures/               bin/
+Downloads/              Pizza.cfg               mbox
+...
 ~~~
 
 Here,
-we can see that `/Users/nelle` contains six **sub-directories**.
+we can see that the home directory contains a number of **sub-directories**.
 The names that don't have trailing slashes,
 like `notes.txt`, `pizza.cfg`, and `solar.pdf`,
 are plain old files.
@@ -171,7 +192,7 @@ which doesn't exist.
 
 > ## What's In A Name? {.callout}
 >
-> You may have noticed that all of Nelle's files' names are "something dot
+> You may have noticed that all of these files' names are "something dot
 > something". This is just a convention: we can call a file `mythesis` or
 > almost anything else we want. However, most people use two-part names
 > most of the time to help them (and their programs) tell different kinds
@@ -190,27 +211,32 @@ which doesn't exist.
 > cause the operating system to try to open it with a music player
 > when someone double-clicks it.
 
-Now let's take a look at what's in Nelle's `data` directory by running `ls -F data`,
+Now let's take a look at what's in our repository materials directory, `2015-09-17-southampton`, by running `ls -F 2015-09-17-southampton`.
+
 i.e.,
-the command `ls` with the **arguments** `-F` and `data`.
+the command `ls` with the **arguments** `-F` and `2015-09-17-southampton`.
 The second argument --- the one *without* a leading dash --- tells `ls` that
 we want a listing of something other than our current working directory:
 
 ~~~ {.bash}
-$ ls -F data
+$ ls -F 2015-09-17-southampton
 ~~~
 ~~~ {.output}
-amino-acids.txt   elements/     morse.txt
-pdb/              planets.txt   sunspot.txt
+CONDUCT.md              _config.yml             prerequisites.html
+CONTRIBUTING.md         _includes/              prerequisites.md
+CUSTOMIZATION.md        _layouts/               reference.html
+DESIGN.md               css/                    schedule.html
+FAQ.md                  deck.js/                setup/
+...
 ~~~
 
-The output shows us that there are four text files and two sub-sub-directories.
-Organizing things hierarchically in this way helps us keep track of our work:
-it's possible to put hundreds of files in our home directory,
+The output shows us that there are many text files and sub-directories.
+Organising things hierarchically in this way helps us keep track of our work:
+it's a bit like using a filing cabinet to store things. It's possible to put hundreds of files in our home directory,
 just as it's possible to pile hundreds of printed papers on our desk,
 but it's a self-defeating strategy.
 
-Notice, by the way that we spelled the directory name `data`.
+Notice, by the way, that we spelled the directory name `2015-09-17-southampton`.
 It doesn't have a trailing slash:
 that's added to directory names by `ls` when we use the `-F` flag to help us tell things apart.
 And it doesn't begin with a slash because it's a **relative path**,
@@ -227,25 +253,40 @@ rather than from the root of the file system.
 > most people use them interchangeably or inconsistently,
 > so we will too.
 
-If we run `ls -F /data` (*with* a leading slash) we get a different answer,
-because `/data` is an **absolute path**:
+Typing `ls -F 2015-09-17-southampton` is a bit painful, so a handy shortcut is to type in the first few letters and press the *TAB* key, e.g.
 
 ~~~ {.bash}
-$ ls -F /data
+$ ls -F 201
+~~~
+
+Pressing *TAB*, the shell automatically completes the directory name:
+
+~~~ {.bash}
+$ ls -F 2015-09-17-southampton/
+~~~
+
+This is known as *tab completion* on any matches with those first few letters.
+If there are more than one files or directories that match those letters, the shell will show you both --- you can then enter more characters (then using *TAB* again) until it is able to identify the precise file you want and finish the tab completion.
+
+If we run `ls -F /2015-09-17-southampton` (*with* a leading slash) we get a different response,
+because `/2015-09-17-southampton` is an **absolute path**:
+
+~~~ {.bash}
+$ ls -F /2015-09-17-southampton
 ~~~
 ~~~ {.output}
-access.log    backup/    hardware.cfg
-network.cfg
+ls: /2015-09-17-southampton: No such file or directory
 ~~~
 
 The leading `/` tells the computer to follow the path from the root of the file system,
 so it always refers to exactly one directory,
 no matter where we are when we run the command.
+In this case, there is no `data` directory in the root of the file system.
 
 What if we want to change our current working directory?
 Before we do this,
 `pwd` shows us that we're in `/Users/nelle`,
-and `ls` without any arguments shows us that directory's contents:
+and `ls` without any arguments shows us that directory's contents (as before):
 
 ~~~ {.bash}
 $ pwd
@@ -257,9 +298,13 @@ $ pwd
 $ ls
 ~~~
 ~~~ {.output}
-creatures  molecules           pizza.cfg
-data       north-pacific-gyre  solar.pdf
-Desktop    notes.txt           writing
+2015-09-17-southampton Misc                   Solar.pdf
+Applications           Movies                 Teaching
+Desktop                Music                  ThunderbirdTemp
+Development            Notes.txt              VirtualBox VMs
+Documents              Pictures               bin
+Downloads              Pizza.cfg              mbox
+...
 ~~~
 
 We can use `cd` followed by a directory name to change our working directory.
@@ -269,27 +314,31 @@ the command doesn't change the directory,
 it changes the shell's idea of what directory we are in.
 
 ~~~ {.bash}
-$ cd data
+$ cd 2015-09-17-southampton
 ~~~
 
 `cd` doesn't print anything,
-but if we run `pwd` after it, we can see that we are now in `/Users/nelle/data`.
+but if we run `pwd` after it, we can see that we are now in `/Users/nelle/2015-09-17-southampton`.
 If we run `ls` without arguments now,
-it lists the contents of `/Users/nelle/data`,
+it lists the contents of `/Users/nelle/2015-09-17-southampton`,
 because that's where we now are:
 
 ~~~ {.bash}
 $ pwd
 ~~~
 ~~~ {.output}
-/Users/nelle/data
+/Users/nelle/2015-09-17-southampton
 ~~~
 ~~~ {.bash}
 $ ls -F
 ~~~
 ~~~ {.output}
-amino-acids.txt   elements/     morse.txt
-pdb/              planets.txt   sunspot.txt
+CONDUCT.md              _config.yml             prerequisites.html
+CONTRIBUTING.md         _includes/              prerequisites.md
+CUSTOMIZATION.md        _layouts/               reference.html
+DESIGN.md               css/                    schedule.html
+FAQ.md                  deck.js/                setup/
+...
 ~~~
 
 We now know how to go down the directory tree:
@@ -306,7 +355,7 @@ but it's almost always simpler to use `cd ..` to go up one level:
 $ pwd
 ~~~
 ~~~ {.output}
-/Users/nelle/data
+/Users/nelle/2015-09-17-southampton
 ~~~
 ~~~ {.bash}
 $ cd ..
@@ -326,6 +375,12 @@ $ pwd
 /Users/nelle
 ~~~
 
+Let's go back into the repository directory:
+
+~~~ {.bash}
+$ cd 2015-09-17-southampton
+~~~
+
 The special directory `..` doesn't usually show up when we run `ls`.
 If we want to display it, we can give `ls` the `-a` flag:
 
@@ -333,15 +388,19 @@ If we want to display it, we can give `ls` the `-a` flag:
 $ ls -F -a
 ~~~
 ~~~ {.output}
-./                  creatures/          notes.txt
-../                 data/               pizza.cfg
-.bash_profile       molecules/          solar.pdf
-Desktop/            north-pacific-gyre/ writing/
+./                      Makefile                novice/
+../                     README.md               prerequisites-ref.html
+.git/                   SETUP.md                prerequisites.html
+.gitignore              _config.yml             prerequisites.md
+CONDUCT.md              _includes/              reference.html
+CONTRIBUTING.md         _layouts/               schedule.html
+CUSTOMIZATION.md        css/                    setup/
+...
 ~~~
 
 `-a` stands for "show all";
 it forces `ls` to show us file and directory names that begin with `.`,
-such as `..` (which, if we're in `/Users/nelle`, refers to the `/Users` directory).
+such as `..` (which, if we're in `/Users/nelle/2015-09-17-southampton`, refers to the `/Users/nelle` directory).
 As you can see,
 it also displays another special directory that's just called `.`,
 which means "the current working directory".
@@ -354,82 +413,14 @@ Finally, we also see a file called `.bash_profile`. This file usually contains s
 > The special names `.` and `..` don't belong to `ls`;
 > they are interpreted the same way by every program.
 > For example,
-> if we are in `/Users/nelle/data`,
+> if we are in `/Users/nelle/2015-09-17-southampton`,
 > the command `ls ..` will give us a listing of `/Users/nelle`.
 > When the meanings of the parts are the same no matter how they're combined,
 > programmers say they are **orthogonal**:
 > Orthogonal systems tend to be easier for people to learn
 > because there are fewer special cases and exceptions to keep track of.
 
-### Nelle's Pipeline: Organizing Files
-
-Knowing just this much about files and directories,
-Nelle is ready to organize the files that the protein assay machine will create.
-First,
-she creates a directory called `north-pacific-gyre`
-(to remind herself where the data came from).
-Inside that,
-she creates a directory called `2012-07-03`,
-which is the date she started processing the samples.
-She used to use names like `conference-paper` and `revised-results`,
-but she found them hard to understand after a couple of years.
-(The final straw was when she found herself creating
-a directory called `revised-revised-results-3`.)
-
-> Output sorting {.callout}
->
-> Nelle names her directories "year-month-day",
-> with leading zeroes for months and days,
-> because the shell displays file and directory names in alphabetical order.
-> If she used month names,
-> December would come before July;
-> if she didn't use leading zeroes,
-> November ('11') would come before July ('7'). Similarly, putting the year first 
-> means that June 2012 will come before June 2013.
-
-Each of her physical samples is labelled according to her lab's convention
-with a unique ten-character ID,
-such as "NENE01729A".
-This is what she used in her collection log
-to record the location, time, depth, and other characteristics of the sample,
-so she decides to use it as part of each data file's name.
-Since the assay machine's output is plain text,
-she will call her files `NENE01729A.txt`, `NENE01812A.txt`, and so on.
-All 1520 files will go into the same directory.
-
-If she is in her home directory,
-Nelle can see what files she has using the command:
-
-~~~ {.bash}
-$ ls north-pacific-gyre/2012-07-03/
-~~~
-
-This is a lot to type,
-but she can let the shell do most of the work through what is called **tab completion**.
-If she types:
-
-~~~ {.bash}
-$ ls nor
-~~~
-
-and then presses tab (the tab key on her keyboard),
-the shell automatically completes the directory name for her:
-
-~~~ {.bash}
-$ ls north-pacific-gyre/
-~~~
-
-If she presses tab again,
-Bash will add `2012-07-03/` to the command,
-since it's the only possible completion.
-Pressing tab again does nothing,
-since there are 1520 possibilities;
-pressing tab twice brings up a list of all the files,
-and so on.
-This is called **tab completion**,
-and we will see it in many other tools as we go on.
-
-![File System for Challange Questions](fig/filesystem-challenge.svg)
+![File System for Challenge Questions](fig/filesystem-challenge.svg)
 
 > ## Relative path resolution {.challenge}
 >
@@ -454,15 +445,6 @@ and we will see it in many other tools as we go on.
 > 2.  `ls -r -F`
 > 3.  `ls -r -F /Users/backup`
 > 4.  Either \#2 or \#3 above, but not \#1.
-
-> ## Default `cd` action {.challenge}
->
-> What does the command `cd` without a directory name do?
->
-> 1.  It has no effect.
-> 2.  It changes the working directory to `/`.
-> 3.  It changes the working directory to the user's home directory.
-> 4.  It produces an error message.
 
 > ## Exploring more `ls` arguments {.challenge}
 >

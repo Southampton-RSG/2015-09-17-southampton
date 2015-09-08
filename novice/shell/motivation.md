@@ -1,74 +1,73 @@
 ---
 layout: slides
-title: Writing Robust Code and Unit Testing
-subtitle: Why do it?
+title: Automating tasks with the Unix shell
+subtitle: 
 ---
 
-## So far...
+## What is the shell?
 
-- Have introduced the basic tools of programming
-- But how do we know a program gives the right answer?
+- Command line interface to applications, as opposed to a GUI
+- Called the 'shell' since it wraps the complexity of the operating system in a simple wrapper
+- Can have shell commands in a file - called a 'script' - but are still just programs
+- Developed in the 1970's - syntax can be parochial
+- Every Unix-like system (e.g. Linux, Mac OS X) has the shell
+- Most popular shell is Bash (Bourne Again SHell)
 
-- We need to
-    + write programs that check their own operation
-    + write tests to catch the mistakes those self-checks miss
+## Boromir speaks
 
+![](img/boromir.png)
 
-## Confess!
+- This is wrong.
 
-Why don't you write tests?
+## A Typical Problem
 
-- "I don't write buggy code"
-- "It's too hard"
-- "It's not interesting"
-- "It takes too much time and I've research to do"
+- Running the same workflow on several samples can be labour intensive
+    + e.g. the same set of processing steps over many files
+- Manual manipulation of data files is...
+    + Often not captured in documentation
+    + Hard to reproduce
+    + Prone to error
+    + Difficult to troubleshoot, review, or improve
 
+## How does the shell help?
 
-## Ariane 5
+- Workflow steps can be automated
+    + Through the use of shell scripts
+    + Even through one-line commands
+    + It's a bit like Lego
+- Built-in commands allow for easy data manipulation (e.g. sort, grep, etc.)
+- Automation improves reproducibility and makes troubleshooting easier
+- *Let the computer do the work!*
 
-- Ariane 5 used Ariane 4 code
-- Ariane 5’s faster engines caused buffer overflow
-- Buffer overflow caused Ariane 5 to explode!
-- Unfortunately, code wasn't properly tested
+## Other reasons to learn the shell
 
-Millions of pounds down the drain, some very red faces
+- It makes you more productive!
+    + Can do simple, repetitive things far more quickly
+    + ...even complex things
+    + You don't need to learn it all for it to be very useful
+- Many applications/services depend on the shell
+    + Scientific applications
+    + Common server applications (e.g. web servers, databases)
+    + High Performance Computing resources (e.g. IRIDIS, Lyceum, ARCHER)
+- Foundation for the rest of the course
 
+## Learning objectives
 
-## Consider Geoffrey Chang...
+This session will provide a brief introduction to the shell and some of its many features.
 
-- Dept. of Molecular Biology, Scripps Institute
-- 5th Annual Presidential Early Career Awards, 2000
-- Beckerman Foundation Young Investigator Award, 2001 
+> * 
 
-Three pharma publications in *Science*, 2001-2005
+## Getting started
 
-Letters – Retraction, Science 22 December 2006
+Let's get a shell running!
 
+- Windows: run *Git Bash*
+- Mac OS X: run the *Terminal* application under *Applications -> Utilities*
+- Linux: run the *Terminal* application
 
-## And he's not alone...
+## Limitations
 
-- “A Test of Corrections for Extraneous Signals in Gridded Surface Temperature Data”, R. McKitrick et al, Climate Research, 2004
-    + “McKitrick screws up yet again”, T. Lambert’s blog
-    + “McKitrick mucks it up”, J. Quiggin’s blog
+- Bash is good for quickly automating repetitive tasks that call other programs... up to a point!
+    + Large Bash scripts can become difficult to maintain
 
-“ERRATUM”, Climate Research, 2004
-
-- “formula for computing cosine of absolute latitude … takes the angle in *radians*, but our data were entered in *degrees*”
-
-
-## What testing gives you
-
-- Confidence that your code does what it is supposed to
-    + That your research is built on a solid foundation
-- Ability to detect, and fix, bugs more quickly
-- Confidence to refactor or fix bugs without creating new bugs
-- Examples of how to use your code
-- “if it’s not tested, it’s broken”
-    + bittermanandy, 10/09/2010
-
-## Learning Objectives
-
-> * how to write code defensively to guard against making errors;
-> * how to use a unit testing framework;
-> * when it's useful to write tests *before* writing code.
-> * how Python reports and handles errors;
+- For larger, more complex tasks a more general programming language (like Python) is better

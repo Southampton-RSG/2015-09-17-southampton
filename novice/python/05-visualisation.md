@@ -77,8 +77,6 @@ Here are our three plots side by side using aliases for `numpy` and `pyplot`:
 
 
 ~~~ {.python}
-#!/usr/bin/python
-
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -106,7 +104,8 @@ plt.show(fig)
 
 Running the above code (present under `code` directory in the file `three-plots.py`) may throw the warning as below. If you see the warning, please ignore it.
 
-`/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer warnings.warn("tight_layout : falling back to Agg renderer")`
+`/Users/user/anaconda/lib/python3.4/site-packages/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer
+  warnings.warn("tight_layout : falling back to Agg renderer")`
 
 `tight_layout` still works by falling back to the Agg renderer. 
 

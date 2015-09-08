@@ -17,6 +17,7 @@ as a multidimensional array quite easily.
 
 #### List basics
 
+Just as a `for` loop is a way to do operations many times, a list is a way to store many values.
 A list in python is just an ordered collection of items which can be of any type. By comparison 
 an array is an ordered collection of items of a single type - so a list is more flexible than an 
 array.
@@ -24,7 +25,21 @@ array.
 A list is also a dynamic mutable type and this means we can add and delete elements from the list 
 at any time. 
 
+Unlike Numpy arrays, lists are built into the language (so we don't have to load a library to use them).
+
 To define a list we simply write a comma separated list of items in square brackets:
+
+~~~{.python}
+odds = [1, 3, 5, 7]
+print('Odds are:', odds)
+~~~
+
+~~~{.output}
+Odds are: [1, 3, 5, 7]
+~~~
+
+We select individual elements from lists by indexing them:
+
 
 ~~~{.python}
 myList = [1,2,3,4,5,6]
@@ -147,7 +162,4 @@ for i in range(10):
 ~~~
 
 This works but it only works if we need to build up the list in this particular order - which most of the time you do. 
-When the same situation arises in two- and multi-dimensioned arrays the problem often isn't as easy to solve with append, 
-and there is a better way.
 
-After examining such problems working with lists as arrays, we will proceed to discover the power of the NumPy arrays in the next lesson.

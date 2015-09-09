@@ -34,16 +34,16 @@
 </div>
 <div class="panel-body">
 <ul>
-<li>Create a directory hierarchy that matches a given diagram.</li>
+<li>Create and delete new directories.</li>
 <li>Create files in that hierarchy using an editor or by copying and renaming existing files.</li>
 <li>Display the contents of a directory using the command line.</li>
 <li>Delete specified files and/or directories.</li>
 </ul>
 </div>
 </section>
-<p>We now know how to explore files and directories, but how do we create them in the first place? Let’s go back to Nelle’s home directory, <code>/Users/nelle</code>, and use <code>ls -F</code> to see what it contains:</p>
+<p>We now know how to explore files and directories, but how do we create them in the first place? Let’s use <code>ls -F</code> to see what our test directory contains:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
-<pre class="output"><code>/Users/nelle</code></pre>
+<pre class="output"><code>/Users/nelle/2015-09-17-southampton/novice/shell/test_directory</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F</code></pre>
 <pre class="output"><code>creatures/  molecules/           pizza.cfg
 data/       north-pacific-gyre/  solar.pdf
@@ -78,6 +78,10 @@ $ <span class="kw">nano</span> draft.txt</code></pre>
 <p>Once our file is saved, we can use Control-X to quit the editor and return to the shell. (Unix documentation often uses the shorthand <code>^A</code> to mean “control-A”.) <code>nano</code> doesn’t leave any output on the screen after it exits, but <code>ls</code> now shows that we have created a file called <code>draft.txt</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
 <pre class="output"><code>draft.txt</code></pre>
+<p>We can use the shell on its own to take a look at its contents using the <code>cat</code> command:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> draft.txt</code></pre>
+<pre class="output"><code>It&#39;s not &quot;publish or perish&quot; any more,
+it&#39;s &quot;share and thrive&quot;.</code></pre>
 <p>Let’s tidy up by running <code>rm draft.txt</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">rm</span> draft.txt</code></pre>
 <p>This command removes files (“rm” is short for “remove”). If we run <code>ls</code> again, its output is empty once more, which tells us that our file is gone:</p>

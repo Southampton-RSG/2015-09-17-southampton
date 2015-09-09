@@ -6,22 +6,20 @@ minutes: 15
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Create a directory hierarchy that matches a given diagram.
+> *   Create and delete new directories.
 > *   Create files in that hierarchy using an editor or by copying and renaming existing files.
 > *   Display the contents of a directory using the command line.
 > *   Delete specified files and/or directories.
 
 We now know how to explore files and directories,
 but how do we create them in the first place?
-Let's go back to Nelle's home directory,
-`/Users/nelle`,
-and use `ls -F` to see what it contains:
+Let's use `ls -F` to see what our test directory contains:
 
 ~~~ {.bash}
 $ pwd
 ~~~
 ~~~ {.output}
-/Users/nelle
+/Users/nelle/2015-09-17-southampton/novice/shell/test_directory
 ~~~
 ~~~ {.bash}
 $ ls -F
@@ -105,6 +103,16 @@ $ ls
 ~~~
 ~~~ {.output}
 draft.txt
+~~~
+
+We can use the shell on its own to take a look at its contents using the `cat` command:
+
+~~~ {.bash}
+$ cat draft.txt
+~~~
+~~~ {.output}
+It's not "publish or perish" any more,
+it's "share and thrive".
 ~~~
 
 Let's tidy up by running `rm draft.txt`:

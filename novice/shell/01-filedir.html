@@ -113,38 +113,49 @@ Documents              Pictures               bin
 Downloads              Pizza.cfg              mbox
 ...</code></pre>
 <p>Of course, this listing will depend on what you have in your own home directory.</p>
-<!-- ![Nelle's Home Directory](fig/homedir.svg) -->
-<p><code>ls</code> prints the names of the files and directories in the current directory in alphabetical order, arranged neatly into columns. We can make its output more comprehensible by using the <strong>flag</strong> <code>-F</code>, which tells <code>ls</code> to add a trailing <code>/</code> to the names of directories:</p>
+<p>We need to get into the repository directory <code>2015-09-17-southampton</code>, so what if we want to change our current working directory? Before we do this, <code>pwd</code> shows us that we’re in <code>/Users/nelle</code>.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
+<pre class="output"><code>/Users/nelle</code></pre>
+<p>We can use <code>cd</code> followed by a directory name to change our working directory. <code>cd</code> stands for “change directory”, which is a bit misleading: the command doesn’t change the directory, it changes the shell’s idea of what directory we are in.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> 2015-09-17-southampton</code></pre>
+<p><code>cd</code> doesn’t print anything, but if we run <code>pwd</code> after it, we can see that we are now in <code>/Users/nelle/2015-09-17-southampton</code>. If we run <code>ls</code> without arguments now, it lists the contents of <code>/Users/nelle/2015-09-17-southampton</code>, because that’s where we now are:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
+<pre class="output"><code>/Users/nelle/2015-09-17-southampton</code></pre>
+<!-- ![Nelle's Home Directory](fig/homedir.svg) - remove Desktop-->
+<p><code>ls</code> prints the names of the files and directories in the current directory in alphabetical order, arranged neatly into columns (where there is space to do so). We can make its output more comprehensible by using the <strong>flag</strong> <code>-F</code>, which tells <code>ls</code> to add a trailing <code>/</code> to the names of directories:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F</code></pre>
-<pre class="output"><code>2015-09-17-southampton/ Misc/                   Solar.pdf
-Applications/           Movies/                 Teaching/
-Desktop/                Music/                  ThunderbirdTemp/
-Development/            Notes.txt               VirtualBox VMs/
-Documents/              Pictures/               bin/
-Downloads/              Pizza.cfg               mbox
-...</code></pre>
-<p>Here, we can see that the home directory contains a number of <strong>sub-directories</strong>. The names that don’t have trailing slashes, like <code>notes.txt</code>, <code>pizza.cfg</code>, and <code>solar.pdf</code>, are plain old files. And note that there is a space between <code>ls</code> and <code>-F</code>: without it, the shell thinks we’re trying to run a command called <code>ls-F</code>, which doesn’t exist.</p>
+<pre class="output"><code>00-intro.html          AUTHORS                img/
+00-intro.md            CONDUCT.md             index.html
+01-filedir.html        CONTRIBUTING.md        index.md
+01-filedir.md          LICENSE.html           instructors.html
+02-create.html         LICENSE.md             instructors.md
+02-create.md           Makefile               js/
+03-pipefilter.html     README.md              motivation.html
+03-pipefilter.md       _includes/             motivation.md
+04-loop.html           _layouts/              reference.html
+04-loop.md             css/                   reference.md
+05-script.html         data/                  requirements.txt
+05-script.md           discussion.html        shell-novice-data.zip
+06-find.html           discussion.md          test_directory/
+06-find.md             fig/                   tools/</code></pre>
+<p>Here, we can see that the home directory contains a number of <strong>sub-directories</strong>. The names that don’t have trailing slashes, like <code>reference.html</code>, <code>prerequisites.md</code>, and <code>preqrequisites.pdf</code>, are plain old files. And note that there is a space between <code>ls</code> and <code>-F</code>: without it, the shell thinks we’re trying to run a command called <code>ls-F</code>, which doesn’t exist.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2 id="whats-in-a-name"><span class="glyphicon glyphicon-pushpin"></span>What’s In A Name?</h2>
 </div>
 <div class="panel-body">
-<p>You may have noticed that all of these files’ names are “something dot something”. This is just a convention: we can call a file <code>mythesis</code> or almost anything else we want. However, most people use two-part names most of the time to help them (and their programs) tell different kinds of files apart. The second part of such a name is called the <strong>filename extension</strong>, and indicates what type of data the file holds: <code>.txt</code> signals a plain text file, <code>.pdf</code> indicates a PDF document, <code>.cfg</code> is a configuration file full of parameters for some program or other, and so on.</p>
+<p>You may have noticed that all of these files’ names are “something dot something”. This is just a convention: we can call a file <code>mythesis</code> or almost anything else we want. However, most people use two-part names most of the time to help them (and their programs) tell different kinds of files apart. The second part of such a name is called the <strong>filename extension</strong>, and indicates what type of data the file holds: <code>.txt</code> signals a plain text file, <code>.pdf</code> indicates a PDF document, <code>.html</code> is an HTML file, and so on.</p>
 <p>This is just a convention, albeit an important one. Files contain bytes: it’s up to us and our programs to interpret those bytes according to the rules for PDF documents, images, and so on.</p>
 <p>Naming a PNG image of a whale as <code>whale.mp3</code> doesn’t somehow magically turn it into a recording of whalesong, though it <em>might</em> cause the operating system to try to open it with a music player when someone double-clicks it.</p>
 </div>
 </aside>
-<p>Now let’s take a look at what’s in our repository materials directory, <code>2015-09-17-southampton</code>, by running <code>ls -F 2015-09-17-southampton</code>.</p>
-<p>i.e., the command <code>ls</code> with the <strong>arguments</strong> <code>-F</code> and <code>2015-09-17-southampton</code>. The second argument — the one <em>without</em> a leading dash — tells <code>ls</code> that we want a listing of something other than our current working directory:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F 2015-09-17-southampton</code></pre>
-<pre class="output"><code>CONDUCT.md              _config.yml             prerequisites.html
-CONTRIBUTING.md         _includes/              prerequisites.md
-CUSTOMIZATION.md        _layouts/               reference.html
-DESIGN.md               css/                    schedule.html
-FAQ.md                  deck.js/                setup/
-...</code></pre>
-<p>The output shows us that there are many text files and sub-directories. Organising things hierarchically in this way helps us keep track of our work: it’s a bit like using a filing cabinet to store things. It’s possible to put hundreds of files in our home directory, just as it’s possible to pile hundreds of printed papers on our desk, but it’s a self-defeating strategy.</p>
-<p>Notice, by the way, that we spelled the directory name <code>2015-09-17-southampton</code>. It doesn’t have a trailing slash: that’s added to directory names by <code>ls</code> when we use the <code>-F</code> flag to help us tell things apart. And it doesn’t begin with a slash because it’s a <strong>relative path</strong>, i.e., it tells <code>ls</code> how to find something from where we are, rather than from the root of the file system.</p>
+<p>Now let’s take a look at what’s in the directory <code>test_directory</code>, by running <code>ls -F test_directory</code>.</p>
+<p>i.e., the command <code>ls</code> with the <strong>arguments</strong> <code>-F</code> and <code>test_directory</code>. The second argument — the one <em>without</em> a leading dash — tells <code>ls</code> that we want a listing of something other than our current working directory:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F test_directory</code></pre>
+<pre class="output"><code>creatures/          molecules/          notes.txt           solar.pdf
+data/               north-pacific-gyre/ pizza.cfg           writing/</code></pre>
+<p>The output shows us that there are some files and sub-directories. Organising things hierarchically in this way helps us keep track of our work: it’s a bit like using a filing cabinet to store things. It’s possible to put hundreds of files in our home directory, for example, just as it’s possible to pile hundreds of printed papers on our desk, but it’s a self-defeating strategy.</p>
+<p>Notice, by the way, that we spelled the directory name <code>test_directory</code>. It doesn’t have a trailing slash: that’s added to directory names by <code>ls</code> when we use the <code>-F</code> flag to help us tell things apart. And it doesn’t begin with a slash because it’s a <strong>relative path</strong>, i.e., it tells <code>ls</code> how to find something from where we are, rather than from the root of the file system.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2 id="parameters-vs.arguments"><span class="glyphicon glyphicon-pushpin"></span>Parameters vs. Arguments</h2>
@@ -153,60 +164,36 @@ FAQ.md                  deck.js/                setup/
 <p>According to <a href="https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments">Wikipedia</a>, the terms argument and <strong>parameter</strong> mean slightly different things. In practice, however, most people use them interchangeably or inconsistently, so we will too.</p>
 </div>
 </aside>
-<p>Typing <code>ls -F 2015-09-17-southampton</code> is a bit painful, so a handy shortcut is to type in the first few letters and press the <em>TAB</em> key, e.g.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F 201</code></pre>
-<p>Pressing <em>TAB</em>, the shell automatically completes the directory name:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F 2015-09-17-southampton/</code></pre>
-<p>This is known as <em>tab completion</em> on any matches with those first few letters. If there are more than one files or directories that match those letters, the shell will show you both — you can then enter more characters (then using <em>TAB</em> again) until it is able to identify the precise file you want and finish the tab completion.</p>
-<p>If we run <code>ls -F /2015-09-17-southampton</code> (<em>with</em> a leading slash) we get a different response, because <code>/2015-09-17-southampton</code> is an <strong>absolute path</strong>:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F /2015-09-17-southampton</code></pre>
-<pre class="output"><code>ls: /2015-09-17-southampton: No such file or directory</code></pre>
+<p>If we run <code>ls -F /test_directory</code> (<em>with</em> a leading slash) we get a different response, because <code>/test_directory</code> is an <strong>absolute path</strong>:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F /test_directory</code></pre>
+<pre class="output"><code>ls: /test_directory: No such file or directory</code></pre>
 <p>The leading <code>/</code> tells the computer to follow the path from the root of the file system, so it always refers to exactly one directory, no matter where we are when we run the command. In this case, there is no <code>data</code> directory in the root of the file system.</p>
-<p>What if we want to change our current working directory? Before we do this, <code>pwd</code> shows us that we’re in <code>/Users/nelle</code>, and <code>ls</code> without any arguments shows us that directory’s contents (as before):</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
-<pre class="output"><code>/Users/nelle</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
-<pre class="output"><code>2015-09-17-southampton Misc                   Solar.pdf
-Applications           Movies                 Teaching
-Desktop                Music                  ThunderbirdTemp
-Development            Notes.txt              VirtualBox VMs
-Documents              Pictures               bin
-Downloads              Pizza.cfg              mbox
-...</code></pre>
-<p>We can use <code>cd</code> followed by a directory name to change our working directory. <code>cd</code> stands for “change directory”, which is a bit misleading: the command doesn’t change the directory, it changes the shell’s idea of what directory we are in.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> 2015-09-17-southampton</code></pre>
-<p><code>cd</code> doesn’t print anything, but if we run <code>pwd</code> after it, we can see that we are now in <code>/Users/nelle/2015-09-17-southampton</code>. If we run <code>ls</code> without arguments now, it lists the contents of <code>/Users/nelle/2015-09-17-southampton</code>, because that’s where we now are:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
-<pre class="output"><code>/Users/nelle/2015-09-17-southampton</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F</code></pre>
-<pre class="output"><code>CONDUCT.md              _config.yml             prerequisites.html
-CONTRIBUTING.md         _includes/              prerequisites.md
-CUSTOMIZATION.md        _layouts/               reference.html
-DESIGN.md               css/                    schedule.html
-FAQ.md                  deck.js/                setup/
-...</code></pre>
-<p>We now know how to go down the directory tree: how do we go up? We could use an absolute path:</p>
+<p>Typing <code>ls -F test_directory</code> is a bit painful, so a handy shortcut is to type in the first few letters and press the <em>TAB</em> key, e.g.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F tes</code></pre>
+<p>Pressing <em>TAB</em>, the shell automatically completes the directory name:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F test_directory/</code></pre>
+<p>This is known as <em>tab completion</em> on any matches with those first few letters. If there are more than one files or directories that match those letters, the shell will show you both — you can then enter more characters (then using <em>TAB</em> again) until it is able to identify the precise file you want and finish the tab completion.</p>
+<p>Let’s change our directory to <code>test_directory</code>:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> test_directory/2015-09-17-southampton</code></pre>
+<p>We know how to go down the directory tree: but how do we go up? We could use an absolute path:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> /Users/nelle</code></pre>
 <p>but it’s almost always simpler to use <code>cd ..</code> to go up one level:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
 <pre class="output"><code>/Users/nelle/2015-09-17-southampton</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ..</code></pre>
-<p><code>..</code> is a special directory name meaning “the directory containing this one”, or more succinctly, the <strong>parent</strong> of the current directory. Sure enough, if we run <code>pwd</code> after running <code>cd ..</code>, we’re back in <code>/Users/nelle</code>:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
+<p><code>..</code> is a special directory name meaning “the directory containing this one”, or more succinctly, the <strong>parent</strong> of the current directory. Sure enough, if we run <code>pwd</code> after running <code>cd ..</code> again, we’re back in <code>/Users/nelle</code>:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ..
+$ <span class="kw">pwd</span></code></pre>
 <pre class="output"><code>/Users/nelle</code></pre>
-<p>Let’s go back into the repository directory:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> 2015-09-17-southampton</code></pre>
+<p>Let’s go back into our test directory:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> 2015-09-17-southampton
+$ <span class="kw">cd</span> test_directory</code></pre>
 <p>The special directory <code>..</code> doesn’t usually show up when we run <code>ls</code>. If we want to display it, we can give <code>ls</code> the <code>-a</code> flag:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F -a</code></pre>
-<pre class="output"><code>./                      Makefile                novice/
-../                     README.md               prerequisites-ref.html
-.git/                   SETUP.md                prerequisites.html
-.gitignore              _config.yml             prerequisites.md
-CONDUCT.md              _includes/              reference.html
-CONTRIBUTING.md         _layouts/               schedule.html
-CUSTOMIZATION.md        css/                    setup/
-...</code></pre>
-<p><code>-a</code> stands for “show all”; it forces <code>ls</code> to show us file and directory names that begin with <code>.</code>, such as <code>..</code> (which, if we’re in <code>/Users/nelle/2015-09-17-southampton</code>, refers to the <code>/Users/nelle</code> directory). As you can see, it also displays another special directory that’s just called <code>.</code>, which means “the current working directory”. It may seem redundant to have a name for it, but we’ll see some uses for it soon. Finally, we also see a file called <code>.bash_profile</code>. This file usually contains settings to customize the shell (terminal). For this lesson material it does not contain any settings. There may also be similar files called <code>.bashrc</code> or <code>.bash_login</code>. The <code>.</code> prefix is used to prevent these configuration files from cluttering the terminal when a standard <code>ls</code> command is used.</p>
+<pre class="output"><code>./                  data/               notes.txt           writing/
+../                 molecules/          pizza.cfg
+creatures/          north-pacific-gyre/ solar.pdf</code></pre>
+<p><code>-a</code> stands for “show all”; it forces <code>ls</code> to show us file and directory names that begin with <code>.</code>, such as <code>..</code> (which, if we’re in <code>/Users/nelle/2015-09-17-southampton/test_directory</code>, refers to the <code>/Users/nelle/2015-09-17-southampton</code> directory). As you can see, it also displays another special directory that’s just called <code>.</code>, which means “the current working directory”. It may seem redundant to have a name for it, but we’ll see some uses for it soon.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2 id="orthogonality"><span class="glyphicon glyphicon-pushpin"></span>Orthogonality</h2>

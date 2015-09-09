@@ -160,151 +160,15 @@ Downloads              Pizza.cfg              mbox
 
 Of course, this listing will depend on what you have in your own home directory.
 
-<!-- ![Nelle's Home Directory](fig/homedir.svg) -->
-
-`ls` prints the names of the files and directories in the current directory in alphabetical order,
-arranged neatly into columns.
-We can make its output more comprehensible by using the **flag** `-F`,
-which tells `ls` to add a trailing `/` to the names of directories:
-
-~~~ {.bash}
-$ ls -F
-~~~
-~~~ {.output}
-2015-09-17-southampton/ Misc/                   Solar.pdf
-Applications/           Movies/                 Teaching/
-Desktop/                Music/                  ThunderbirdTemp/
-Development/            Notes.txt               VirtualBox VMs/
-Documents/              Pictures/               bin/
-Downloads/              Pizza.cfg               mbox
-...
-~~~
-
-Here,
-we can see that the home directory contains a number of **sub-directories**.
-The names that don't have trailing slashes,
-like `notes.txt`, `pizza.cfg`, and `solar.pdf`,
-are plain old files.
-And note that there is a space between `ls` and `-F`:
-without it,
-the shell thinks we're trying to run a command called `ls-F`,
-which doesn't exist.
-
-> ## What's In A Name? {.callout}
->
-> You may have noticed that all of these files' names are "something dot
-> something". This is just a convention: we can call a file `mythesis` or
-> almost anything else we want. However, most people use two-part names
-> most of the time to help them (and their programs) tell different kinds
-> of files apart. The second part of such a name is called the
-> **filename extension**, and indicates
-> what type of data the file holds: `.txt` signals a plain text file, `.pdf`
-> indicates a PDF document, `.cfg` is a configuration file full of parameters
-> for some program or other, and so on.
->
-> This is just a convention, albeit an important one. Files contain
-> bytes: it's up to us and our programs to interpret those bytes
-> according to the rules for PDF documents, images, and so on.
->
-> Naming a PNG image of a whale as `whale.mp3` doesn't somehow
-> magically turn it into a recording of whalesong, though it *might*
-> cause the operating system to try to open it with a music player
-> when someone double-clicks it.
-
-Now let's take a look at what's in our repository materials directory, `2015-09-17-southampton`, by running `ls -F 2015-09-17-southampton`.
-
-i.e.,
-the command `ls` with the **arguments** `-F` and `2015-09-17-southampton`.
-The second argument --- the one *without* a leading dash --- tells `ls` that
-we want a listing of something other than our current working directory:
-
-~~~ {.bash}
-$ ls -F 2015-09-17-southampton
-~~~
-~~~ {.output}
-CONDUCT.md              _config.yml             prerequisites.html
-CONTRIBUTING.md         _includes/              prerequisites.md
-CUSTOMIZATION.md        _layouts/               reference.html
-DESIGN.md               css/                    schedule.html
-FAQ.md                  deck.js/                setup/
-...
-~~~
-
-The output shows us that there are many text files and sub-directories.
-Organising things hierarchically in this way helps us keep track of our work:
-it's a bit like using a filing cabinet to store things. It's possible to put hundreds of files in our home directory,
-just as it's possible to pile hundreds of printed papers on our desk,
-but it's a self-defeating strategy.
-
-Notice, by the way, that we spelled the directory name `2015-09-17-southampton`.
-It doesn't have a trailing slash:
-that's added to directory names by `ls` when we use the `-F` flag to help us tell things apart.
-And it doesn't begin with a slash because it's a **relative path**,
-i.e., it tells `ls` how to find something from where we are,
-rather than from the root of the file system.
-
-> ## Parameters vs. Arguments {.callout}
->
-> According to [Wikipedia](https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments),
-> the terms argument and **parameter**
-> mean slightly different things.
-> In practice,
-> however,
-> most people use them interchangeably or inconsistently,
-> so we will too.
-
-Typing `ls -F 2015-09-17-southampton` is a bit painful, so a handy shortcut is to type in the first few letters and press the *TAB* key, e.g.
-
-~~~ {.bash}
-$ ls -F 201
-~~~
-
-Pressing *TAB*, the shell automatically completes the directory name:
-
-~~~ {.bash}
-$ ls -F 2015-09-17-southampton/
-~~~
-
-This is known as *tab completion* on any matches with those first few letters.
-If there are more than one files or directories that match those letters, the shell will show you both --- you can then enter more characters (then using *TAB* again) until it is able to identify the precise file you want and finish the tab completion.
-
-If we run `ls -F /2015-09-17-southampton` (*with* a leading slash) we get a different response,
-because `/2015-09-17-southampton` is an **absolute path**:
-
-~~~ {.bash}
-$ ls -F /2015-09-17-southampton
-~~~
-~~~ {.output}
-ls: /2015-09-17-southampton: No such file or directory
-~~~
-
-The leading `/` tells the computer to follow the path from the root of the file system,
-so it always refers to exactly one directory,
-no matter where we are when we run the command.
-In this case, there is no `data` directory in the root of the file system.
-
-What if we want to change our current working directory?
+We need to get into the repository directory `2015-09-17-southampton`, so what if we want to change our current working directory?
 Before we do this,
-`pwd` shows us that we're in `/Users/nelle`,
-and `ls` without any arguments shows us that directory's contents (as before):
+`pwd` shows us that we're in `/Users/nelle`.
 
 ~~~ {.bash}
 $ pwd
 ~~~
 ~~~ {.output}
 /Users/nelle
-~~~
-~~~ {.bash}
-$ ls
-~~~
-~~~ {.output}
-2015-09-17-southampton Misc                   Solar.pdf
-Applications           Movies                 Teaching
-Desktop                Music                  ThunderbirdTemp
-Development            Notes.txt              VirtualBox VMs
-Documents              Pictures               bin
-Downloads              Pizza.cfg              mbox
-...
 ~~~
 
 We can use `cd` followed by a directory name to change our working directory.
@@ -329,20 +193,142 @@ $ pwd
 ~~~ {.output}
 /Users/nelle/2015-09-17-southampton
 ~~~
+
+<!-- ![Nelle's Home Directory](fig/homedir.svg) - remove Desktop-->
+
+`ls` prints the names of the files and directories in the current directory in alphabetical order,
+arranged neatly into columns (where there is space to do so).
+We can make its output more comprehensible by using the **flag** `-F`,
+which tells `ls` to add a trailing `/` to the names of directories:
+
 ~~~ {.bash}
 $ ls -F
 ~~~
 ~~~ {.output}
-CONDUCT.md              _config.yml             prerequisites.html
-CONTRIBUTING.md         _includes/              prerequisites.md
-CUSTOMIZATION.md        _layouts/               reference.html
-DESIGN.md               css/                    schedule.html
-FAQ.md                  deck.js/                setup/
-...
+00-intro.html          AUTHORS                img/
+00-intro.md            CONDUCT.md             index.html
+01-filedir.html        CONTRIBUTING.md        index.md
+01-filedir.md          LICENSE.html           instructors.html
+02-create.html         LICENSE.md             instructors.md
+02-create.md           Makefile               js/
+03-pipefilter.html     README.md              motivation.html
+03-pipefilter.md       _includes/             motivation.md
+04-loop.html           _layouts/              reference.html
+04-loop.md             css/                   reference.md
+05-script.html         data/                  requirements.txt
+05-script.md           discussion.html        shell-novice-data.zip
+06-find.html           discussion.md          test_directory/
+06-find.md             fig/                   tools/
 ~~~
 
-We now know how to go down the directory tree:
-how do we go up?
+Note that under Git Bash in Windows, the `/` is appended automatically.
+
+Here,
+we can see that the home directory contains a number of **sub-directories**.
+The names that don't have trailing slashes,
+like `reference.html`, `prerequisites.md`, and `preqrequisites.pdf`,
+are plain old files.
+And note that there is a space between `ls` and `-F`:
+without it,
+the shell thinks we're trying to run a command called `ls-F`,
+which doesn't exist.
+
+> ## What's In A Name? {.callout}
+>
+> You may have noticed that all of these files' names are "something dot
+> something". This is just a convention: we can call a file `mythesis` or
+> almost anything else we want. However, most people use two-part names
+> most of the time to help them (and their programs) tell different kinds
+> of files apart. The second part of such a name is called the
+> **filename extension**, and indicates
+> what type of data the file holds: `.txt` signals a plain text file, `.pdf`
+> indicates a PDF document, `.html` is an HTML file, and so on.
+>
+> This is just a convention, albeit an important one. Files contain
+> bytes: it's up to us and our programs to interpret those bytes
+> according to the rules for PDF documents, images, and so on.
+>
+> Naming a PNG image of a whale as `whale.mp3` doesn't somehow
+> magically turn it into a recording of whalesong, though it *might*
+> cause the operating system to try to open it with a music player
+> when someone double-clicks it.
+
+Now let's take a look at what's in the directory `test_directory`, by running `ls -F test_directory`.
+
+i.e.,
+the command `ls` with the **arguments** `-F` and `test_directory`.
+The second argument --- the one *without* a leading dash --- tells `ls` that
+we want a listing of something other than our current working directory:
+
+~~~ {.bash}
+$ ls -F test_directory
+~~~
+~~~ {.output}
+creatures/          molecules/          notes.txt           solar.pdf
+data/               north-pacific-gyre/ pizza.cfg           writing/
+~~~
+
+The output shows us that there are some files and sub-directories.
+Organising things hierarchically in this way helps us keep track of our work:
+it's a bit like using a filing cabinet to store things. It's possible to put hundreds of files in our home directory, for example,
+just as it's possible to pile hundreds of printed papers on our desk,
+but it's a self-defeating strategy.
+
+Notice, by the way, that we spelled the directory name `test_directory`.
+It doesn't have a trailing slash:
+that's added to directory names by `ls` when we use the `-F` flag to help us tell things apart.
+And it doesn't begin with a slash because it's a **relative path**,
+i.e., it tells `ls` how to find something from where we are,
+rather than from the root of the file system.
+
+> ## Parameters vs. Arguments {.callout}
+>
+> According to [Wikipedia](https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments),
+> the terms argument and **parameter**
+> mean slightly different things.
+> In practice,
+> however,
+> most people use them interchangeably or inconsistently,
+> so we will too.
+
+If we run `ls -F /test_directory` (*with* a leading slash) we get a different response,
+because `/test_directory` is an **absolute path**:
+
+~~~ {.bash}
+$ ls -F /test_directory
+~~~
+~~~ {.output}
+ls: /test_directory: No such file or directory
+~~~
+
+The leading `/` tells the computer to follow the path from the root of the file system,
+so it always refers to exactly one directory,
+no matter where we are when we run the command.
+In this case, there is no `data` directory in the root of the file system.
+
+Typing `ls -F test_directory` is a bit painful, so a handy shortcut is to type in the first few letters and press the *TAB* key, e.g.
+
+~~~ {.bash}
+$ ls -F tes
+~~~
+
+Pressing *TAB*, the shell automatically completes the directory name:
+
+~~~ {.bash}
+$ ls -F test_directory/
+~~~
+
+This is known as *tab completion* on any matches with those first few letters.
+If there are more than one files or directories that match those letters, the shell will show you both --- you can then enter more characters (then using *TAB* again) until it is able to identify the precise file you want and finish the tab completion.
+
+Let's change our directory to `test_directory`:
+
+~~~ {.bash}
+$ cd test_directory/2015-09-17-southampton
+~~~
+
+We know how to go down the directory tree:
+but how do we go up?
 We could use an absolute path:
 
 ~~~ {.bash}
@@ -366,19 +352,21 @@ $ cd ..
 or more succinctly,
 the **parent** of the current directory.
 Sure enough,
-if we run `pwd` after running `cd ..`, we're back in `/Users/nelle`:
+if we run `pwd` after running `cd ..` again, we're back in `/Users/nelle`:
 
 ~~~ {.bash}
+$ cd ..
 $ pwd
 ~~~
 ~~~ {.output}
 /Users/nelle
 ~~~
 
-Let's go back into the repository directory:
+Let's go back into our test directory:
 
 ~~~ {.bash}
 $ cd 2015-09-17-southampton
+$ cd test_directory
 ~~~
 
 The special directory `..` doesn't usually show up when we run `ls`.
@@ -388,25 +376,19 @@ If we want to display it, we can give `ls` the `-a` flag:
 $ ls -F -a
 ~~~
 ~~~ {.output}
-./                      Makefile                novice/
-../                     README.md               prerequisites-ref.html
-.git/                   SETUP.md                prerequisites.html
-.gitignore              _config.yml             prerequisites.md
-CONDUCT.md              _includes/              reference.html
-CONTRIBUTING.md         _layouts/               schedule.html
-CUSTOMIZATION.md        css/                    setup/
-...
+./                  data/               notes.txt           writing/
+../                 molecules/          pizza.cfg
+creatures/          north-pacific-gyre/ solar.pdf
 ~~~
 
 `-a` stands for "show all";
 it forces `ls` to show us file and directory names that begin with `.`,
-such as `..` (which, if we're in `/Users/nelle/2015-09-17-southampton`, refers to the `/Users/nelle` directory).
+such as `..` (which, if we're in `/Users/nelle/2015-09-17-southampton/test_directory`, refers to the `/Users/nelle/2015-09-17-southampton` directory).
 As you can see,
 it also displays another special directory that's just called `.`,
 which means "the current working directory".
 It may seem redundant to have a name for it,
 but we'll see some uses for it soon.
-Finally, we also see a file called `.bash_profile`. This file usually contains settings to customize the shell (terminal). For this lesson material it does not contain any settings. There may also be similar files called `.bashrc` or `.bash_login`. The `.` prefix is used to prevent these configuration files from cluttering the terminal when a standard `ls` command is used.
 
 > ## Orthogonality {.callout}
 >

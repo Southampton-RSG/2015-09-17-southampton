@@ -353,11 +353,7 @@ $ cd test_directory
 
 We know how to go down the directory tree:
 but how do we go up?
-We could use an absolute path:
-
-~~~ {.bash}
-$ cd /Users/nelle/2015-09-17-southampton/novice/shell
-~~~
+We could use an absolute path, e.g. `cd /Users/nelle/2015-09-17-southampton/novice/shell`.
 
 but it's almost always simpler to use `cd ..` to go up one level:
 

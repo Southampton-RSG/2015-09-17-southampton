@@ -66,9 +66,7 @@ pyplot.show(min_plot)</code></pre>
 </div>
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data.</p>
 <p>It’s very common to create an <a href="../../reference.html#alias">alias</a> for a library when importing it in order to reduce the amount of typing we have to do. Here are our three plots side by side using aliases for <code>numpy</code> and <code>pyplot</code>:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/python</span>
-
-<span class="ch">import</span> numpy <span class="ch">as</span> np
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy <span class="ch">as</span> np
 <span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot <span class="ch">as</span> plt
 
 data = np.loadtxt(fname=<span class="st">&#39;../data/inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
@@ -92,7 +90,7 @@ fig.tight_layout()
 
 plt.show(fig)</code></pre>
 <p>Running the above code (present under <code>code</code> directory in the file <code>three-plots.py</code>) may throw the warning as below. If you see the warning, please ignore it.</p>
-<p><code>/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer warnings.warn(&quot;tight_layout : falling back to Agg renderer&quot;)</code></p>
+<p><code>/Users/user/anaconda/lib/python3.4/site-packages/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer   warnings.warn(&quot;tight_layout : falling back to Agg renderer&quot;)</code></p>
 <p><code>tight_layout</code> still works by falling back to the Agg renderer.</p>
 <div class="figure">
 <img src="01-numpy_files/novice/python/01-numpy_83_0.png" alt="The Previous Plots as Subplots" /><p class="caption">The Previous Plots as Subplots</p>

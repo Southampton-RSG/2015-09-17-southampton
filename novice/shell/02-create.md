@@ -6,7 +6,7 @@ minutes: 15
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Create and delete new directories.
+> *   Create new directories.
 > *   Create files in that hierarchy using an editor or by copying and renaming existing files.
 > *   Display the contents of a directory using the command line.
 > *   Delete specified files and/or directories.

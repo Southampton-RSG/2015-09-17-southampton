@@ -85,7 +85,9 @@ $ nano draft.txt
 > use your current working directory as its default location. If you use
 > your computer's start menu, it may want to save files in your desktop or
 > documents directory instead. You can change this by navigating to
-> another directory the first time you "Save As..."
+> another directory the first time you "Save As...", and point it to the
+> 2015-09-17-southampton/novice/shell/test_directory/thesis folder in your 
+> user's home directory.
 
 Let's type in a few lines of text,
 then use Control-O to write our data to disk:
@@ -105,7 +107,7 @@ $ ls
 draft.txt
 ~~~
 
-We can use the shell on its own to take a look at its contents using the `cat` command:
+We can use the shell on its own to take a look at its contents using the `cat` command (which stands for "concatenate"):
 
 ~~~ {.bash}
 $ cat draft.txt

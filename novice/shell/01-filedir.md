@@ -6,12 +6,12 @@ minutes: 15
 ---
 > ## Learning Objectives {.objectives}
 >
+> *   Explain the steps in the shell's read-run-print cycle.
 > *   Explain the similarities and differences between a file and a directory.
 > *   Translate an absolute path into a relative path and vice versa.
 > *   Construct absolute and relative paths that identify specific files and directories.
-> *   Explain the steps in the shell's read-run-print cycle.
 > *   Identify the actual command, flags, and filenames in a command-line call.
-> *   Demonstrate the use of tab completion, and explain its advantages.
+> *   Demonstrate the use of tab completion and other key shortcuts and explain their advantages.
 
 The part of the operating system responsible for managing files and directories is called the **file system**.
 It organizes our data into files,
@@ -403,7 +403,7 @@ creatures/          north-pacific-gyre/ solar.pdf
 
 `-a` stands for "show all";
 it forces `ls` to show us file and directory names that begin with `.`,
-such as `..` (which, if we're in `/Users/nelle/2015-09-17-southampton/shell/novice/test_directory`, refers to the `/Users/nelle/2015-09-17-southampton/shell/novice` directory).
+such as `..` (which, if we're in `/Users/nelle/2015-09-17-southampton/shell/novice/test_directory`, refers to the `/Users/nelle/2015-09-17-southampton/2015-09-17-southampton/novice/shell/` directory).
 As you can see,
 it also displays another special directory that's just called `.`,
 which means "the current working directory".

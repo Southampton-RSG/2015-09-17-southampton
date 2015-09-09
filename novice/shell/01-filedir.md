@@ -216,7 +216,37 @@ README.md               novice/                 welcome/
 SETUP.md                prerequisites-ref.html
 ~~~
 
-For this exercise, we need to change directory to `novice`, and then `shell` within the `novice` directory. We can do this by:
+Here,
+we can see that this directory contains a number of **sub-directories**.
+The names that don't have trailing slashes,
+like `reference.html`, `prerequisites.md`, and `preqrequisites.pdf`,
+are plain old files.
+And note that there is a space between `ls` and `-F`:
+without it,
+the shell thinks we're trying to run a command called `ls-F`,
+which doesn't exist.
+
+> ## What's In A Name? {.callout}
+>
+> You may have noticed that all of these files' names are "something dot
+> something". This is just a convention: we can call a file `mythesis` or
+> almost anything else we want. However, most people use two-part names
+> most of the time to help them (and their programs) tell different kinds
+> of files apart. The second part of such a name is called the
+> **filename extension**, and indicates
+> what type of data the file holds: `.txt` signals a plain text file, `.pdf`
+> indicates a PDF document, `.html` is an HTML file, and so on.
+>
+> This is just a convention, albeit an important one. Files contain
+> bytes: it's up to us and our programs to interpret those bytes
+> according to the rules for PDF documents, images, and so on.
+>
+> Naming a PNG image of a whale as `whale.mp3` doesn't somehow
+> magically turn it into a recording of whalesong, though it *might*
+> cause the operating system to try to open it with a music player
+> when someone double-clicks it.
+
+For this exercise, we need to change our working directory to `novice`, and then `shell` (within the `novice` directory). We can do this by:
 
 ~~~ {.bash}
 $ cd novice/shell
@@ -246,36 +276,6 @@ $ ls -F
 ~~~
 
 Note that under Git Bash in Windows, the `/` is appended automatically.
-
-Here,
-we can see that the home directory contains a number of **sub-directories**.
-The names that don't have trailing slashes,
-like `reference.html`, `prerequisites.md`, and `preqrequisites.pdf`,
-are plain old files.
-And note that there is a space between `ls` and `-F`:
-without it,
-the shell thinks we're trying to run a command called `ls-F`,
-which doesn't exist.
-
-> ## What's In A Name? {.callout}
->
-> You may have noticed that all of these files' names are "something dot
-> something". This is just a convention: we can call a file `mythesis` or
-> almost anything else we want. However, most people use two-part names
-> most of the time to help them (and their programs) tell different kinds
-> of files apart. The second part of such a name is called the
-> **filename extension**, and indicates
-> what type of data the file holds: `.txt` signals a plain text file, `.pdf`
-> indicates a PDF document, `.html` is an HTML file, and so on.
->
-> This is just a convention, albeit an important one. Files contain
-> bytes: it's up to us and our programs to interpret those bytes
-> according to the rules for PDF documents, images, and so on.
->
-> Naming a PNG image of a whale as `whale.mp3` doesn't somehow
-> magically turn it into a recording of whalesong, though it *might*
-> cause the operating system to try to open it with a music player
-> when someone double-clicks it.
 
 Now let's take a look at what's in the directory `test_directory`, by running `ls -F test_directory`.
 

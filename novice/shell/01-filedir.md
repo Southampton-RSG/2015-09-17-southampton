@@ -418,6 +418,33 @@ but we'll see some uses for it soon.
 > Orthogonal systems tend to be easier for people to learn
 > because there are fewer special cases and exceptions to keep track of.
 
+> ## Another Useful Abbreviation {.callout}
+>
+> The shell interprets the character `~` (tilde) at the start of a path to
+> mean "the current user's home directory". For example, if Nelle's home
+> directory is `/Users/nelle`, then `~/data` is equivalent to
+> `/Users/nelle/data`. This only works if it is the first character in the
+> path: `here/there/~/elsewhere` is *not* `/Users/nelle/elsewhere`.
+
+Another handy feature is that we can reference our home directory with `~`, e.g.:
+
+~~~ {.bash}
+$ ls ~/2015-09-17-southampton
+~~~
+~~~ {.output}
+CONDUCT.md              _config.yml             prerequisites.html
+CONTRIBUTING.md         _includes/              prerequisites.md
+CUSTOMIZATION.md        _layouts/               reference.html
+DESIGN.md               css/                    schedule.html
+FAQ.md                  deck.js/                setup/
+LICENSE.md              index.html              template/
+Makefile                js/                     tools/
+README.md               novice/                 welcome/
+SETUP.md                prerequisites-ref.html
+~~~
+
+Which again shows us our repository directory.
+
 ![File System for Challenge Questions](fig/filesystem-challenge.svg)
 
 > ## Relative path resolution {.challenge}

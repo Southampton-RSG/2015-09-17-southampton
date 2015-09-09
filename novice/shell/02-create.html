@@ -145,20 +145,12 @@ $ <span class="kw">ls</span> thesis</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cp</span> quotes.txt thesis/quotations.txt
 $ <span class="kw">ls</span> quotes.txt thesis/quotations.txt</code></pre>
 <pre class="output"><code>quotes.txt   thesis/quotations.txt</code></pre>
-<p>To prove that we made a copy, let’s delete the <code>quotes.txt</code> file in the current directory and then run that same <code>ls</code> again.</p>
+<p>To prove that we made a copy, let’s delete the <code>quotes.txt</code> file in the current directory and then run that same <code>ls</code> again (we can get to this command by pressing the up arrow twice).</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">rm</span> quotes.txt
 $ <span class="kw">ls</span> quotes.txt thesis/quotations.txt</code></pre>
 <pre class="error"><code>ls: cannot access quotes.txt: No such file or directory
 thesis/quotations.txt</code></pre>
 <p>This time it tells us that it can’t find <code>quotes.txt</code> in the current directory, but it does find the copy in <code>thesis</code> that we didn’t delete.</p>
-<aside class="callout panel panel-info">
-<div class="panel-heading">
-<h2 id="another-useful-abbreviation"><span class="glyphicon glyphicon-pushpin"></span>Another Useful Abbreviation</h2>
-</div>
-<div class="panel-body">
-<p>The shell interprets the character <code>~</code> (tilde) at the start of a path to mean “the current user’s home directory”. For example, if Nelle’s home directory is <code>/Users/nelle</code>, then <code>~/data</code> is equivalent to <code>/Users/nelle/data</code>. This only works if it is the first character in the path: <code>here/there/~/elsewhere</code> is <em>not</em> <code>/Users/nelle/elsewhere</code>.</p>
-</div>
-</aside>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="renaming-files"><span class="glyphicon glyphicon-pencil"></span>Renaming files</h2>

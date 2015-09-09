@@ -213,6 +213,26 @@ creatures/          north-pacific-gyre/ solar.pdf</code></pre>
 <p>The special names <code>.</code> and <code>..</code> don’t belong to <code>ls</code>; they are interpreted the same way by every program. For example, if we are in <code>/Users/nelle/2015-09-17-southampton</code>, the command <code>ls ..</code> will give us a listing of <code>/Users/nelle</code>. When the meanings of the parts are the same no matter how they’re combined, programmers say they are <strong>orthogonal</strong>: Orthogonal systems tend to be easier for people to learn because there are fewer special cases and exceptions to keep track of.</p>
 </div>
 </aside>
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2 id="another-useful-abbreviation"><span class="glyphicon glyphicon-pushpin"></span>Another Useful Abbreviation</h2>
+</div>
+<div class="panel-body">
+<p>The shell interprets the character <code>~</code> (tilde) at the start of a path to mean “the current user’s home directory”. For example, if Nelle’s home directory is <code>/Users/nelle</code>, then <code>~/data</code> is equivalent to <code>/Users/nelle/data</code>. This only works if it is the first character in the path: <code>here/there/~/elsewhere</code> is <em>not</em> <code>/Users/nelle/elsewhere</code>.</p>
+</div>
+</aside>
+<p>Another handy feature is that we can reference our home directory with <code>~</code>, e.g.:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> ~/2015-09-17-southampton</code></pre>
+<pre class="output"><code>CONDUCT.md              _config.yml             prerequisites.html
+CONTRIBUTING.md         _includes/              prerequisites.md
+CUSTOMIZATION.md        _layouts/               reference.html
+DESIGN.md               css/                    schedule.html
+FAQ.md                  deck.js/                setup/
+LICENSE.md              index.html              template/
+Makefile                js/                     tools/
+README.md               novice/                 welcome/
+SETUP.md                prerequisites-ref.html</code></pre>
+<p>Which again shows us our repository directory.</p>
 <div class="figure">
 <img src="fig/filesystem-challenge.svg" alt="File System for Challenge Questions" />
 <p class="caption">File System for Challenge Questions</p>

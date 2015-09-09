@@ -26,15 +26,13 @@ These lessons will start you on a path towards using these resources effectively
 
 > ## Getting ready {.getready}
 >
-> You need to download some files to follow this lesson:
+> You need to download some files to follow this lesson. Open a terminal (Linux, 
+> Mac OS X), or run Git Bash under Windows and then type the following into the 
+> prompt that appears (pressing enter/return after each line):
 > 
-> 1. Make a new folder in your Desktop called `shell-novice`.
-> 2. Download [shell-novice-data.zip](./shell-novice-data.zip) and move the file to this folder.
-> 3. If it's not unzipped yet, double-click on it to unzip it. You should end up with a new folder called `data`.
-> 4. You can access this folder from the Unix shell with:
->
 > ~~~ {.input}
-> $ cd && cd Desktop/shell-novice/data
+> $ cd
+> $ git clone https://github.com/Southampton-RSG/2015-09-17-southampton 
 > ~~~
 
 ## Topics

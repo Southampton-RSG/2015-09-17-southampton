@@ -124,6 +124,19 @@ Downloads              Pizza.cfg              mbox
 <!-- ![Nelle's Home Directory](fig/homedir.svg) - remove Desktop-->
 <p><code>ls</code> prints the names of the files and directories in the current directory in alphabetical order, arranged neatly into columns (where there is space to do so). We can make its output more comprehensible by using the <strong>flag</strong> <code>-F</code>, which tells <code>ls</code> to add a trailing <code>/</code> to the names of directories:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F</code></pre>
+<pre class="output"><code>CONDUCT.md              _config.yml             prerequisites.html
+CONTRIBUTING.md         _includes/              prerequisites.md
+CUSTOMIZATION.md        _layouts/               reference.html
+DESIGN.md               css/                    schedule.html
+FAQ.md                  deck.js/                setup/
+LICENSE.md              index.html              template/
+Makefile                js/                     tools/
+README.md               novice/                 welcome/
+SETUP.md                prerequisites-ref.html</code></pre>
+<p>For this exercise, we need to change directory to <code>novice</code>, and then <code>shell</code> within the <code>novice</code> directory. We can do this by:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> novice/shell</code></pre>
+<p>Note that we are able to add directories together by using <code>/</code>. Now if we view the contents of that directory:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F</code></pre>
 <pre class="output"><code>00-intro.html          AUTHORS                img/
 00-intro.md            CONDUCT.md             index.html
 01-filedir.html        CONTRIBUTING.md        index.md
@@ -138,6 +151,7 @@ Downloads              Pizza.cfg              mbox
 05-script.md           discussion.html        shell-novice-data.zip
 06-find.html           discussion.md          test_directory/
 06-find.md             fig/                   tools/</code></pre>
+<p>Note that under Git Bash in Windows, the <code>/</code> is appended automatically.</p>
 <p>Here, we can see that the home directory contains a number of <strong>sub-directories</strong>. The names that don’t have trailing slashes, like <code>reference.html</code>, <code>prerequisites.md</code>, and <code>preqrequisites.pdf</code>, are plain old files. And note that there is a space between <code>ls</code> and <code>-F</code>: without it, the shell thinks we’re trying to run a command called <code>ls-F</code>, which doesn’t exist.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
@@ -174,26 +188,24 @@ data/               north-pacific-gyre/ pizza.cfg           writing/</code></pre
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F test_directory/</code></pre>
 <p>This is known as <em>tab completion</em> on any matches with those first few letters. If there are more than one files or directories that match those letters, the shell will show you both — you can then enter more characters (then using <em>TAB</em> again) until it is able to identify the precise file you want and finish the tab completion.</p>
 <p>Let’s change our directory to <code>test_directory</code>:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> test_directory/2015-09-17-southampton</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> test_directory</code></pre>
 <p>We know how to go down the directory tree: but how do we go up? We could use an absolute path:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> /Users/nelle</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> /Users/nelle/2015-09-17-southampton/novice/shell</code></pre>
 <p>but it’s almost always simpler to use <code>cd ..</code> to go up one level:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
-<pre class="output"><code>/Users/nelle/2015-09-17-southampton</code></pre>
+<pre class="output"><code>/Users/nelle/2015-09-17-southampton/novice/shell/test_directory</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ..</code></pre>
-<p><code>..</code> is a special directory name meaning “the directory containing this one”, or more succinctly, the <strong>parent</strong> of the current directory. Sure enough, if we run <code>pwd</code> after running <code>cd ..</code> again, we’re back in <code>/Users/nelle</code>:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ..
-$ <span class="kw">pwd</span></code></pre>
-<pre class="output"><code>/Users/nelle</code></pre>
+<p><code>..</code> is a special directory name meaning “the directory containing this one”, or more succinctly, the <strong>parent</strong> of the current directory.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
+<pre class="output"><code>/Users/nelle/2015-09-17-southampton/novice/shell/</code></pre>
 <p>Let’s go back into our test directory:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> 2015-09-17-southampton
-$ <span class="kw">cd</span> test_directory</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> test_directory</code></pre>
 <p>The special directory <code>..</code> doesn’t usually show up when we run <code>ls</code>. If we want to display it, we can give <code>ls</code> the <code>-a</code> flag:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F -a</code></pre>
 <pre class="output"><code>./                  data/               notes.txt           writing/
 ../                 molecules/          pizza.cfg
 creatures/          north-pacific-gyre/ solar.pdf</code></pre>
-<p><code>-a</code> stands for “show all”; it forces <code>ls</code> to show us file and directory names that begin with <code>.</code>, such as <code>..</code> (which, if we’re in <code>/Users/nelle/2015-09-17-southampton/test_directory</code>, refers to the <code>/Users/nelle/2015-09-17-southampton</code> directory). As you can see, it also displays another special directory that’s just called <code>.</code>, which means “the current working directory”. It may seem redundant to have a name for it, but we’ll see some uses for it soon.</p>
+<p><code>-a</code> stands for “show all”; it forces <code>ls</code> to show us file and directory names that begin with <code>.</code>, such as <code>..</code> (which, if we’re in <code>/Users/nelle/2015-09-17-southampton/shell/novice/test_directory</code>, refers to the <code>/Users/nelle/2015-09-17-southampton/shell/novice</code> directory). As you can see, it also displays another special directory that’s just called <code>.</code>, which means “the current working directory”. It may seem redundant to have a name for it, but we’ll see some uses for it soon.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2 id="orthogonality"><span class="glyphicon glyphicon-pushpin"></span>Orthogonality</h2>

@@ -205,6 +205,30 @@ which tells `ls` to add a trailing `/` to the names of directories:
 $ ls -F
 ~~~
 ~~~ {.output}
+CONDUCT.md              _config.yml             prerequisites.html
+CONTRIBUTING.md         _includes/              prerequisites.md
+CUSTOMIZATION.md        _layouts/               reference.html
+DESIGN.md               css/                    schedule.html
+FAQ.md                  deck.js/                setup/
+LICENSE.md              index.html              template/
+Makefile                js/                     tools/
+README.md               novice/                 welcome/
+SETUP.md                prerequisites-ref.html
+~~~
+
+For this exercise, we need to change directory to `novice`, and then `shell` within the `novice` directory. We can do this by:
+
+~~~ {.bash}
+$ cd novice/shell
+~~~
+
+Note that we are able to add directories together by using `/`.
+Now if we view the contents of that directory:
+
+~~~ {.bash}
+$ ls -F
+~~~
+~~~ {.output}
 00-intro.html          AUTHORS                img/
 00-intro.md            CONDUCT.md             index.html
 01-filedir.html        CONTRIBUTING.md        index.md
@@ -324,7 +348,7 @@ If there are more than one files or directories that match those letters, the sh
 Let's change our directory to `test_directory`:
 
 ~~~ {.bash}
-$ cd test_directory/2015-09-17-southampton
+$ cd test_directory
 ~~~
 
 We know how to go down the directory tree:
@@ -332,7 +356,7 @@ but how do we go up?
 We could use an absolute path:
 
 ~~~ {.bash}
-$ cd /Users/nelle
+$ cd /Users/nelle/2015-09-17-southampton/novice/shell
 ~~~
 
 but it's almost always simpler to use `cd ..` to go up one level:
@@ -341,7 +365,7 @@ but it's almost always simpler to use `cd ..` to go up one level:
 $ pwd
 ~~~
 ~~~ {.output}
-/Users/nelle/2015-09-17-southampton
+/Users/nelle/2015-09-17-southampton/novice/shell/test_directory
 ~~~
 ~~~ {.bash}
 $ cd ..
@@ -351,21 +375,17 @@ $ cd ..
 "the directory containing this one",
 or more succinctly,
 the **parent** of the current directory.
-Sure enough,
-if we run `pwd` after running `cd ..` again, we're back in `/Users/nelle`:
 
 ~~~ {.bash}
-$ cd ..
 $ pwd
 ~~~
 ~~~ {.output}
-/Users/nelle
+/Users/nelle/2015-09-17-southampton/novice/shell/
 ~~~
 
 Let's go back into our test directory:
 
 ~~~ {.bash}
-$ cd 2015-09-17-southampton
 $ cd test_directory
 ~~~
 
@@ -383,7 +403,7 @@ creatures/          north-pacific-gyre/ solar.pdf
 
 `-a` stands for "show all";
 it forces `ls` to show us file and directory names that begin with `.`,
-such as `..` (which, if we're in `/Users/nelle/2015-09-17-southampton/test_directory`, refers to the `/Users/nelle/2015-09-17-southampton` directory).
+such as `..` (which, if we're in `/Users/nelle/2015-09-17-southampton/shell/novice/test_directory`, refers to the `/Users/nelle/2015-09-17-southampton/shell/novice` directory).
 As you can see,
 it also displays another special directory that's just called `.`,
 which means "the current working directory".

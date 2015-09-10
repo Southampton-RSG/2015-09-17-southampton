@@ -72,8 +72,6 @@ $ pwd
 /Users/nelle
 ~~~
 
-Make a note of what is output here - it will likely come in handy later!
-
 > ## Home directory {.callout}
 >
 > The home directory path will look different on different operating systems.

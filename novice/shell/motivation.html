@@ -30,9 +30,12 @@
 <section id="what-is-the-shell" class="slide level2">
 <h1>What is the shell?</h1>
 <ul>
-<li>Command line interface to applications, as opposed to a GUI</li>
+<li>Command line interface to applications</li>
 <li>Called the ‘shell’ since it wraps the complexity of the operating system in a simple wrapper</li>
-<li>Can have shell commands in a file - called a ‘script’ - but are still just programs</li>
+<li>Can have shell commands in a file - called a ‘script’
+<ul>
+<li>… but are still just programs</li>
+</ul></li>
 <li>Developed in the 1970’s - syntax can be parochial</li>
 <li>Every Unix-like system (e.g. Linux, Mac OS X) has the shell</li>
 <li>Most popular shell is Bash (Bourne Again SHell)</li>
@@ -97,18 +100,32 @@
 </section>
 <section id="learning-objectives" class="slide level2">
 <h1>Learning objectives</h1>
-<p>This session will provide a brief introduction to the shell and some of its many features.</p>
+<p>We’ll find out how to:</p>
 <ul>
-<li class="fragment"></li>
+<li class="fragment">Navigate the file system</li>
+<li class="fragment">Create files and directories</li>
+<li class="fragment"><em>Redirect</em> output from commands to files</li>
+<li class="fragment">Chaining commands together using <em>pipes</em></li>
+<li class="fragment">Write loops to repeat operations many times</li>
+<li class="fragment">Include multiple commands in a shell <em>script</em></li>
+<li class="fragment">How to find files and things within files</li>
 </ul>
 </section>
-<section id="getting-started" class="slide level2">
-<h1>Getting started</h1>
-<p>Let’s get a shell running!</p>
+<section id="getting-started-i" class="slide level2">
+<h1>Getting started I</h1>
+<p>If you haven’t already, let’s get a shell running!</p>
 <ul>
-<li>Windows: run <em>Git Bash</em></li>
-<li>Mac OS X: run the <em>Terminal</em> application under <em>Applications -&gt; Utilities</em></li>
-<li>Linux: run the <em>Terminal</em> application</li>
+<li><strong>Windows</strong>: run <strong>Git Bash</strong></li>
+<li><strong>Mac OS X</strong>: run the <strong>Terminal</strong> application under <em>Applications -&gt; Utilities</em></li>
+<li><strong>Linux</strong>: run the <strong>Terminal</strong> application</li>
+</ul>
+</section>
+<section id="getting-started-ii" class="slide level2">
+<h1>Getting started II</h1>
+<p>Then:</p>
+<ul>
+<li>In your browser, go to <strong>https://etherpad.mozilla.org/SWC-Soton-Sep2015</strong></li>
+<li>Follow the instructions for downloading the repository and setting up your environment</li>
 </ul>
 </section>
 <section id="limitations" class="slide level2">
@@ -116,9 +133,11 @@
 <ul>
 <li>Bash is good for quickly automating repetitive tasks that call other programs… up to a point!
 <ul>
-<li>Large Bash scripts can become difficult to maintain</li>
+<li>More advanced techniques often have a steep learning curve</li>
+<li>Writing more complex Bash scripts can take a lot longer</li>
+<li>Large Bash scripts can become difficult to read and maintain</li>
 </ul></li>
-<li>For larger, more complex tasks a more general programming language (like Python) is better</li>
+<li>For larger, more complex tasks a more general programming language (like Python) can be more productive and lead to more maintainable code</li>
 </ul>
 </section>
     <!-- End slides. -->

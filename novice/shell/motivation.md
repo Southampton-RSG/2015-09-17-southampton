@@ -6,9 +6,10 @@ subtitle:
 
 ## What is the shell?
 
-- Command line interface to applications, as opposed to a GUI
+- Command line interface to applications
 - Called the 'shell' since it wraps the complexity of the operating system in a simple wrapper
-- Can have shell commands in a file - called a 'script' - but are still just programs
+- Can have shell commands in a file - called a 'script'
+    - ... but are still just programs
 - Developed in the 1970's - syntax can be parochial
 - Every Unix-like system (e.g. Linux, Mac OS X) has the shell
 - Most popular shell is Bash (Bourne Again SHell)
@@ -53,21 +54,36 @@ subtitle:
 
 ## Learning objectives
 
-This session will provide a brief introduction to the shell and some of its many features.
+We'll find out how to:
 
-> * 
+> * Navigate the file system
+> * Create files and directories
+> * *Redirect* output from commands to files
+> * Chaining commands together using *pipes*
+> * Write loops to repeat operations many times
+> * Include multiple commands in a shell *script*
+> * How to find files and things within files
 
-## Getting started
+## Getting started I
 
-Let's get a shell running!
+If you haven't already, let's get a shell running!
 
-- Windows: run *Git Bash*
-- Mac OS X: run the *Terminal* application under *Applications -> Utilities*
-- Linux: run the *Terminal* application
+- **Windows**: run **Git Bash**
+- **Mac OS X**: run the **Terminal** application under *Applications -> Utilities*
+- **Linux**: run the **Terminal** application
+
+## Getting started II
+
+Then:
+
+- In your browser, go to **https://etherpad.mozilla.org/SWC-Soton-Sep2015**
+- Follow the instructions for downloading the repository and setting up your environment
 
 ## Limitations
 
 - Bash is good for quickly automating repetitive tasks that call other programs... up to a point!
-    + Large Bash scripts can become difficult to maintain
+    + More advanced techniques often have a steep learning curve
+    + Writing more complex Bash scripts can take a lot longer
+    + Large Bash scripts can become difficult to read and maintain
 
-- For larger, more complex tasks a more general programming language (like Python) is better
+- For larger, more complex tasks a more general programming language (like Python) can be more productive and lead to more maintainable code

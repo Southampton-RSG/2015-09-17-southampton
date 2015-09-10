@@ -81,9 +81,10 @@ Then:
 
 ## Limitations
 
-- Bash is good for quickly automating repetitive tasks that call other programs... up to a point!
+- Bash scripts good for quickly automating repetitive tasks that call other programs... up to a point!
     + More advanced techniques often have a steep learning curve
     + Writing more complex Bash scripts can take a lot longer
     + Large Bash scripts can become difficult to read and maintain
 
-- For larger, more complex tasks a more general programming language (like Python) can be more productive and lead to more maintainable code
+- For larger tasks more general language (like Python) can be more productive and lead to more maintainable code
+    + But you can still use Bash's pipes and redirects with them!

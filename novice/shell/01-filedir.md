@@ -94,7 +94,7 @@ $ pwd
 > its jargon. The result is as inconsistent as the roolz uv Inglish
 > speling, but we're stuck with it now.
 
-> ## Saving yourself some typing! {.callout}
+> ## Save yourself some unnecessary keypresses {.callout}
 >
 > We can move to the beginning of a line in the shell by typing `^A`
 > (which means Control-A) and to the end using `^E`. Much quicker on long

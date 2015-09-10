@@ -28,11 +28,10 @@ cubane.pdb    ethane.pdb    methane.pdb
 octane.pdb    pentane.pdb   propane.pdb
 ~~~
 
-Let's go into that directory with `cd` and run the command `wc *.pdb`.
-`wc` is the "word count" command:
-it counts the number of lines, words, and characters in files.
-The `*` in `*.pdb` matches zero or more characters,
-so the shell turns `*.pdb` into a complete list of `.pdb` files:
+Let's go into that directory with `cd` and run the command `wc *.pdb`:
+
+* `wc` is the "word count" command, it counts the number of lines, words, and characters in files.
+* The `*` in `*.pdb` matches zero or more characters, so the shell turns `*.pdb` into a complete list of `.pdb` files:
 
 ~~~ {.bash}
 $ cd molecules
@@ -286,87 +285,6 @@ so that you and other people can put those programs into pipes to multiply their
 > any command line parameters, so it reads from standard input, but we
 > have told the shell to send the contents of `ammonia.pdb` to `wc`'s
 > standard input.
-
-### Nelle's Pipeline: Checking Files
-
-Nelle has run her samples through the assay machines
-and created 1520 files in the `north-pacific-gyre/2012-07-03` directory described earlier.
-As a quick sanity check, starting from her home directory, Nelle types:
-
-~~~ {.bash}
-$ cd north-pacific-gyre/2012-07-03
-$ wc -l *.txt
-~~~
-
-The output is 1520 lines that look like this:
-
-~~~ {.output}
-300 NENE01729A.txt
-300 NENE01729B.txt
-300 NENE01736A.txt
-300 NENE01751A.txt
-300 NENE01751B.txt
-300 NENE01812A.txt
-... ...
-~~~
-
-Now she types this:
-
-~~~ {.bash}
-$ wc -l *.txt | sort -n | head -5
-~~~
-~~~ {.output}
- 240 NENE02018B.txt
- 300 NENE01729A.txt
- 300 NENE01729B.txt
- 300 NENE01736A.txt
- 300 NENE01751A.txt
-~~~
-
-Whoops: one of the files is 60 lines shorter than the others.
-When she goes back and checks it,
-she sees that she did that assay at 8:00 on a Monday morning --- someone
-was probably in using the machine on the weekend,
-and she forgot to reset it.
-Before re-running that sample,
-she checks to see if any files have too much data:
-
-~~~ {.bash}
-$ wc -l *.txt | sort -n | tail -5
-~~~
-~~~ {.output}
- 300 NENE02040A.txt
- 300 NENE02040B.txt
- 300 NENE02040Z.txt
- 300 NENE02043A.txt
- 300 NENE02043B.txt
-~~~
-
-Those numbers look good --- but what's that 'Z' doing there in the third-to-last line?
-All of her samples should be marked 'A' or 'B';
-by convention,
-her lab uses 'Z' to indicate samples with missing information.
-To find others like it, she does this:
-
-~~~ {.bash}
-$ ls *Z.txt
-~~~
-~~~ {.output}
-NENE01971Z.txt    NENE02040Z.txt
-~~~
-
-Sure enough,
-when she checks the log on her laptop,
-there's no depth recorded for either of those samples.
-Since it's too late to get the information any other way,
-she must exclude those two files from her analysis.
-She could just delete them using `rm`,
-but there are actually some analyses she might do later where depth doesn't matter,
-so instead, she'll just be careful later on to select files using the wildcard expression `*[AB].txt`.
-As always,
-the '\*' matches any number of characters;
-the expression `[AB]` matches either an 'A' or a 'B',
-so this matches all the valid data files she has.
 
 > ## What does `sort -n` do? {.challenge}
 >

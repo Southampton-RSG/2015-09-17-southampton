@@ -167,28 +167,6 @@ history | tail -5 | colrm 1 7</code></pre>
 </div>
 </aside>
 <p>In practice, most people develop shell scripts by running commands at the shell prompt a few times to make sure they’re doing the right thing, then saving them in a file for re-use. This style of work allows people to recycle what they discover about their data and their workflow with one call to <code>history</code> and a bit of editing to clean up the output and save it as a shell script.</p>
-<h2 id="nelles-pipeline-creating-a-script">Nelle’s Pipeline: Creating a Script</h2>
-<p>An off-hand comment from her supervisor has made Nelle realize that she should have provided a couple of extra parameters to <code>goostats</code> when she processed her files. This might have been a disaster if she had done all the analysis by hand, but thanks to for loops, it will only take a couple of hours to re-do.</p>
-<p>But experience has taught her that if something needs to be done twice, it will probably need to be done a third or fourth time as well. She runs the editor and writes the following:</p>
-<pre><code># Calculate reduced stats for data files at J = 100 c/bp.
-for datafile in &quot;$@&quot;
-do
-    echo $datafile
-    bash goostats -J 100 -r $datafile stats-$datafile
-done</code></pre>
-<p>(The parameters <code>-J 100</code> and <code>-r</code> are the ones her supervisor said she should have used.) She saves this in a file called <code>do-stats.sh</code> so that she can now re-do the first stage of her analysis by typing:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">bash</span> do-stats.sh *[AB].txt</code></pre>
-<p>She can also do this:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">bash</span> do-stats.sh *[AB].txt <span class="kw">|</span> <span class="kw">wc</span> -l</code></pre>
-<p>so that the output is just the number of files processed rather than the names of the files that were processed.</p>
-<p>One thing to note about Nelle’s script is that it lets the person running it decide what files to process. She could have written it as:</p>
-<pre><code># Calculate reduced stats for  A and Site B data files at J = 100 c/bp.
-for datafile in *[AB].txt
-do
-    echo $datafile
-    bash goostats -J 100 -r $datafile stats-$datafile
-done</code></pre>
-<p>The advantage is that this always selects the right files: she doesn’t have to remember to exclude the ‘Z’ files. The disadvantage is that it <em>always</em> selects just those files — she can’t run it on all files (including the ‘Z’ files), or on the ‘G’ or ‘H’ files her colleagues in Antarctica are producing, without editing the script. If she wanted to be more adventurous, she could modify her script to check for command-line parameters, and use <code>*[AB].txt</code> if none were provided. Of course, this introduces another tradeoff between flexibility and complexity.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="variables-in-shell-scripts"><span class="glyphicon glyphicon-pencil"></span>Variables in shell scripts</h2>

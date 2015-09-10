@@ -299,68 +299,6 @@ what they discover about their data and their workflow with one call to `history
 and a bit of editing to clean up the output
 and save it as a shell script.
 
-## Nelle's Pipeline: Creating a Script
-
-An off-hand comment from her supervisor has made Nelle realize that
-she should have provided a couple of extra parameters to `goostats` when she processed her files.
-This might have been a disaster if she had done all the analysis by hand,
-but thanks to for loops,
-it will only take a couple of hours to re-do.
-
-But experience has taught her that if something needs to be done twice,
-it will probably need to be done a third or fourth time as well.
-She runs the editor and writes the following:
-
-~~~
-# Calculate reduced stats for data files at J = 100 c/bp.
-for datafile in "$@"
-do
-    echo $datafile
-    bash goostats -J 100 -r $datafile stats-$datafile
-done
-~~~
-
-(The parameters `-J 100` and `-r` are the ones her supervisor said she should have used.)
-She saves this in a file called `do-stats.sh`
-so that she can now re-do the first stage of her analysis by typing:
-
-~~~ {.bash}
-$ bash do-stats.sh *[AB].txt
-~~~
-
-She can also do this:
-
-~~~ {.bash}
-$ bash do-stats.sh *[AB].txt | wc -l
-~~~
-
-so that the output is just the number of files processed
-rather than the names of the files that were processed.
-
-One thing to note about Nelle's script is that
-it lets the person running it decide what files to process.
-She could have written it as:
-
-~~~
-# Calculate reduced stats for  A and Site B data files at J = 100 c/bp.
-for datafile in *[AB].txt
-do
-    echo $datafile
-    bash goostats -J 100 -r $datafile stats-$datafile
-done
-~~~
-
-The advantage is that this always selects the right files:
-she doesn't have to remember to exclude the 'Z' files.
-The disadvantage is that it *always* selects just those files --- she can't run it on all files
-(including the 'Z' files),
-or on the 'G' or 'H' files her colleagues in Antarctica are producing,
-without editing the script.
-If she wanted to be more adventurous,
-she could modify her script to check for command-line parameters,
-and use `*[AB].txt` if none were provided.
-Of course, this introduces another tradeoff between flexibility and complexity.
-
 > ## Variables in shell scripts {.challenge}
 >
 > In the molecules directory, you have a shell script called `script.sh` containing the 

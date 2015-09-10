@@ -77,12 +77,15 @@
 <p>If the command to find out who we are is <code>whoami</code>, the command to find out where we are ought to be called <code>whereami</code>, so why is it <code>pwd</code> instead? The usual answer is that in the early 1970s, when Unix was first being developed, every keystroke counted: the devices of the day were slow, and backspacing on a teletype was so painful that cutting the number of keystrokes in order to cut the number of typing mistakes was actually a win for usability. The reality is that commands were added to Unix one by one, without any master plan, by people who were immersed in its jargon. The result is as inconsistent as the roolz uv Inglish speling, but we’re stuck with it now.</p>
 </div>
 </aside>
-<p>There are some helpful things to know which can save us some typing:</p>
-<ul>
-<li>Using the up and down arrow keys allow you to cycle through your previous commands - plus, useful if you forget exactly what you typed earlier!</li>
-<li>Ctrl-A and Ctrl-E will send the cursor to the start and end of a line respectively; much quicker than using the left/right arrow keys on a long line</li>
-</ul>
-<p>There are others that can also help us — we’ll look at a few later on.</p>
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2 id="saving-yourself-some-typing"><span class="glyphicon glyphicon-pushpin"></span>Saving yourself some typing!</h2>
+</div>
+<div class="panel-body">
+<p>We can move to the beginning of a line in the shell by typing <code>^A</code> (which means Control-A) and to the end using <code>^E</code>. Much quicker on long lines than just using the left/right arrow keys.</p>
+<p>Using the up and down arrow keys allow you to cycle through your previous commands - plus, useful if you forget exactly what you typed earlier!</p>
+</div>
+</aside>
 <p>To understand what a “home directory” is, let’s have a look at how the file system as a whole is organized. At the top is the <strong>root directory</strong> that holds everything else. We refer to it using a slash character <code>/</code> on its own; this is the leading slash in <code>/Users/nelle</code>.</p>
 <p>Inside that directory are several other directories, e.g.: <code>bin</code> (which is where some built-in programs are stored), <code>data</code> (for miscellaneous data files), <code>Users</code> (where users’ personal directories are located), <code>tmp</code> (for temporary files that don’t need to be stored long-term), and so on:</p>
 <div class="figure">

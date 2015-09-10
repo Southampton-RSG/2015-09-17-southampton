@@ -83,7 +83,6 @@ Make a note of what is output here - it will likely come in handy later!
 > Note that it may also look slightly different for different versions of 
 > Windows.
 
-
 > ## Alphabet Soup {.callout}
 >
 > If the command to find out who we are is `whoami`, the command to find
@@ -97,12 +96,14 @@ Make a note of what is output here - it will likely come in handy later!
 > its jargon. The result is as inconsistent as the roolz uv Inglish
 > speling, but we're stuck with it now.
 
-There are some helpful things to know which can save us some typing:
-
-* Using the up and down arrow keys allow you to cycle through your previous commands - plus, useful if you forget exactly what you typed earlier!
-* Ctrl-A and Ctrl-E will send the cursor to the start and end of a line respectively; much quicker than using the left/right arrow keys on a long line
-
-There are others that can also help us --- we'll look at a few later on.
+> ## Saving yourself some typing! {.callout}
+>
+> We can move to the beginning of a line in the shell by typing `^A`
+> (which means Control-A) and to the end using `^E`. Much quicker on long
+> lines than just using the left/right arrow keys.
+>
+> Using the up and down arrow keys allow you to cycle through your previous 
+> commands - plus, useful if you forget exactly what you typed earlier!
 
 To understand what a "home directory" is,
 let's have a look at how the file system as a whole is organized.

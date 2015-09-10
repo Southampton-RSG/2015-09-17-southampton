@@ -155,51 +155,6 @@ mv unicorn.dat original-unicorn.dat</code></pre>
 <p><em>without</em> actually running those commands. We can then use up-arrow to redisplay the loop, back-arrow to get to the word <code>echo</code>, delete it, and then press “enter” to run the loop with the actual <code>mv</code> commands. This isn’t foolproof, but it’s a handy way to see what’s going to happen when you’re still learning how loops work.</p>
 </div>
 </aside>
-<h2 id="nelles-pipeline-processing-files">Nelle’s Pipeline: Processing Files</h2>
-<p>Nelle is now ready to process her data files. Since she’s still learning how to use the shell, she decides to build up the required commands in stages. Her first step is to make sure that she can select the right files — remember, these are ones whose names end in ‘A’ or ‘B’, rather than ‘Z’. Starting from her home directory, Nelle types:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> north-pacific-gyre/2012-07-03
-$ <span class="kw">for</span> <span class="kw">datafile</span> in *[AB].txt
-<span class="kw">&gt;</span> <span class="kw">do</span>
-<span class="kw">&gt;</span>     <span class="kw">echo</span> <span class="ot">$datafile</span>
-<span class="kw">&gt;</span> <span class="kw">done</span></code></pre>
-<pre class="output"><code>NENE01729A.txt
-NENE01729B.txt
-NENE01736A.txt
-...
-NENE02043A.txt
-NENE02043B.txt</code></pre>
-<p>Her next step is to decide what to call the files that the <code>goostats</code> analysis program will create. Prefixing each input file’s name with “stats” seems simple, so she modifies her loop to do that:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">for</span> <span class="kw">datafile</span> in *[AB].txt
-<span class="kw">&gt;</span> <span class="kw">do</span>
-<span class="kw">&gt;</span>     <span class="kw">echo</span> <span class="ot">$datafile</span> stats-<span class="ot">$datafile</span>
-<span class="kw">&gt;</span> <span class="kw">done</span></code></pre>
-<pre class="output"><code>NENE01729A.txt stats-NENE01729A.txt
-NENE01729B.txt stats-NENE01729B.txt
-NENE01736A.txt stats-NENE01736A.txt
-...
-NENE02043A.txt stats-NENE02043A.txt
-NENE02043B.txt stats-NENE02043B.txt</code></pre>
-<p>She hasn’t actually run <code>goostats</code> yet, but now she’s sure she can select the right files and generate the right output filenames.</p>
-<p>Typing in commands over and over again is becoming tedious, though, and Nelle is worried about making mistakes, so instead of re-entering her loop, she presses the up arrow. In response, the shell redisplays the whole loop on one line (using semi-colons to separate the pieces):</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">for</span> <span class="kw">datafile</span> in *[AB].txt<span class="kw">;</span> <span class="kw">do</span> <span class="kw">echo</span> <span class="ot">$datafile</span> stats-<span class="ot">$datafile</span><span class="kw">;</span> <span class="kw">done</span></code></pre>
-<p>Using the left arrow key, Nelle backs up and changes the command <code>echo</code> to <code>goostats</code>:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">for</span> <span class="kw">datafile</span> in *[AB].txt<span class="kw">;</span> <span class="kw">do</span> <span class="kw">bash</span> goostats <span class="ot">$datafile</span> stats-<span class="ot">$datafile</span><span class="kw">;</span> <span class="kw">done</span></code></pre>
-<p>When she presses enter, the shell runs the modified command. However, nothing appears to happen — there is no output. After a moment, Nelle realizes that since her script doesn’t print anything to the screen any longer, she has no idea whether it is running, much less how quickly. She kills the job by typing Control-C, uses up-arrow to repeat the command, and edits it to read:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">for</span> <span class="kw">datafile</span> in *[AB].txt<span class="kw">;</span> <span class="kw">do</span> <span class="kw">echo</span> <span class="ot">$datafile</span><span class="kw">;</span> <span class="kw">bash</span> goostats <span class="ot">$datafile</span> stats-<span class="ot">$datafile</span><span class="kw">;</span> <span class="kw">done</span></code></pre>
-<aside class="callout panel panel-info">
-<div class="panel-heading">
-<h2 id="beginning-and-end"><span class="glyphicon glyphicon-pushpin"></span>Beginning and End</h2>
-</div>
-<div class="panel-body">
-<p>We can move to the beginning of a line in the shell by typing <code>^A</code> (which means Control-A) and to the end using <code>^E</code>.</p>
-</div>
-</aside>
-<p>When she runs her program now, it produces one line of output every five seconds or so:</p>
-<pre class="output"><code>NENE01729A.txt
-NENE01729B.txt
-NENE01736A.txt
-...</code></pre>
-<p>1518 times 5 seconds, divided by 60, tells her that her script will take about two hours to run. As a final check, she opens another terminal window, goes into <code>north-pacific-gyre/2012-07-03</code>, and uses <code>cat stats-NENE01729B.txt</code> to examine one of the output files. It looks good, so she decides to get some coffee and catch up on her reading.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2 id="those-who-know-history-can-choose-to-repeat-it"><span class="glyphicon glyphicon-pushpin"></span>Those Who Know History Can Choose to Repeat It</h2>

@@ -79,6 +79,14 @@ Then:
 - In your browser, go to **https://etherpad.mozilla.org/SWC-Soton-Sep2015**
 - Follow the instructions for downloading the repository and setting up your environment
 
+## An example filesystem I
+
+![](img/filesystem.png)
+
+## An example filesystem II
+
+![](img/home-directories.png)
+
 ## Limitations
 
 - Bash scripts good for quickly automating repetitive tasks that call other programs... up to a point!

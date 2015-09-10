@@ -15,12 +15,12 @@ minutes: 15
 
 Wildcards and tab completion are two ways to reduce typing (and typing mistakes).
 Another is to tell the shell to do something over and over again.
-Suppose we have several hundred genome data files named `basilisk.dat`, `unicorn.dat`, and so on.
+Suppose we have several hundred genome data files named `basilisk.dat`, `minotaur.dat`, `unicorn.dat`, and so on.
 In this example,
-we'll use the `creatures` directory which only has two example files,
+we'll use the `creatures` directory which only has three example files,
 but the principles can be applied to many many more files at once.
 We would like to modify these files, but also save a version of the original files and rename them 
-as `original-basilisk.dat` and `original-unicorn.dat`.
+as `original-basilisk.dat`, `original-minotaur.dat`, `original-unicorn.dat`.
 We can't use:
 
 ~~~ {.bash}
@@ -30,7 +30,7 @@ $ mv *.dat original-*.dat
 because that would expand to:
 
 ~~~ {.bash}
-$ mv basilisk.dat unicorn.dat original-*.dat
+$ mv basilisk.dat minotaur.dat unicorn.dat original-*.dat
 ~~~
 
 This wouldn't back up our files, instead we get an error
@@ -49,7 +49,7 @@ to do some operation once for each thing in a list.
 Here's a simple example that displays the first three lines of each file in turn:
 
 ~~~ {.bash}
-$ for filename in basilisk.dat unicorn.dat
+$ for filename in basilisk.dat minotaur.dat unicorn.dat
 > do
 >    head -3 $filename
 > done
@@ -58,6 +58,9 @@ $ for filename in basilisk.dat unicorn.dat
 COMMON NAME: basilisk
 CLASSIFICATION: basiliscus vulgaris
 UPDATED: 1745-05-02
+COMMON NAME: minotaur
+CLASSIFICATION: minotaurus maximus
+UPDATED: 1764-09-12
 COMMON NAME: unicorn
 CLASSIFICATION: equus monoceros
 UPDATED: 1738-11-24
@@ -65,14 +68,14 @@ UPDATED: 1738-11-24
 
 When the shell sees the keyword `for`,
 it knows it is supposed to repeat a command (or group of commands) once for each thing in a list.
-In this case, the list is the two filenames.
+In this case, the list is the three filenames.
 Each time through the loop,
 the name of the thing currently being operated on is assigned to
 the **variable** called `filename`.
 Inside the loop,
 we get the variable's value by putting `$` in front of it:
 `$filename` is `basilisk.dat` the first time through the loop,
-`unicorn.dat` the second,
+`minotaur.dat` the second, `unicorn.dat` the third,
 and so on.
 
 By using the dollar sign we are telling the shell interpreter to treat
@@ -98,7 +101,7 @@ The shell itself doesn't care what the variable is called;
 if we wrote this loop as:
 
 ~~~ {.bash}
-for x in basilisk.dat unicorn.dat
+for x in basilisk.dat minotaur.dat unicorn.dat
 do
     head -3 $x
 done
@@ -107,7 +110,7 @@ done
 or:
 
 ~~~ {.bash}
-for temperature in basilisk.dat unicorn.dat
+for temperature in basilisk.dat minotaur.dat unicorn.dat
 do
     head -3 $temperature
 done
@@ -236,6 +239,12 @@ mv basilisk.dat original-basilisk.dat
 ~~~
 
 The second time, the command is:
+
+~~~ {.bash}
+mv minotaur.dat original-minotaur.dat
+~~~
+
+The third time, the command is:
 
 ~~~ {.bash}
 mv unicorn.dat original-unicorn.dat

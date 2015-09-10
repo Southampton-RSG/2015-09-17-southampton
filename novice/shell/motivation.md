@@ -87,6 +87,8 @@ Then:
 
 ![](img/home-directories.png)
 
+## Let us begin...
+
 ## Limitations
 
 - Bash scripts good for quickly automating repetitive tasks that call other programs... up to a point!

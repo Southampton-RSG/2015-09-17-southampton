@@ -13,7 +13,6 @@ subtitle: Why do it?
     + write programs that check their own operation
     + write tests to catch the mistakes those self-checks miss
 
-
 ## Confess!
 
 Why don't you write tests?
@@ -23,7 +22,6 @@ Why don't you write tests?
 - "It's not interesting"
 - "It takes too much time and I've research to do"
 
-
 ## Ariane 5
 
 - Ariane 5 used Ariane 4 code
@@ -32,7 +30,6 @@ Why don't you write tests?
 - Unfortunately, code wasn't properly tested
 
 Millions of pounds down the drain, some very red faces
-
 
 ## Consider Geoffrey Chang...
 
@@ -44,17 +41,21 @@ Three pharma publications in *Science*, 2001-2005
 
 Letters – Retraction, Science 22 December 2006
 
-
 ## And he's not alone...
 
 - “A Test of Corrections for Extraneous Signals in Gridded Surface Temperature Data”, R. McKitrick et al, Climate Research, 2004
     + “McKitrick screws up yet again”, T. Lambert’s blog
     + “McKitrick mucks it up”, J. Quiggin’s blog
+- “ERRATUM”, Climate Research, 2004
+- “formula … takes the angle in *radians*, but our data were entered in *degrees*”
 
-“ERRATUM”, Climate Research, 2004
+## He's *really* not alone...
 
-- “formula for computing cosine of absolute latitude … takes the angle in *radians*, but our data were entered in *degrees*”
-
+- "Worms: Identifying Impacts on Education and Health in the Presence of Treatment Externalities", E. Miguel, M. Kremer, Econometrica, 2003
+    + "Wrong answers typed into the program", Buzzfeed
+- FreeSurfer neuroimaging analysis software
+    + Reviewed in PLOS one article "The Effects of FreeSurfer Version, ...", P. Habets et al.
+    + Results significantly different between v5.0.0 and two earlier versions and across machines
 
 ## What testing gives you
 
@@ -65,6 +66,15 @@ Letters – Retraction, Science 22 December 2006
 - Examples of how to use your code
 - “if it’s not tested, it’s broken”
     + bittermanandy, 10/09/2010
+
+## Examples of unit testing frameworks
+
+- Fortran: FRUIT, pFUnit
+- R: RUnit, testthat
+- MATLAB: Unit Testing Framework
+- .NET: csUnit
+- PHP: PHPUnit, PHP Unit Testing Framework
+- Python: Nose, Autotest
 
 ## Learning Objectives
 

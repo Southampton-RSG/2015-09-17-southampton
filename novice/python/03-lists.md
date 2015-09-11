@@ -15,7 +15,7 @@ One of the most fundamental data structures in any language is the array. Python
 a native array data structure, but it has the list which is much more general and can be used 
 as a multidimensional array quite easily.
 
-#### List basics
+### List basics
 
 Just as a `for` loop is a way to do operations many times, a list is a way to store many values.
 A list in python is just an ordered collection of items which can be of any type. By comparison 
@@ -83,6 +83,10 @@ The *Slicing* notation looks like array indexing but it is a lot more flexible. 
 odds[2:5]
 ~~~
 
+~~~{.output}
+[5, 7, 9]
+~~~
+
 is a sublist from the third element to the fifth i.e. from `odds[2]` to `odds[4]`. Notice that the 
 final element specified i.e. `[5]` is not included in the slice.
 
@@ -93,10 +97,18 @@ For example:
 odds[5:]
 ~~~
 
+~~~{.output}
+[11, 13]
+~~~
+
 is the list from `odds[5]` to the end of the list and
 
 ~~~{.python}
 odds[:5]
+~~~
+
+~~~{.output}
+[1, 3, 5, 7, 9]
 ~~~
 
 is the list up to and not including odds[5] and
@@ -105,9 +117,13 @@ is the list up to and not including odds[5] and
 odds[:]
 ~~~
 
+~~~{.output}
+[1, 3, 5, 7, 9, 11, 13]
+~~~
+
 is the entire list.
 
-## Slicing strings 
+### Slicing strings 
 
 A section of an array is called a [slice](../../reference.html#slice).
 We can take slices of character strings as well:
@@ -150,10 +166,12 @@ odds[1]=19
 Finally is it worth knowing that the list we assign to a slice doesn't have to be the same size as the slice - 
 it simply replaces it even if it is a different size.
 
-## Thin slices 
+### Thin slices 
 
 The expression `element[3:3]` produces an [empty string](../../reference.html#empty-string),
  i.e., a string that contains no characters.
+ 
+ ### Lists and Strings
  
  There is one important difference between lists and strings:
 we can change the values in a list,
@@ -269,18 +287,18 @@ odds: [1, 3, 5, 7]
 
 This is different from how variables worked in lesson 1, and more similar to how a spreadsheet works.
 
-## Turn a string into a list {.challenge}
-
-Use a for-loop to convert the string "hello" into a list of letters:
-
-~~~ {.python}
-["h", "e", "l", "l", "o"]
-~~~
-Hint: You can create an empty list like this:
-
-~~~ {.python}
-my_list = []
-~~~
+>##Turn a string into a list {.challenge}
+>
+>Use a for-loop to convert the string "hello" into a list of letters:
+>
+>~~~ {.python}
+>["h", "e", "l", "l", "o"]
+>~~~
+>Hint: You can create an empty list like this:
+>
+>~~~ {.python}
+>my_list = []
+>~~~
 
 ### Basic array operations
 

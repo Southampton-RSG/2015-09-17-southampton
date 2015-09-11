@@ -64,20 +64,17 @@ We'll find out how to:
 > * Include multiple commands in a shell *script*
 > * How to find files and things within files
 
-## Getting started I
+## Getting started
 
 If you haven't already, let's get a shell running!
 
 - **Windows**: run **Git Bash**
-- **Mac OS X**: run the **Terminal** application under *Applications -> Utilities*
-- **Linux**: run the **Terminal** application
+- **Mac OS X**: run **Terminal** under *Applications -> Utilities*
+- **Linux**: run **Terminal** application
 
-## Getting started II
+Then go to **https://etherpad.mozilla.org/SWC-Soton-Sep2015** and follow instructions for downloading repository and configuring environment.
 
-Then:
-
-- In your browser, go to **https://etherpad.mozilla.org/SWC-Soton-Sep2015**
-- Follow the instructions for downloading the repository and setting up your environment
+## Let us begin...
 
 ## An example filesystem I
 
@@ -87,14 +84,13 @@ Then:
 
 ![](img/home-directories.png)
 
-## Let us begin...
-
 ## Limitations
 
 - Bash scripts good for quickly automating repetitive tasks that call other programs... up to a point!
-    + More advanced techniques often have a steep learning curve
+    + More advanced techniques often have steep learning curve
     + Writing more complex Bash scripts can take a lot longer
-    + Large Bash scripts can become difficult to read and maintain
+    + Large Bash scripts often difficult to read and maintain
 
-- For larger tasks more general language (like Python) can be more productive and lead to more maintainable code
-    + But you can still use Bash's pipes and redirects with them!
+- For larger tasks use a more general language (like Python)
+    + Can be more productive and lead to more maintainable code
+    + You can still use Bash's pipes and redirects with them!

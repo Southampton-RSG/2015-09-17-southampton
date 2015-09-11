@@ -91,19 +91,22 @@ OK</code></pre>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
-<li><p>Write a function called <code>something</code> that passes the following unit tests:</p>
-<pre><code>def test_empty():
-    assert something([]) == []
+<li><p>Write a function called <code>addnumbers</code> that passes the following unit tests:</p>
+<pre><code>from addnumbers import addnumbers
+
+def test_empty():
+    assert addnumbers([]) == None
 
 def test_single_value():
-    assert something([&#39;a&#39;]) == []
+    assert addnumbers([1]) == 1
 
 def test_two_values():
-    assert something([&#39;a&#39;, &#39;b&#39;]) == [(&#39;a&#39;, &#39;b&#39;)]
+    assert addnumbers([1, 2]) == 3
 
 def test_three_values():
-    assert something([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]) == [(&#39;a&#39;, &#39;b&#39;), (&#39;a&#39;, &#39;c&#39;), (&#39;b&#39;, &#39;c&#39;)]</code></pre>
-<p>(You can find this set of tests in <code>test_something.py</code>).</p></li>
+    assert addnumbers([1, 2, 3]) == 6
+</code></pre>
+<p>(You can find this set of tests in <code>test_addnumbers.py</code>).</p></li>
 </ol>
 </div>
 </section>

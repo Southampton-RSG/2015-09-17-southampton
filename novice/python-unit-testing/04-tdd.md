@@ -79,18 +79,21 @@ trying it a few times helps you learn how to design functions and programs that 
 
 > ## Challenges {.challenge}
 > 
-> 1.  Write a function called `something` that passes the following unit tests:
+> 1.  Write a function called `addnumbers` that passes the following unit tests:
 >     ```
+>     from addnumbers import addnumbers
+> 
 >     def test_empty():
->         assert something([]) == []
->     
+>         assert addnumbers([]) == None
+> 
 >     def test_single_value():
->         assert something(['a']) == []
->     
+>         assert addnumbers([1]) == 1
+> 
 >     def test_two_values():
->         assert something(['a', 'b']) == [('a', 'b')]
->     
+>         assert addnumbers([1, 2]) == 3
+> 
 >     def test_three_values():
->         assert something(['a', 'b', 'c']) == [('a', 'b'), ('a', 'c'), ('b', 'c')]
+>         assert addnumbers([1, 2, 3]) == 6
+> 
 >     ```
->     (You can find this set of tests in `test_something.py`).
+>     (You can find this set of tests in `test_addnumbers.py`).

@@ -118,6 +118,14 @@ Although we commonly refer to `variables` even in Python (because it is the comm
 >
 > ~~~ {.python}
 > first, second = 'Grace', 'Hopper'
+> ~~~
+>
+> ~~~{.output}
+> first = Grace
+> second = Hopper
+> ~~~
+>
+> ~~~{.python}
 > third, fourth = second, first
 > print(third, fourth)
 > ~~~

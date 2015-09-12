@@ -18,6 +18,10 @@ Similarly,
 while a lot of powerful tools are built into languages like Python,
 even more live in the [libraries](../../reference.html#software-library) they are used to build.
 
+Library is a collection of code (precompiled routines) that a program can use. They are particularly 
+useful for storing frequently used routines because you don't need to explicitly link them to every program 
+that uses them. Libraries will be automatically looked for routines that are not found elsewhere.
+
 Hence, this lesson represents an end-to-end scientific Python example, from analysing data (using a library),
 to visualisation (using a library).
 

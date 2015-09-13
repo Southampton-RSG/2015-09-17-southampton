@@ -37,7 +37,7 @@ subtitle: Why Python?
 - Based on survey conducted by SSI's Policy researchers:
   ![Software survey word cloud](img/wordle.png)
 
-## Python2.x vs Python3
+## Python3
 
 - Python is currently transitioning from version 2 to 3
 - Teaching will be in 3.4

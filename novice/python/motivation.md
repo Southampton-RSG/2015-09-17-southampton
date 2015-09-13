@@ -8,20 +8,22 @@ subtitle: Why Python?
 
 - It's free, well-documented, and runs almost everywhere
 - Large (and growing) user base among researchers and scientists
-- Simple, readable and easier for beginners to grasp 
+- Simple, readable, flexible, powerful language and easier for beginners to grasp 
 - Goal is to teach basic programming concepts that can be applied to other programming languages
 
 ## Cont..
 
+- Part of the winning formula for productivity, software quality, and maintainability at many institutions and companies across the world
+    + Largely being used across various application domains:
+         + Scientific (Bioinformatics, Biology, Computational chemistry, Data visualisation, Scientific programming etc..)
+         + Engineering
+         + Software development
+         + Arts, business, education and government sectors
 - Popular for application development on its own
-- Used for development on the web and the client 
-- Used as scripting language in many applications and games
-     + Gimp
-     + Battlefield2
-     + ...
 
 ## Cont..
 
+- Used for development on the web and the client 
 - Increased productivity:
       + Debugging Python programs is easy: a bad input or bug will show a meaningful error message.
       

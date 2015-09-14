@@ -53,4 +53,4 @@ To do all that, we'll have to learn a little bit about programming.
 
 *  [Motivation](motivation.html)
 *  [Exercises](Challenges.html)
-*  [References](../../references.html)
+*  [References](../../reference.html)

@@ -133,7 +133,7 @@ curl -L http://goo.gl/HuPJu3 | python
 curl -L http://goo.gl/HuPJu3 | python3.4
 ~~~
 
-You should see eight passes and no failures.  If anything fails, please contact us (emailing s.crouch@software.ac.uk, j.robinson@software.ac.uk and d.inupakutika@software.ac.uk) with details by **Thursday 10 September** at the latest.
+You should see eight passes and no failures.  If anything fails, please contact us (emailing s.crouch@software.ac.uk, j.robinson@software.ac.uk and d.inupakutika@software.ac.uk) with details by **Weds 16 September** at the latest.
 
 ## During the workshop
 

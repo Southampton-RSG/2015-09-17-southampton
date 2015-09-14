@@ -127,13 +127,7 @@ We provide a simple Python script to test that the prerequisites have been corre
 curl -L http://goo.gl/HuPJu3 | python
 ~~~
 
-#### Mac OS X
-
-~~~ {.code}
-curl -L http://goo.gl/HuPJu3 | python3.4
-~~~
-
-#### Linux
+#### Mac OS X, Linux
 
 ~~~ {.code}
 curl -L http://goo.gl/HuPJu3 | python3.4

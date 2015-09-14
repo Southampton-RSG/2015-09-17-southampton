@@ -41,6 +41,14 @@
 </div>
 </section>
 <p>The IPython Notebook and other interactive tools are great for prototyping code and exploring data, but at some point we will want to use our program in a pipeline or run it in a shell script to process thousands of data files. In order to do that, we need to make our programs work like other Unix command-line tools. For example, we may want a program that reads a data set and prints the average inflammation per patient:</p>
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pushpin"></span>Switching to Shell Commands</h2>
+</div>
+<div class="panel-body">
+<p>In this lesson we are switching from typing commands in a Python interpreter to typing commands in a shell terminal window (such as bash). When you see a <code>$</code> in front of a command that tells you to run that command in the shell rather than the Python interpreter.</p>
+</div>
+</aside>
 <pre><code>$ python3.4 readings.py --mean ../data/inflammation-01.csv
 5.45
 5.425

@@ -19,6 +19,11 @@ For example,
 we may want a program that reads a data set
 and prints the average inflammation per patient:
 
+> ## Switching to Shell Commands {.callout}
+> In this lesson we are switching from typing commands in a Python interpreter to typing
+> commands in a shell terminal window (such as bash). When you see a `$` in front of a
+> command that tells you to run that command in the shell rather than the Python interpreter.
+
 ~~~
 $ python3.4 readings.py --mean ../data/inflammation-01.csv
 5.45

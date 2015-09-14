@@ -24,6 +24,9 @@ and prints the average inflammation per patient:
 > commands in a shell terminal window (such as bash). When you see a `$` in front of a
 > command that tells you to run that command in the shell rather than the Python interpreter.
 
+This program does exactly what we want - it prints the average inflammation per patient
+for a given file.
+
 ~~~
 $ python3.4 readings.py --mean ../data/inflammation-01.csv
 5.45

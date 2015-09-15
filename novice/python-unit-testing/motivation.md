@@ -73,6 +73,7 @@ Letters – Retraction, Science 22 December 2006
 - R: RUnit, testthat
 - MATLAB: Unit Testing Framework
 - .NET: csUnit
+- Java: JUnit
 - PHP: PHPUnit, PHP Unit Testing Framework
 - Python: Nose, Autotest
 

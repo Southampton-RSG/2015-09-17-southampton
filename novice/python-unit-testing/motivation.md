@@ -79,7 +79,7 @@ Letters – Retraction, Science 22 December 2006
 
 ## Learning Objectives
 
-> * how to write code defensively to guard against making errors;
-> * how to use a unit testing framework;
-> * when it's useful to write tests *before* writing code.
-> * how Python reports and handles errors;
+> * how to write code defensively to guard against making errors
+> * how to use a unit testing framework
+> * when it's useful to write tests *before* writing code
+> * how Python reports and handles errors

@@ -47,6 +47,16 @@ subtitle: Why Python?
       + Everything is an iterator ...
 - New syntax. New interpreter behaviour. Standard library fixes        
      
+## Learning objectives
+ 
+-  how to assigning values to variables and perform simple operations: python basics
+-  how to repeat actions with loops 
+-  how to read and analyse patient data using libraries
+-  how to visualise data using libraries
+-  how to correctly evaluate expressions: making choices using conditionals 
+-  why we should divide programs into small, single-purpose blocks of code: creating functions
+-  how to read data from standard input in a program so that it can be used in a pipeline
+     
 ## Basics: Variables, Objects, types and Data Structures
 
 - Introduction to Python variables
@@ -93,8 +103,9 @@ subtitle: Why Python?
 -  One-dimensional arrays are simple; on the surface they act similarly to Python lists.
  
 ## Indexing in a NumPy 2D array 
-       + Indexing elements in a  NumPy array:
-            ![Indexing 2D Numpy array](img/indexing2darray.png) 
+   
+-  Indexing elements in a  NumPy array:
+   ![Indexing 2D Numpy array](img/indexing2darray.png) 
    
 ## Data visualisation using libraries
 

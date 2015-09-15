@@ -19,7 +19,6 @@ subtitle: Why Python?
          + Engineering
          + Software development
          + Arts, business, education and government sectors
-- Popular for application development on its own
 
 ## Cont..
 
@@ -35,7 +34,7 @@ subtitle: Why Python?
 ## Why teaching Python?
 
 - Based on Southampton PhD students software usage survey conducted by SSI's Policy researchers:
-     ![Software survey word cloud](img/wordle2.png = )
+     ![Software survey word cloud](img/wordle2.png)
 
 ## Python3
 
@@ -95,7 +94,7 @@ subtitle: Why Python?
  
 ## Indexing in a NumPy 2D array 
        + Indexing elements in a  NumPy array:
-            ![Indexing 2D Numpy array](img/indexing2darray.png =256x256) 
+            ![Indexing 2D Numpy array](img/indexing2darray.png) 
    
 ## Data visualisation using libraries
 

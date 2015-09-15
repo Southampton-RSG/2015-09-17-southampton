@@ -34,8 +34,8 @@ subtitle: Why Python?
       
 ## Why teaching Python?
 
-- Based on survey conducted by SSI's Policy researchers:
-  ![Software survey word cloud](img/wordle.png)
+- Based on Southampton PhD students software usage survey conducted by SSI's Policy researchers:
+     ![Software survey word cloud](img/wordle2.png)
 
 ## Python3
 
@@ -65,33 +65,46 @@ __future__.print_function)
      + int(val[,base]) converts to an integer (of base base)
      + float(val): Corresponding to floats
      + str(val): Corresponding to strings (classes allow this automatically)
-      
-## Lists in Python
-
--  Lists as arrays
--  Indexing and Slicing      
-      
-## Using Python libraries
-
--  This introduction to Python is built around an end to end scientific example: data analysis
--  What is a library (module) and its usage
--  Reading data from a file
--  Numpy arrays and operations on arrays of data
--  Selecting individual values and subsections of data
--  Plotting data using `matplotlib` library
 
 ## Python Control Flow
 
 - Real power of programs come from:
       + Repetition
       + Selection
-
+      
 ## Control Flow: Repeating actions with loops
 
 -  What a loop does?
 -  Writing loops to repeat simple calculations
 -  Track changes to a loop variable as the loop runs
--  Track changes to other variables as they are updated by a `for` loop
+-  Track changes to other variables as they are updated by a `for` loop      
+      
+## Lists in Python
+
+-  Lists as arrays
+-  Indexing and Slicing      
+      
+## Arrays
+
+-  NumPy arrays and operations on arrays of data
+
+## NumPy arrays indexing and slicing
+
+-  Ways of selecting individual values and subsets of data
+       + One-dimensional arrays are simple; on the surface they act similarly to Python lists.
+       + Indexing elements in a  NumPy array:
+            ![Indexing 2D Numpy array](img/indexing2darray.png) 
+   
+
+## Using Python libraries
+
+-  This introduction to Python is built around an end to end scientific example: data analysis
+-  What is a library (module) and its usage
+-  Reading data from a file
+
+## Data visualisation using libraries
+
+-  Plotting data using `matplotlib` library
 
 ## Control Flow: Making choices
 

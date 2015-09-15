@@ -49,7 +49,7 @@ subtitle: Why Python?
      
 ## Learning objectives
  
--  how to assigning values to variables and perform simple operations: python basics
+-  how to assign values to variables and perform simple operations: python basics
 -  how to repeat actions with loops 
 -  how to read and analyse patient data using libraries
 -  how to visualise data using libraries
@@ -104,7 +104,6 @@ subtitle: Why Python?
  
 ## Indexing in a NumPy 2D array 
    
--  Indexing elements in a  NumPy array:
    ![Indexing 2D Numpy array](img/indexing2darray.png) 
    
 ## Data visualisation using libraries

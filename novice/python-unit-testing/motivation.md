@@ -73,12 +73,13 @@ Letters – Retraction, Science 22 December 2006
 - R: RUnit, testthat
 - MATLAB: Unit Testing Framework
 - .NET: csUnit
+- Java: JUnit
 - PHP: PHPUnit, PHP Unit Testing Framework
 - Python: Nose, Autotest
 
 ## Learning Objectives
 
-> * how to write code defensively to guard against making errors;
-> * how to use a unit testing framework;
-> * when it's useful to write tests *before* writing code.
-> * how Python reports and handles errors;
+> * how to write code defensively to guard against making errors
+> * how to use a unit testing framework
+> * when it's useful to write tests *before* writing code
+> * how Python reports and handles errors

@@ -46,13 +46,7 @@ subtitle: Why Python?
       + Matrix multiplication
       + Chained exceptions
       + Everything is an iterator ...
-
-## Cont..
-
-- New syntax. New interpreter behaviour. Standard library fixes      
-- Some have been backported to Python 2.7. (like dictionary/set comprehensions or set literals,
-__future__.print_function)
-- But there's more than that.
+- New syntax. New interpreter behaviour. Standard library fixes        
      
 ## Basics: Variables, Objects, types and Data Structures
 

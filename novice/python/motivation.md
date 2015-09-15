@@ -35,7 +35,7 @@ subtitle: Why Python?
 ## Why teaching Python?
 
 - Based on Southampton PhD students software usage survey conducted by SSI's Policy researchers:
-     ![Software survey word cloud](img/wordle2.png)
+     ![Software survey word cloud](img/wordle2.png = )
 
 ## Python3
 
@@ -77,25 +77,26 @@ subtitle: Why Python?
 
 -  Lists as arrays
 -  Indexing and Slicing      
-      
-## Arrays
-
--  NumPy arrays and operations on arrays of data
-
-## NumPy arrays indexing and slicing
-
--  Ways of selecting individual values and subsets of data
-       + One-dimensional arrays are simple; on the surface they act similarly to Python lists.
-       + Indexing elements in a  NumPy array:
-            ![Indexing 2D Numpy array](img/indexing2darray.png) 
    
-
 ## Using Python libraries
 
 -  This introduction to Python is built around an end to end scientific example: data analysis
 -  What is a library (module) and its usage
 -  Reading data from a file
+         
+## NumPy Arrays
 
+-  NumPy arrays and operations on arrays of data
+
+## NumPy arrays: Indexing and Slicing
+
+-  Ways of selecting individual values and subsets of data
+-  One-dimensional arrays are simple; on the surface they act similarly to Python lists.
+ 
+## Indexing in a NumPy 2D array 
+       + Indexing elements in a  NumPy array:
+            ![Indexing 2D Numpy array](img/indexing2darray.png =256x256) 
+   
 ## Data visualisation using libraries
 
 -  Plotting data using `matplotlib` library

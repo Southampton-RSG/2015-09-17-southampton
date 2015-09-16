@@ -68,6 +68,7 @@ subtitle: Why Python?
 ## Python Overview
 
 *From Learning Python:*
+
 - Programs are composed of modules
 - Modules contain statements
 - Statements contain expressions

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Tracking Changes
+subtitle: 3. Tracking Changes
 minutes: 20
 ---
 > ## Learning Objectives {.objectives}
@@ -22,16 +22,14 @@ you can use whatever editor you like.)
 $ nano mars.txt
 ~~~
 
-Under Windows, you'll need to choose to save it to under your home directory "C\:\\Users\\Me\\ltop\\planets"
+Under Windows, you'll need to choose to save it to under your home directory "C\:\\Users\\Me\\planets"
 
 
 Type the text below into the `mars.txt` file:
 
 ~~~ {.output}
-Cold and dry, but everything is my favorite color
+Cold and dry, but everything is my favorite color (You're Dracula - right?)
 ~~~
-
-
 
 `mars.txt` now contains a single line:
 
@@ -98,7 +96,7 @@ $ git status
 Git now knows that it's supposed to keep track of `mars.txt`,
 but it hasn't recorded these changes as a commit yet.
 
-###Commit the Changes###
+###Initial Commit###
 To get it to do that,
 we need to run one more command:
 
@@ -106,14 +104,18 @@ we need to run one more command:
 $ git commit -m "Start notes on Mars as a base"
 ~~~
 
-We use the `-m` flag (for "message")
+We use the `-m` flag (for "**message**")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
 If we just run `git commit` without the `-m` option,
 Git will launch `nano` (or whatever other editor we configured at the start)
 so that we can write a longer message.
 
-[Good commit messages][commit-messages] start with a brief (<50 characters) summary of
-changes made in the commit.  If you want to go into more detail, add
+**Good commit messages** start with a brief (<50 characters) summary of
+changes made in the commit.  
+
+**NOT Bug Fixes** or **Changes**!
+
+If you want to go into more detail, add
 a blank line between the summary line and your additional notes.
 
 ~~~ {.output}
@@ -127,7 +129,7 @@ Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a [revision](reference.html#revision)
 and its short identifier is `f22b25e`.
-(Your revision may have another identifier.)
+(Your revision will have different identifier.)
 
 
 If we run `git status` now:
@@ -140,6 +142,17 @@ $ git status
 nothing to commit, working directory clean
 ~~~
 it tells us everything is up to date.
+
+**( SLIDE 14 - add and commit)**
+
+Git has a special **staging** area
+where it keeps track of things that have been **added** to
+the current [change set](reference.html#change-set)
+but **not yet committed**.
+`git add` puts things in this area,
+and `git commit` then copies them to long-term storage (as a commit):
+
+**( SLIDE 15 - Exploring history #1)**
 
 ###Review the Log###
 If we want to know what we've done recently,
@@ -232,22 +245,29 @@ index df0654a..315bf3a 100644
 +The two moons may be a problem for Wolfman
 ~~~
 
+> ## Windows users note {.callout}
+>
+> **No newline at end of file**
+> This message is displayed because otherwise there is no way to tell the difference between a file where there is a newline at the end and one where is not. Diff has to output a newline anyway, or the result would be harder to read or process automatically.
+> This can safely be ignored, but you can avoid seeing it by leaving a blank line at the end of your file.
+
+
 The output is cryptic because
 it is actually a series of commands for tools like editors and `patch`
 telling them how to reconstruct one file given the other.
 
 The key things to note are:
 
- 1. Line 1: The files that are being compared
- 2. Line 2: The two hex strings on the second line which are the revisions being compared
- 3. Line 5: The lines that have changed
+ 1. Line 1: The files that are being compared (a/ and b/ are labels, not paths)
+ 2. Line 2: The two hex strings on the second line which parts of the hashes of the files being compares
+ 3. Line 5: The lines that have changed. 
  4. Below that, the changes - note the '**+**' marker which shows an addtion
 
 
 After reviewing our change, it's time to commit it:
 
 ~~~ {.bash}
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git commit -m "Add concerns about effects of Mars's moons on Wolfman"
 ~~~
 ~~~ {.output}
 # On branch master
@@ -260,7 +280,7 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 
-Whoops:
+**Whoops**:
 Git won't commit because we didn't use `git add` first.
 Let's fix that:
 
@@ -273,10 +293,11 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
  1 file changed, 1 insertion(+)
 ~~~
 
+** Recapping add / commit**
+
 Git insists that we **add** files to the set we want to commit
 before actually committing anything
 because we may not want to commit everything at once.
-
 
 For example,
 suppose we're adding a few citations to our supervisor's work
@@ -286,16 +307,8 @@ and the corresponding addition to the bibliography,
 but *not* commit the work we're doing on the conclusion
 (which we haven't finished yet).
 
-To allow for this,
-Git has a special **staging** area
-where it keeps track of things that have been **added** to
-the current [change set](reference.html#change-set)
-but **not yet committed**.
-`git add` puts things in this area,
-and `git commit` then copies them to long-term storage (as a commit):
-
-
-**( SLIDE 14 - Git Add / Commit)**
+**( SLIDE 14 - add and commit)** **Breifly BACK**
+**( SLIDE 15 Exploring history #1)** 
 
 ![The Git Staging Area](img/git-committing.svg)
 
@@ -343,8 +356,7 @@ There is no output:
 as far as Git can tell,
 there's no difference between what it's been asked to save permanently
 and what's currently in the directory.
-However,
-if we do this:
+However, if we do this:
 
 ~~~ {.bash}
 $ git diff --staged
@@ -360,16 +372,19 @@ index 315bf3a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ~~~
 
-it shows us the difference between
+it shows us the **difference between
 the last committed change
-and what's in the staging area.
+and what's in the staging area**.
+
+**( SLIDE 16 - Git diff #1)**
+
 Let's save our changes:
 
 ~~~ {.bash}
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+$ git commit -m "Discuss concerns about Mars's climate for Mummy"
 ~~~
 ~~~ {.output}
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[master 005937f] Discuss concerns about Mars's climate for Mummy
  1 file changed, 1 insertion(+)
 ~~~
 

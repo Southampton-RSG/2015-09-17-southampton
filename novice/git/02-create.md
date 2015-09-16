@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Creating a Repository
+subtitle: 2. Creating a Repository
 minutes: 10
 ---
 > ## Learning Objectives {.objectives}
@@ -12,19 +12,14 @@ minutes: 10
 
 Once Git is configured,
 we can start using it.
-Let's create a couple of directories for our work.  One will represent our desktop computer, the other our laptop.
-
-**NOT DESKTOP**
+Let's create a directory for our work.
 
 ~~~ {.bash}
-$ mkdir dtop ltop
-$ cd ltop
-
 $ mkdir planets
 $ cd planets
 ~~~
 
-and tell Git to make it a [repository](reference.html#repository)&mdash; A storage area where a version control system stores the full history of commits of a project and information about who changed what, when.
+Now lets tell Git to make it a [repository](reference.html#repository)&mdash; A storage area where a version control system stores the full history of commits of a project and information about who changed what, when.
 
 ~~~ {.bash}
 $ git init

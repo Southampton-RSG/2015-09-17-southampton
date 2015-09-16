@@ -27,10 +27,12 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
                     <a href="index.html"><h1 class="title">Version Control with Git</h1></a>
-          <h2 class="subtitle">Creating a Repository</h2>
+          <h2 class="subtitle"><ol start="2" style="list-style-type: decimal">
+<li>Creating a Repository</li>
+</ol></h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -39,14 +41,10 @@
 </div>
 </section>
 <p><strong>( SLIDE 12 - Creating a Repository)</strong></p>
-<p>Once Git is configured, we can start using it. Let’s create a couple of directories for our work. One will represent our desktop computer, the other our laptop.</p>
-<p><strong>NOT DESKTOP</strong></p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> dtop ltop
-$ <span class="kw">cd</span> ltop
-
-$ <span class="kw">mkdir</span> planets
+<p>Once Git is configured, we can start using it. Let’s create a directory for our work.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets</code></pre>
-<p>and tell Git to make it a <a href="reference.html#repository">repository</a>— A storage area where a version control system stores the full history of commits of a project and information about who changed what, when.</p>
+<p>Now lets tell Git to make it a <a href="reference.html#repository">repository</a>— A storage area where a version control system stores the full history of commits of a project and information about who changed what, when.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre>
 <p>If we use <code>ls</code> to show the directory’s contents, it appears that nothing has changed:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>

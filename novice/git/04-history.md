@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Exploring History
+subtitle: 4. Exploring History
 minutes: 25
 ---
 > ## Learning Objectives {.objectives}
@@ -10,7 +10,7 @@ minutes: 25
 > *   Compare files with old versions of themselves.
 > *   Restore old versions of files.
 
-**(SLIDE 15 - Exploring History)**
+**(SLIDE 17 - Git diff #2)**
 
 ###Relative History###
 
@@ -39,6 +39,8 @@ index 315bf3a..b36abfd 100644
  The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
+So we see the difference between the file as it is now, and as it was **before the last commit**
+
 ~~~ {.bash}
 $ git diff HEAD~2 mars.txt
 ~~~
@@ -52,7 +54,7 @@ index df0654a..b36abfd 100644
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
-
+And here we see the state before the last **two** commits, HEAD minus2 
 
 ###Absolute History###
 
@@ -65,7 +67,7 @@ and "unique" really does mean unique:
 every change to any set of files on any machine
 has a unique 40-character identifier. (A SHA-1 hash of the new, post-commit state of the repository).
 
-Our first commit was given the ID **bottom ID from git log**
+Our first commit was given the ID: **(bottom ID from git log)**
 
 f22b25e3233b4645dabd0d81e651fe074bd8e73b,
 so let's try this:
@@ -83,9 +85,8 @@ index df0654a..b36abfd 100644
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
-
-That's the right answer,
-but typing random 40-character strings is annoying,
+So that's all the changes since our first commit.
+That's the right answer,but typing random 40-character strings is annoying,
 so Git lets us use just the first **seven**:
 
 ~~~ {.bash}
@@ -102,6 +103,7 @@ index df0654a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ~~~
 
+**(SLIDE 18 - Restoring Files)**
 ###Restoring Files###
 
 All right:
@@ -137,7 +139,7 @@ $ git status
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 
-We can put things back the way they were
+Following the helpful hint in that output, we can put things back the way they were
 by using `git checkout`:
 
 ~~~ {.bash}
@@ -165,7 +167,7 @@ we can use a revision identifier instead:
 $ git checkout <last but one rev> mars.txt
 ~~~
 
-**(SLIDE 16 - Restoration)**
+**(SLIDE 19 - Restoration)**
 
 ![The Git Staging Area](img/git-checkout.svg)
 

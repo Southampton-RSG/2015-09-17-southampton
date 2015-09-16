@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: A Better Backup / Setting Up Git
+subtitle: 1. Setting Up Git
 minutes: 10
 ---
 > ## Learning Objectives {.objectives}
@@ -15,18 +15,17 @@ minutes: 10
 > Some previous experience with the shell is expected,
 > *but isn't mandatory*.
 
-## Get Started - The Scenario - Comedy Monsters
+## Get Started - The Scenario - Comedy Monsters plan a space mission
 
-Lets walk through a little scenario to get some hands on experience using Git.
+Lets walk through a (painfully contrived) little scenario to get some hands on experience using Git.
 
 **Linux and Mac users should open a terminal, windows users to should go to the Start Menu open GitBash from the Git group.**
 
 **Post-Its**
 
-Wolfman and Dracula have been hired by Universal Missions
+**(FULL SCREEN SLIDE 9 /10 - Monsters... / ...to Space)**
+We've have been hired by the **Transylvanian Space Agency**
 to investigate if it is possible to send their next planetary lander to Mars.
-
-**(FULL SCREEN SLIDE 9 /10 - Monsters to Mars)**
 
 **Switch out of fullscreen**
 **Open Terminal**
@@ -34,7 +33,7 @@ to investigate if it is possible to send their next planetary lander to Mars.
 
 **( SLIDE 11 - local configuration)**
 
-We’ll start by exploring how version control can be used to keep track of what *one person* did and when.
+**Working individually**, we’ll start by exploring how version control can be used to keep track of what *one person* did and when.
 
 ## Setting Up ##
 
@@ -56,7 +55,7 @@ $ git config --global user.email "vlad@tran.sylvan.ia"
 
 (Please use your own name and email address instead of Dracula's.)
 
-He also has to set his favorite text editor, following this table:
+You can set your favourite text editor, following this table:
 
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
@@ -82,22 +81,5 @@ You can check your settings at any time:
 ~~~ {.bash}
 $ git config --list
 ~~~
-
-> ## Proxy {.callout}
->
-> In some networks you need to use a [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case you may also
-> need to tell Git about the proxy:
->
-> ~~~ {.bash}
-> $ git config --global http.proxy proxy-url
-> $ git config --global https.proxy proxy-url
-> ~~~
->
-> To disable the proxy, use
->
-> ~~~ {.bash}
-> $ git config --global --unset http.proxy
-> $ git config --global --unset https.proxy
-> ~~~
 
 [Next - Creating a Repository](02-create.html)

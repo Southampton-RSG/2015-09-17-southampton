@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Ignoring Things
+subtitle: 5. Ignoring Things
 minutes: 5
 ---
 > ## Learning Objectives {.objectives}

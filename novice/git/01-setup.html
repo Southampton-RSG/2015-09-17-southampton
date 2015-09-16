@@ -27,10 +27,12 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
                     <a href="index.html"><h1 class="title">Version Control with Git</h1></a>
-          <h2 class="subtitle">A Better Backup / Setting Up Git</h2>
+          <h2 class="subtitle"><ol style="list-style-type: decimal">
+<li>Setting Up Git</li>
+</ol></h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -40,21 +42,20 @@
 </section>
 <section class="prereq panel panel-warning">
 <div class="panel-heading">
-<h2 id="prerequisites"><span class="glyphicon glyphicon-education"></span>Prerequisites</h2>
+<h2><span class="glyphicon glyphicon-education"></span>Prerequisites</h2>
 </div>
 <div class="panel-body">
 <p>In this lesson we use Git from the Bash Shell. Some previous experience with the shell is expected, <em>but isn’t mandatory</em>.</p>
 </div>
 </section>
-<h2 id="get-started---the-scenario---comedy-monsters">Get Started - The Scenario - Comedy Monsters</h2>
-<p>Lets walk through a little scenario to get some hands on experience using Git.</p>
+<h2 id="get-started---the-scenario---comedy-monsters-plan-a-space-mission">Get Started - The Scenario - Comedy Monsters plan a space mission</h2>
+<p>Lets walk through a (painfully contrived) little scenario to get some hands on experience using Git.</p>
 <p><strong>Linux and Mac users should open a terminal, windows users to should go to the Start Menu open GitBash from the Git group.</strong></p>
 <p><strong>Post-Its</strong></p>
-<p>Wolfman and Dracula have been hired by Universal Missions to investigate if it is possible to send their next planetary lander to Mars.</p>
-<p><strong>(FULL SCREEN SLIDE 9 /10 - Monsters to Mars)</strong></p>
+<p><strong>(FULL SCREEN SLIDE 9 /10 - Monsters… / …to Space)</strong> We’ve have been hired by the <strong>Transylvanian Space Agency</strong> to investigate if it is possible to send their next planetary lander to Mars.</p>
 <p><strong>Switch out of fullscreen</strong> <strong>Open Terminal</strong></p>
 <p><strong>( SLIDE 11 - local configuration)</strong></p>
-<p>We’ll start by exploring how version control can be used to keep track of what <em>one person</em> did and when.</p>
+<p><strong>Working individually</strong>, we’ll start by exploring how version control can be used to keep track of what <em>one person</em> did and when.</p>
 <h2 id="setting-up">Setting Up</h2>
 <p>The first time we use Git on a new machine, we need to configure a few things.</p>
 <p>Make sure you’re in your home directory (not another repository).</p>
@@ -63,7 +64,7 @@
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Vlad Dracula&quot;</span>
 $ <span class="kw">git</span> config --global user.email <span class="st">&quot;vlad@tran.sylvan.ia&quot;</span></code></pre>
 <p>(Please use your own name and email address instead of Dracula’s.)</p>
-<p>He also has to set his favorite text editor, following this table:</p>
+<p>You can set your favourite text editor, following this table:</p>
 <table>
 <thead>
 <tr class="header">
@@ -92,19 +93,6 @@ $ <span class="kw">git</span> config --global user.email <span class="st">&quot;
 <p>The three commands above only need to be run once: the flag <code>--global</code> tells Git to use the settings for every project on this machine.</p>
 <p>You can check your settings at any time:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --list</code></pre>
-<aside class="callout panel panel-info">
-<div class="panel-heading">
-<h2 id="proxy"><span class="glyphicon glyphicon-pushpin"></span>Proxy</h2>
-</div>
-<div class="panel-body">
-<p>In some networks you need to use a <a href="https://en.wikipedia.org/wiki/Proxy_server">proxy</a>. If this is the case you may also need to tell Git about the proxy:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global http.proxy proxy-url
-$ <span class="kw">git</span> config --global https.proxy proxy-url</code></pre>
-<p>To disable the proxy, use</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --unset http.proxy
-$ <span class="kw">git</span> config --global --unset https.proxy</code></pre>
-</div>
-</aside>
 <p><a href="02-create.html">Next - Creating a Repository</a></p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Collaborating
+subtitle: 6. Collaborating
 minutes: 55
 ---
 > ## Learning Objectives {.objectives}
@@ -12,18 +12,22 @@ minutes: 55
 
 We've seen how Version control can help us track the changes we make to our files, and to revisit any point in their history.
 
-**(SLIDE 17 - Git Workflow - Local Repo)**
+**(SLIDE 20 - Git Workflow - Local Repo)**
+
+(there are a few extra commands we haven't covered today for you to look at).
 
 Version control really comes into its own
 when we begin to collaborate with other people.
 
-**(SLIDE 18 - Collaboration)**
+
 
 ###The missing link###
 We already have most of the machinery we need to do this;
 the only thing missing is to copy changes from one repository to another.
 
-Systems like Git allow us to move work between any two repositories.
+**(SLIDE 21 Collaboration)**
+
+Systems like Git allow us to syncronise work between any two repositories.
 
 In practice,
 though, it's easiest to use one copy as a central hub,
@@ -34,16 +38,34 @@ to hold those master copies;  we'll explore the pros and cons of these a bit lat
 
 ###Exploring the collaborative process###
 
-But first let's explore the collaborative process, with a contrived example - Collaborating with ourselves.
+But first let's explore the collaborative process.  Time to buddy up.
 
-**(SLIDE 19 - Remote Repositories)**
 
-Earlier on we created two directories - laptop and desktop.  So far we have been working in laptop.  Let's use GitHub to set up a remote repository and start **"collaborating"** with our desktop - this could of course be another dev 
 
-###To GitHub###
-Let's start by sharing the changes we've made to our current project with the world.
+**(SLIDE 22 Collaboration)**
+
+So far we have been working in splendid isolation.  We're going to use GitHub to set up a remote repository and start **"collaborating"** with our partners.
+
+**Developer A** is going to take the role of the project originator. 
+**Developer B** is going to take now on the role of a colleague joining the project and collaborating in development. 
+
+Olivier is going to be my developer B.  Hello and welcome to the Transylvanian Space Agency, Olivier.
+
+In your pairs, decide who will be Developer A and Developer B while Olivier and I get set up.
+
+###Developer A - To GitHub ###
+
+**Now, Bs just wait for a moment and just watch A until told otherwise**
+
+**JUST A's**. Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
 then click on the icon in the top right corner to create a new repository called `planets`:
+
+You can optionally give it a friendly description and prove a README.md which is rendered on the front page of the web interface.
+
+Not that GitHub will host Public repositories free of charge, but makes a charge for Private ones.  You generally ensure that you really want to make your code publicly accessible, and that you're not breaching the terms of any license of shared code by making it publicly available.
+
+**BitBucket** offers free private repositories for teams of up to 5.  
 
 ![Creating a Repository on GitHub (Step 1)](img/github-create-repo-01.png)
 
@@ -51,21 +73,9 @@ Name your repository "planets" and then click "Create Repository":
 
 ![Creating a Repository on GitHub (Step 2)](img/github-create-repo-02.png)
 
-As soon as the repository is created,
-GitHub displays a page with a URL and some information on how to configure your local repository:
+We needs that URL from 
 
-![Creating a Repository on GitHub (Step 3)](img/github-create-repo-03.png)
-
-This effectively does the following on GitHub's servers:
-
-~~~ {.bash}
-$ mkdir planets
-$ cd planets
-$ git init
-~~~
-
-**(SLIDE 19 - Remote Repositories)**
-**(SLIDE 20 - Remote Repositories)**
+**(SLIDE 23 - Remote Repositories #1)**
 
 ###Connecting the remote repository###
 
@@ -139,7 +149,7 @@ Our local and remote repositories are now in sync.
 
 ###Testing Pull###
 
-We can pull changes from the remote repository to the local one as well:
+**Still as Dev. A** We can pull changes from the remote repository to the local one as well:
 
 ~~~ {.bash}
 $ git pull origin master
@@ -151,17 +161,24 @@ Already up-to-date.
 ~~~
 
 Pulling has no effect in this case
-because the two repositories are already synchronized.
+because the two repositories are already **synchronized**.
 If someone else had pushed some changes to the repository on GitHub,
 though, this command would download them to our local repository.
 
-###Cloning the desktop###
+Lastly, let's add **Developer B** as a collaborator on our project.  Return to the repos GitHub page, and click the Settings link on the right, followed by the collaborators link on the left.  Add Beveloper B.
 
-Now lets look at collaboration.  In this case it's with ourselves - on laptop and desktop, 
-but the principal, is the same.
+###Developer B - Cloning the remote repository###
+**(SLIDE 24 - Remote Repositories #2)**
+
+Now Developer B gets a go. **Developer A, you can take a break**
+First, we need to move our own files out of the way to avoid confusion: 
 
 ~~~ {.bash}
-$ cd ../../dtop
+$ cd
+$ mv planets planets.old
+~~~ 
+
+~~~ {.bash}
 $ git clone https://github.com/vlad/planets.git
 ~~~
 
@@ -169,16 +186,29 @@ $ git clone https://github.com/vlad/planets.git
 
 ![After Creating Clone of Repository](img/github-collaboration.svg)
 
-You can now start work on your desktop machine:
+Let check what we've got:
 
 ~~~ {.bash}
 $ cd planets
+$ ls
+~~~
+
+~~~ {.output}
+ mars.txt 
+~~~
+
+Lets expand our survey of suitable planets for exploration to the outer edge of the solar system:
+
+~~~ {.bash}
 $ nano pluto.txt
 $ cat pluto.txt
 ~~~
+
 ~~~ {.output}
 It is so a planet!
 ~~~
+
+
 ~~~ {.bash}
 $ git add pluto.txt
 $ git commit -m "Some notes about Pluto"
@@ -210,10 +240,12 @@ when we clone a repository.
 (This is why `origin` was a sensible choice earlier
 when we were setting up remotes by hand.)
 
-We can now download changes into the original repository on our machine:
+###Developer A: Pull in the changes###
+
+Developer A can now update their repository with the changes made by B:
 
 ~~~ {.bash}
-cd ../../ltop
+cd ~/planets
 $ git pull origin master
 ~~~
 ~~~ {.output}
@@ -230,19 +262,13 @@ Fast-forward
  create mode 100644 pluto.txt
 ~~~
 
+Hey look: We're collaborating!
+
+> ## Two way collaboration {.challenge}
+> Now Developer A can share their thoughts on Neptune.  Add / commit them to their local repository and push them to github.
+> Developer B can pull the updates
+
 **(SLIDE 21 - Git Workflow Remote Repositories)**
 
-###Wrap up###
-
-So, we've seen how we can use remote git repos to collaborate (with ourselves).
-
-
-For more for info see the Software Carpentry site:
-**(SLIDE 22 - What next)**
-
-That about wraps up what we can fit into this session, but you'll probably want to explore what happens when your commits conflict - **merging** and how to use development **branches**.
-
-
-
-We'll leave questions until the Q&A session
+[Next - Conflicts](07-conflict.html)
 

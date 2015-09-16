@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Conflicts
+subtitle: 7. Conflicts
 minutes: 15
 ---
 > ## Learning Objectives {.objectives}
@@ -31,7 +31,8 @@ The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
 
-Let's add a line to one partner's copy only:
+###Developer A###
+Let's add a line to Developer A's copy only:
 
 ~~~ {.bash}
 $ nano mars.txt
@@ -41,17 +42,17 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-This line added to Wolfman's copy
+Developer A added this line
 ~~~
 
 and then push the change to GitHub:
 
 ~~~ {.bash}
 $ git add mars.txt
-$ git commit -m "Adding a line in our home copy"
+$ git commit -m "Developer A added a line"
 ~~~
 ~~~ {.output}
-[master 5ae9631] Adding a line in our home copy
+[master 5ae9631] Developer A added a line
  1 file changed, 1 insertion(+)
 ~~~
 ~~~ {.bash}
@@ -67,8 +68,8 @@ To https://github.com/vlad/planets
    29aba7c..dabb4c8  master -> master
 ~~~
 
-Now let's have the other partner
-make a different change to their copy
+###Developer B###
+Now let's have Developer B make a different change to their copy
 *without* updating from GitHub:
 
 ~~~ {.bash}
@@ -79,17 +80,17 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-We added a different line in the other copy
+This was added by Dev B
 ~~~
 
 We can commit the change locally:
 
 ~~~ {.bash}
 $ git add mars.txt
-$ git commit -m "Adding a line in my copy"
+$ git commit -m "Developer B added a different line"
 ~~~
 ~~~ {.output}
-[master 07ebc69] Adding a line in my copy
+[master 07ebc69] Developer B added a different line
  1 file changed, 1 insertion(+)
 ~~~
 
@@ -143,9 +144,9 @@ Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 <<<<<<< HEAD
-We added a different line in the other copy
+This was added by Dev B
 =======
-This line added to Wolfman's copy
+Developer A added this line
 >>>>>>> dabb4c8c450e8475aee9b14b4383acc99f42af1d
 ~~~
 
@@ -255,14 +256,9 @@ the version control system is essentially trying to tell its users
 that they ought to clarify who's responsible for what,
 or find a way to divide the work up differently.
 
-> ## Solving Conflicts that You Create {.challenge}
+> ## Reverse {.challenge}
 >
-> Clone the repository created by your instructor.
-> Add a new file to it,
-> and modify an existing file (your instructor will tell you which one).
-> When asked by your instructor,
-> pull her changes from the repository to create a conflict,
-> then resolve it.
+Reverse
 
 > ## Conflicts on Non-textual files {.challenge}
 >

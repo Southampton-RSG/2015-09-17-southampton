@@ -150,7 +150,10 @@
 <h1>Control Flow: Repeating actions with loops</h1>
 <ul>
 <li>What a loop does?</li>
-<li>Writing loops to repeat simple calculations</li>
+<li>Writing loops to repeat simple calculations
+<ul>
+<li>Indexing/ Counting starts from <strong>0</strong></li>
+</ul></li>
 <li>Track changes to a loop variable as the loop runs</li>
 <li>Track changes to other variables as they are updated by a <code>for</code> loop</li>
 </ul>
@@ -179,6 +182,7 @@
 <li>Slicing
 <ul>
 <li>Subset of a list, called a <strong>Slice</strong>, by specifying two indices. The return value is a new list containing all the elements of the list, in order, starting with the first slice index, up to but not including the second slice index.</li>
+<li><strong>Difference between upper and lower bound is the number of values in the slice.</strong></li>
 </ul></li>
 </ul>
 </section>
@@ -211,6 +215,17 @@
 </section>
 <section id="indexing-in-a-numpy-2d-array" class="slide level2">
 <h1>Indexing in a NumPy 2D array</h1>
+<ul>
+<li>The indices are (row, column) instead of (column, row).</li>
+<li>Example Patient inflammation data who were given treatment for arthritis:
+<ul>
+<li><strong>Rows:</strong> Hold information for a single patient</li>
+<li><strong>Columns:</strong> Represent successive days</li>
+</ul></li>
+</ul>
+</section>
+<section id="cont..-2" class="slide level2">
+<h1>Cont..</h1>
 <figure>
 <img src="img/indexing2darray.png" />
 </figure>

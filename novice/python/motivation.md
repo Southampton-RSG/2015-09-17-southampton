@@ -96,6 +96,7 @@ subtitle: Why Python?
 
 -  What a loop does?
 -  Writing loops to repeat simple calculations
+      + Indexing/ Counting starts from **0**
 -  Track changes to a loop variable as the loop runs
 -  Track changes to other variables as they are updated by a `for` loop      
 
@@ -115,6 +116,7 @@ subtitle: Why Python?
      + Indexing for retrieving single elements works as usual in python and indexing by negative numbers starts counting from the end.
 -  Slicing
       + Subset of a list, called a **Slice**, by specifying two indices. The return value is a new list containing all the elements of the list, in order, starting with the first slice index, up to but not including the second slice index.
+      + **Difference between upper and lower bound is the number of values in the slice.**
       
 ## Indexing and Slicing a List Example
 
@@ -137,7 +139,14 @@ subtitle: Why Python?
 -  One-dimensional arrays are simple; on the surface they act similarly to Python lists.
  
 ## Indexing in a NumPy 2D array 
-   
+
+- The indices are (row, column) instead of (column, row).
+- Example Patient inflammation data who were given treatment for arthritis:
+     + **Rows:** Hold information for a single patient
+     + **Columns:**  Represent successive days
+
+## Cont..
+
    ![](img/indexing2darray.png) 
    
 ## Data visualisation using libraries

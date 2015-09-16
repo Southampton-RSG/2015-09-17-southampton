@@ -4,7 +4,7 @@ title: Building programs with Python
 subtitle: Challenges
 ---
 
->## Python basics: Variables, Arrays, Lists etc
+>## Python basics: Variables, Objects, Arrays, Lists etc
 
 > #### What's inside the box? {.challenge}
 >
@@ -27,6 +27,36 @@ subtitle: Challenges
 > third, fourth = second, first
 > print third, fourth
 > ~~~
+
+>## Loops
+
+> #### From 1 to N {.challenge}
+>
+> Python has a built-in function called `range` that creates a list of numbers:
+> `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
+> Using `range`,
+> write a loop to print the first 3 natural numbers:
+>
+> ~~~ {.python}
+> 1
+> 2
+> 3
+> ~~~
+
+> ## Computing powers with loops {.challenge}
+>
+> Exponentiation is built into Python:
+>
+> ~~~ {.python}
+> print(5 ** 3)
+>125
+> ~~~
+>
+>Write a loop that calculates the same result as `5 ** 3` using multiplication (and without exponentiation).
+
+>## Reverse a string {.challenge}
+>
+> Write a loop that takes a string, and produces a new string with the characters in reverse order, so `Newton` becomes `notweN`.
 
 > #### Slicing strings {.challenge}
 >
@@ -64,21 +94,6 @@ subtitle: Challenges
 >
 > Create a plot showing the standard deviation of the inflammation data for each day across all patients.
 > Hint: `data.std(axis=0)` gives you standard deviation.
-
->## Loops
-
-> #### From 1 to N {.challenge}
->
-> Python has a built-in function called `range` that creates a list of numbers:
-> `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
-> Using `range`,
-> write a loop that uses `range` to print the first 3 natural numbers:
->
-> ~~~ {.python}
-> 1
-> 2
-> 3
-> ~~~
 
 >## Making choices
 

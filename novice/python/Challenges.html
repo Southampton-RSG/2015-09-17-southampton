@@ -29,7 +29,7 @@
                     <a href="index.html"><h1 class="title">Building programs with Python</h1></a>
           <h2 class="subtitle">Challenges</h2>
           <blockquote>
-<h2>Python basics: Variables, Arrays, Lists etc</h2>
+<h2>Python basics: Variables, Objects, Arrays, Lists etc</h2>
 </blockquote>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
@@ -53,6 +53,39 @@ age = age + <span class="dv">20</span></code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">first, second = <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hopper&#39;</span>
 third, fourth = second, first
 <span class="dt">print</span> third, fourth</code></pre>
+</div>
+</section>
+<blockquote>
+<h2>Loops</h2>
+</blockquote>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h4><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h4>
+</div>
+<div class="panel-body">
+<p>Python has a built-in function called <code>range</code> that creates a list of numbers: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>. Using <code>range</code>, write a loop to print the first 3 natural numbers:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">1</span>
+<span class="dv">2</span>
+<span class="dv">3</span></code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Computing powers with loops</h2>
+</div>
+<div class="panel-body">
+<p>Exponentiation is built into Python:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="dv">5</span> ** <span class="dv">3</span>)
+<span class="dv">125</span></code></pre>
+<p>Write a loop that calculates the same result as <code>5 ** 3</code> using multiplication (and without exponentiation).</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Reverse a string</h2>
+</div>
+<div class="panel-body">
+<p>Write a loop that takes a string, and produces a new string with the characters in reverse order, so <code>Newton</code> becomes <code>notweN</code>.</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
@@ -90,20 +123,6 @@ third, fourth = second, first
 </div>
 <div class="panel-body">
 <p>Create a plot showing the standard deviation of the inflammation data for each day across all patients. Hint: <code>data.std(axis=0)</code> gives you standard deviation.</p>
-</div>
-</section>
-<blockquote>
-<h2>Loops</h2>
-</blockquote>
-<section class="challenge panel panel-success">
-<div class="panel-heading">
-<h4><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h4>
-</div>
-<div class="panel-body">
-<p>Python has a built-in function called <code>range</code> that creates a list of numbers: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">1</span>
-<span class="dv">2</span>
-<span class="dv">3</span></code></pre>
 </div>
 </section>
 <blockquote>

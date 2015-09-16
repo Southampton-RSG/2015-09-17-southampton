@@ -143,13 +143,13 @@ $ ls
 > file's disk space right away.
 
 Let's re-create that file
-and then move up one directory to `/Users/nelle` using `cd ..`:
+and then move up one directory using `cd ..`:
 
 ~~~ {.bash}
 $ pwd
 ~~~
 ~~~ {.output}
-/Users/nelle/thesis
+/Users/nelle/2015-09-17-southampton/novice/shell/test_directory/thesis
 ~~~
 ~~~ {.bash}
 $ nano draft.txt

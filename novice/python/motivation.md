@@ -151,6 +151,9 @@ subtitle: Why Python?
    
 ## Data visualisation using libraries
 
+* The purpose of computing is insight, not numbers.* - Richard Hamming
+
+-  Best way to develop insight is often to visualise data.
 -  Plotting data using `matplotlib` library
 
 ## Control Flow: Making choices

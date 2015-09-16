@@ -71,7 +71,7 @@
 <section id="why-teaching-python" class="slide level2">
 <h1>Why teaching Python?</h1>
 <ul>
-<li>Based on Southampton PhD students software usage survey conducted by SSI’s Policy researchers: <img src="img/wordle2.png" alt="Software survey word cloud" /></li>
+<li>Based on Southampton PhD students software usage survey conducted by SSI’s Policy researchers: <img src="img/wordle2.png" /></li>
 </ul>
 </section>
 <section id="python3" class="slide level2">
@@ -136,12 +136,38 @@
 <li>Track changes to other variables as they are updated by a <code>for</code> loop</li>
 </ul>
 </section>
+<section id="why-indentation" class="slide level2">
+<h1>Why indentation?</h1>
+<ul>
+<li>Studies show that’s what people actually pay attention to
+<ul>
+<li>Every textbook on C or Java has examples where indentation and bracing don’t match</li>
+</ul></li>
+<li>Doesn’t matter how much indentation you use, but the whole block must be consistent<br /></li>
+<li>Python Style Guide (PEP 8) recommends 4 spaces</li>
+<li>And no tab characters</li>
+</ul>
+</section>
 <section id="lists-in-python" class="slide level2">
 <h1>Lists in Python</h1>
 <ul>
 <li>Lists as arrays</li>
-<li>Indexing and Slicing</li>
+<li>Indexing
+<ul>
+<li>Indexing some single value or even a whole set of values from a given list.</li>
+<li>Indexing for retrieving single elements works as usual in python and indexing by negative numbers starts counting from the end.</li>
+</ul></li>
+<li>Slicing
+<ul>
+<li>Subset of a list, called a <strong>Slice</strong>, by specifying two indices. The return value is a new list containing all the elements of the list, in order, starting with the first slice index, up to but not including the second slice index.</li>
+</ul></li>
 </ul>
+</section>
+<section id="indexing-and-slicing-a-list-example" class="slide level2">
+<h1>Indexing and Slicing a List Example</h1>
+<figure>
+<img src="img/index_slice_list.png" />
+</figure>
 </section>
 <section id="using-python-libraries" class="slide level2">
 <h1>Using Python libraries</h1>
@@ -167,7 +193,7 @@
 <section id="indexing-in-a-numpy-2d-array" class="slide level2">
 <h1>Indexing in a NumPy 2D array</h1>
 <figure>
-<img src="img/indexing2darray.png" alt="Indexing 2D Numpy array" /><figcaption>Indexing 2D Numpy array</figcaption>
+<img src="img/indexing2darray.png" />
 </figure>
 </section>
 <section id="data-visualisation-using-libraries" class="slide level2">
@@ -180,19 +206,13 @@
 <h1>Control Flow: Making choices</h1>
 <ul>
 <li>Write conditional statements including <code>if</code>, <code>elif</code> and <code>else</code></li>
-<li>Evaluate expressions containing <code>and</code> and <code>or</code></li>
-</ul>
-</section>
-<section id="why-indentation" class="slide level2">
-<h1>Why indentation?</h1>
+<li>A few things to note about the syntax:
 <ul>
-<li>Studies show that’s what people actually pay attention to
-<ul>
-<li>Every textbook on C or Java has examples where indentation and bracing don’t match</li>
+<li>Each if/ else statement must close with a colon (:)</li>
+<li>Code to be executed as part of any <em>if/else</em> statement must be indented by four spaces.</li>
+<li>Although not explicitly required, every <em>if</em> statement must also include an <em>else</em> statement - it just makes for a better program.</li>
 </ul></li>
-<li>Doesn’t matter how much indentation you use, but the whole block must be consistent<br /></li>
-<li>Python Style Guide (PEP 8) recommends 4 spaces</li>
-<li>And no tab characters</li>
+<li>Evaluate expressions containing <code>and</code> and <code>or</code></li>
 </ul>
 </section>
 <section id="creating-functions" class="slide level2">

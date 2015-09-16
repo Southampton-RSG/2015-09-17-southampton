@@ -34,7 +34,7 @@ subtitle: Why Python?
 ## Why teaching Python?
 
 - Based on Southampton PhD students software usage survey conducted by SSI's Policy researchers:
-     ![Software survey word cloud](img/wordle2.png)
+     ![](img/wordle2.png)
 
 ## Python3
 
@@ -81,11 +81,28 @@ subtitle: Why Python?
 -  Writing loops to repeat simple calculations
 -  Track changes to a loop variable as the loop runs
 -  Track changes to other variables as they are updated by a `for` loop      
+
+## Why indentation?
+
+-  Studies show that's what people actually pay attention to
+       + Every textbook on C or Java has examples where indentation and bracing don't match
+-  Doesn't matter how much indentation you use, but the whole block must be consistent     
+-  Python Style Guide (PEP 8) recommends 4 spaces 
+-  And no tab characters
       
 ## Lists in Python
 
 -  Lists as arrays
--  Indexing and Slicing      
+-  Indexing  
+     + Indexing some single value or even a whole set of values from a given list.
+     + Indexing for retrieving single elements works as usual in python and indexing by negative numbers starts counting from the end.
+-  Slicing
+      + Subset of a list, called a **Slice**, by specifying two indices. The return value is a new list containing all the elements of the list, in order, starting with the first slice index, up to but not including the second slice index.
+      
+## Indexing and Slicing a List Example
+
+![](img/index_slice_list.png)      
+              
    
 ## Using Python libraries
 
@@ -104,7 +121,7 @@ subtitle: Why Python?
  
 ## Indexing in a NumPy 2D array 
    
-   ![Indexing 2D Numpy array](img/indexing2darray.png) 
+   ![](img/indexing2darray.png) 
    
 ## Data visualisation using libraries
 
@@ -113,15 +130,11 @@ subtitle: Why Python?
 ## Control Flow: Making choices
 
 -  Write conditional statements including `if`, `elif` and `else` 
+-  A few things to note about the syntax:
+      + Each if/ else statement must close with a colon (:)
+      + Code to be executed as part of any *if/else* statement must be indented by four spaces.
+      + Although not explicitly required, every *if* statement must also include an *else* statement - it just makes for a better program.
 -  Evaluate expressions containing `and` and `or`
-
-## Why indentation?
-
--  Studies show that's what people actually pay attention to
-       + Every textbook on C or Java has examples where indentation and bracing don't match
--  Doesn't matter how much indentation you use, but the whole block must be consistent     
--  Python Style Guide (PEP 8) recommends 4 spaces 
--  And no tab characters
   
 ## Creating Functions
 

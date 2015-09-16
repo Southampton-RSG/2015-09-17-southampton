@@ -85,7 +85,16 @@ subtitle: Why Python?
 ## Lists in Python
 
 -  Lists as arrays
--  Indexing and Slicing      
+-  Indexing  
+     + Indexing some single value or even a whole set of values from a given list.
+     + Indexing for retrieving single elements works as usual in python and indexing by negative numbers starts counting from the end.
+-  Slicing
+      + Subset of a list, called a **Slice**, by specifying two indices. The return value is a new list containing all the elements of the list, in order, starting with the first slice index, up to but not including the second slice index.
+      
+## Indexing and Slicing a List Example
+
+![Indexing and Slicing a List](img/index_slice_list.png)      
+              
    
 ## Using Python libraries
 

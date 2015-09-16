@@ -78,6 +78,21 @@ subtitle: Challenges
 > Given those answers,
 > explain what `element[1:-1]` does.
 
+
+>##Turn a string into a list {.challenge}
+>
+>Use a for-loop to convert the string "hello" into a list of letters:
+>
+>~~~ {.python}
+>["h", "e", "l", "l", "o"]
+>~~~
+>Hint: You can create an empty list like this:
+>
+>~~~ {.python}
+>my_list = []
+>~~~
+
+
 >## Using libraries
 
 > #### Thin slices {.challenge}

@@ -34,7 +34,7 @@ subtitle: Why Python?
 ## Why teaching Python?
 
 - Based on Southampton PhD students software usage survey conducted by SSI's Policy researchers:
-     ![Software survey word cloud](img/wordle2.png)
+     ![](img/wordle2.png)
 
 ## Python3
 
@@ -93,7 +93,7 @@ subtitle: Why Python?
       
 ## Indexing and Slicing a List Example
 
-![Indexing and Slicing a List](img/index_slice_list.png)      
+![](img/index_slice_list.png)      
               
    
 ## Using Python libraries
@@ -113,7 +113,7 @@ subtitle: Why Python?
  
 ## Indexing in a NumPy 2D array 
    
-   ![Indexing 2D Numpy array](img/indexing2darray.png) 
+   ![](img/indexing2darray.png) 
    
 ## Data visualisation using libraries
 

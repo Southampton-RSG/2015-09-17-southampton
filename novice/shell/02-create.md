@@ -8,7 +8,7 @@ minutes: 15
 >
 > *   Create new directories.
 > *   Create files in that hierarchy using an editor or by copying and renaming existing files.
-> *   Display the contents of a directory using the command line.
+> *   Display the contents of a file using the command line.
 > *   Delete specified files and/or directories.
 
 We now know how to explore files and directories,

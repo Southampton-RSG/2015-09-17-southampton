@@ -81,6 +81,14 @@ subtitle: Why Python?
 -  Writing loops to repeat simple calculations
 -  Track changes to a loop variable as the loop runs
 -  Track changes to other variables as they are updated by a `for` loop      
+
+## Why indentation?
+
+-  Studies show that's what people actually pay attention to
+       + Every textbook on C or Java has examples where indentation and bracing don't match
+-  Doesn't matter how much indentation you use, but the whole block must be consistent     
+-  Python Style Guide (PEP 8) recommends 4 spaces 
+-  And no tab characters
       
 ## Lists in Python
 
@@ -122,15 +130,11 @@ subtitle: Why Python?
 ## Control Flow: Making choices
 
 -  Write conditional statements including `if`, `elif` and `else` 
+-  A few things to note about the syntax:
+      + Each if/ else statement must close with a colon (:)
+      + Code to be executed as part of any *if/else* statement must be indented by four spaces.
+      + Although not explicitly required, every *if* statement must also include an *else* statement - it just makes for a better program.
 -  Evaluate expressions containing `and` and `or`
-
-## Why indentation?
-
--  Studies show that's what people actually pay attention to
-       + Every textbook on C or Java has examples where indentation and bracing don't match
--  Doesn't matter how much indentation you use, but the whole block must be consistent     
--  Python Style Guide (PEP 8) recommends 4 spaces 
--  And no tab characters
   
 ## Creating Functions
 

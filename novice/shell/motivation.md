@@ -72,7 +72,7 @@ If you haven't already, let's get a shell running!
 - **Mac OS X**: run **Terminal** under *Applications -> Utilities*
 - **Linux**: run **Terminal** application
 
-Then go to **https://etherpad.mozilla.org/SWC-Soton-Sep2015** and follow instructions for downloading repository and configuring environment.
+Then go to **http://bit.ly/SWCSoton** and follow instructions for downloading repository and configuring environment.
 
 ## Let us begin...
 
@@ -83,6 +83,10 @@ Then go to **https://etherpad.mozilla.org/SWC-Soton-Sep2015** and follow instruc
 ## An example filesystem II
 
 ![](img/home-directories.png)
+
+## Pipes example
+
+![](img/redirects-and-pipes.png)
 
 ## Limitations
 

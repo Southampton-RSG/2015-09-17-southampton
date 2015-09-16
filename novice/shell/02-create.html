@@ -36,7 +36,7 @@
 <ul>
 <li>Create new directories.</li>
 <li>Create files in that hierarchy using an editor or by copying and renaming existing files.</li>
-<li>Display the contents of a directory using the command line.</li>
+<li>Display the contents of a file using the command line.</li>
 <li>Delete specified files and/or directories.</li>
 </ul>
 </div>
@@ -94,9 +94,9 @@ it&#39;s &quot;share and thrive&quot;.</code></pre>
 <p>The Unix shell doesn’t have a trash bin that we can recover deleted files from (though most graphical interfaces to Unix do). Instead, when we delete files, they are unhooked from the file system so that their storage space on disk can be recycled. Tools for finding and recovering deleted files do exist, but there’s no guarantee they’ll work in any particular situation, since the computer may recycle the file’s disk space right away.</p>
 </div>
 </aside>
-<p>Let’s re-create that file and then move up one directory to <code>/Users/nelle</code> using <code>cd ..</code>:</p>
+<p>Let’s re-create that file and then move up one directory using <code>cd ..</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
-<pre class="output"><code>/Users/nelle/thesis</code></pre>
+<pre class="output"><code>/Users/nelle/2015-09-17-southampton/novice/shell/test_directory/thesis</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> draft.txt
 $ <span class="kw">ls</span></code></pre>
 <pre class="output"><code>draft.txt</code></pre>

@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 def running(values):
    result = []
    lastval = 0

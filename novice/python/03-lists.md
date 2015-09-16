@@ -163,7 +163,9 @@ odds[0]=17
 odds[1]=19
 ~~~
 
-Finally is it worth knowing that the list we assign to a slice doesn't have to be the same size as the slice - 
+**NOTE:**
+
+Finally it is worth knowing that the list we assign to a slice doesn't have to be the same size as the slice - 
 it simply replaces it even if it is a different size.
 
 ### Thin slices 
@@ -171,9 +173,9 @@ it simply replaces it even if it is a different size.
 The expression `element[3:3]` produces an [empty string](../../reference.html#empty-string),
  i.e., a string that contains no characters.
  
- ### Lists and Strings
+### Lists and Strings
  
- There is one important difference between lists and strings:
+There is one important difference between lists and strings:
 we can change the values in a list,
 but we cannot change the characters in a string.
 For example:
@@ -316,6 +318,13 @@ for i in range(10):
 ~~~
 
 only to discover that this doesn't work because we can't assign to a list element that doesn't already exist.
+
+~~~{.error}
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+IndexError: list assignment index out of range
+~~~
+
 One solution is to use the append method to add elements one by one:
 
 ~~~ {.python}

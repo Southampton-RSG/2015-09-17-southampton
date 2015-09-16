@@ -84,6 +84,10 @@ Then go to **https://etherpad.mozilla.org/SWC-Soton-Sep2015** and follow instruc
 
 ![](img/home-directories.png)
 
+## Pipes example
+
+![](img/redirects-and-pipes.png)
+
 ## Limitations
 
 - Bash scripts good for quickly automating repetitive tasks that call other programs... up to a point!

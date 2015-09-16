@@ -9,11 +9,15 @@ minutes: 15
 > *   Explain what conflicts are and when they can occur.
 > *   Resolve conflicts resulting from a merge.
 
-As soon as people can work in parallel,
-someone's going to step on someone else's toes.
+As soon as people can work in **parallel**,
+someone is going to step on someone else's toes.
+
+
 This will even happen with a single person:
 if we are working on a piece of software on both our laptop and a server in the lab,
 we could make different changes to each copy.
+
+These situations are called **conflicts**
 Version control helps us manage these [conflicts](reference.html#conflicts)
 by giving us tools to [resolve](reference.html#resolve) overlapping changes.
 
@@ -30,6 +34,8 @@ Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
+
+**(SLIDE 27 - Collaboration - conflicts #1)**
 
 ###Developer A###
 Let's add a line to Developer A's copy only:
@@ -67,6 +73,8 @@ Total 3 (delta 1), reused 0 (delta 0)
 To https://github.com/vlad/planets
    29aba7c..dabb4c8  master -> master
 ~~~
+
+**(SLIDE 28 - Collaboration - conflicts #2)**
 
 ###Developer B###
 Now let's have Developer B make a different change to their copy
@@ -215,7 +223,9 @@ To https://github.com/vlad/planets.git
 
 Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again
-when the collaborator who made the first change pulls again:
+when **Developer A** who made the first change pulls again:
+
+### Developer A###
 
 ~~~ {.bash}
 $ git pull origin master

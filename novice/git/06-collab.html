@@ -42,41 +42,40 @@
 </ul>
 </div>
 </section>
-<p>We’ve seen how Version control can help us track the changes we make to our files, and to revisit any point in their history.</p>
+<p>So far, we’ve seen how Version control can help us <strong>track the changes</strong> we make to our files, and to <strong>revisit</strong> any point in their history.</p>
 <p><strong>(SLIDE 20 - Git Workflow - Local Repo)</strong></p>
 <p>(there are a few extra commands we haven’t covered today for you to look at).</p>
-<p>Version control really comes into its own when we begin to collaborate with other people.</p>
+<p>But, version control really comes into its own when we begin to <strong>collaborate</strong> with other people.</p>
 <h3 id="the-missing-link">The missing link</h3>
 <p>We already have most of the machinery we need to do this; the only thing missing is to copy changes from one repository to another.</p>
 <p><strong>(SLIDE 21 Collaboration)</strong></p>
-<p>Systems like Git allow us to syncronise work between any two repositories.</p>
+<p>Systems like Git allow us to synchronise work between any two repositories.</p>
 <p>In practice, though, it’s easiest to use one copy as a central hub, and to keep it on the web rather than on someone’s laptop.</p>
 <p>Many programmers use hosting services like GitHub or BitBucket to hold those master copies; we’ll explore the pros and cons of these a bit later.</p>
 <h3 id="exploring-the-collaborative-process">Exploring the collaborative process</h3>
 <p>But first let’s explore the collaborative process. Time to buddy up.</p>
 <p><strong>(SLIDE 22 Collaboration)</strong></p>
-<p>So far we have been working in splendid isolation. We’re going to use GitHub to set up a remote repository and start <strong>“collaborating”</strong> with our partners.</p>
+<p>So far we have been working in splendid isolation. We’re going to use <strong>GitHub</strong> to set up a remote repository and start <strong>“collaborating”</strong> with our partners.</p>
 <p><strong>Developer A</strong> is going to take the role of the project originator. <strong>Developer B</strong> is going to take now on the role of a colleague joining the project and collaborating in development.</p>
 <p>Olivier is going to be my developer B. Hello and welcome to the Transylvanian Space Agency, Olivier.</p>
 <p>In your pairs, decide who will be Developer A and Developer B while Olivier and I get set up.</p>
 <h3 id="developer-a---to-github">Developer A - To GitHub</h3>
-<p><strong>Now, Bs just wait for a moment and just watch A until told otherwise</strong></p>
-<p><strong>JUST A’s</strong>. Let’s start by sharing the changes we’ve made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a new repository called <code>planets</code>:</p>
-<p>You can optionally give it a friendly description and prove a README.md which is rendered on the front page of the web interface.</p>
-<p>Not that GitHub will host Public repositories free of charge, but makes a charge for Private ones. You generally ensure that you really want to make your code publicly accessible, and that you’re not breaching the terms of any license of shared code by making it publicly available.</p>
-<p><strong>BitBucket</strong> offers free private repositories for teams of up to 5.</p>
+<p><strong>Now, Bs just sit back for a moment and watch A until told otherwise</strong></p>
+<p><strong>JUST A’s</strong>. Let’s start by sharing the changes we’ve made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a <strong>new repository</strong> called <code>planets</code>:</p>
 <div class="figure">
 <img src="img/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" /><p class="caption">Creating a Repository on GitHub (Step 1)</p>
 </div>
-<p>Name your repository “planets” and then click “Create Repository”:</p>
+<p><strong>Name your repository</strong> “planets” You can optionally give it a friendly <strong>description</strong> and prove a <strong>README.md</strong> which is rendered on the front page of the web interface.</p>
+<p>GitHub will host <strong>Publicly</strong> accessible repositories <strong>free</strong> of charge, but makes a charge for Private ones. <strong>BitBucket</strong> offers free private repositories for teams of up to 5.</p>
+<p>You need to ensure that you really want to make your code publicly accessible, you’ve thought about <strong>licensing</strong>, and that you’re not breaching the terms of any license of shared code by making it publicly available.</p>
+<p>and then click “Create Repository”:</p>
 <div class="figure">
 <img src="img/github-create-repo-02.png" alt="Creating a Repository on GitHub (Step 2)" /><p class="caption">Creating a Repository on GitHub (Step 2)</p>
 </div>
-<p>We needs that URL from</p>
 <p><strong>(SLIDE 23 - Remote Repositories #1)</strong></p>
 <h3 id="connecting-the-remote-repository">Connecting the remote repository</h3>
-<p>Our local repository still contains our earlier work on <code>mars.txt</code>, but the remote repository on GitHub doesn’t contain any files yet:</p>
-<p>The next step is to connect the two repositories.</p>
+<p>Our <strong>local</strong> repository still contains our earlier work on <code>mars.txt</code>, but the <strong>remote</strong> repository on GitHub doesn’t contain any files yet:</p>
+<p>The next step is to <strong>connect</strong> the two repositories.</p>
 <p>We do this by making the GitHub repository a <a href="reference.html#remote">remote</a> for the local repository. A <strong>remote</strong> is a repository conected to another in such way that both can be kept in sync exchanging commits.</p>
 <p>The home page of the repository on GitHub includes the string we need to identify it:</p>
 <div class="figure">
@@ -84,9 +83,8 @@
 </div>
 <p>Copy that URL from the browser, go into the local <code>planets</code> repository, and run this command:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/vlad/planets.git</code></pre>
-<p>The name <code>origin</code> is a local nickname for your remote repository: we could use something else if we wanted to, but <code>origin</code> is conventional.</p>
-<p>Make sure to use the URL for your repository rather than Vlad’s: the only difference should be your username instead of <code>vlad</code>.</p>
-<p>We can check that the command has worked by running <code>git remote -v</code>:</p>
+<p>The name <code>origin</code> is a local nickname for your remote repository: we could use something else if we wanted to, but <code>origin</code> is conventional, and will come in useful later.</p>
+<p>Make sure to use the URL for your repository rather than Vlad’s: the only difference should be your username instead of <code>vlad</code>. : Where to Find Repository URL on GitHub We can check that the command has worked by running <code>git remote -v</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote -v</code></pre>
 <pre class="output"><code>origin   https://github.com/vlad/planets.git (push)
 origin   https://github.com/vlad/planets.git (fetch)</code></pre>
@@ -101,18 +99,18 @@ Total 9 (delta 2), reused 0 (delta 0)
 To https://github.com/vlad/planets
  * [new branch]      master -&gt; master
 Branch master set up to track remote branch master from origin.</code></pre>
-<p>The push command takes two arguments, the remote name (‘origin’) and a branch name (‘master’).</p>
+<p>The push command takes two arguments, the <strong>remote name</strong> (‘origin’) and a <strong>branch name</strong> (‘master’).</p>
 <p>We haven’t yet discussed <strong>branching</strong> yet, and we won’t have time to do so today.</p>
 <p>But this is a feature common to almost all version control systems and gives you the ability to diverge from the main line of development and to continue to do work without messing with that main line. The main (default) branch is the master.</p>
 <p>At a later time you can re-integrate branches to the master.</p>
-<p>Our local and remote repositories are now in sync.</p>
+<p>Our local and remote repositories are now <strong>in sync</strong>!</p>
 <h3 id="testing-pull">Testing Pull</h3>
-<p><strong>Still as Dev. A</strong> We can pull changes from the remote repository to the local one as well:</p>
+<p><strong>Still as Dev. A</strong> We can <strong>pull</strong> changes from the remote repository to the local one as well:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
 <pre class="output"><code>From https://github.com/vlad/planets
  * branch            master     -&gt; FETCH_HEAD
 Already up-to-date.</code></pre>
-<p>Pulling has no effect in this case because the two repositories are already <strong>synchronized</strong>. If someone else had pushed some changes to the repository on GitHub, though, this command would download them to our local repository.</p>
+<p>Pulling has no effect in this case because the two repositories are already <strong>synchronized</strong>. If someone else had pushed some changes to the repository on GitHub, this command would download them to our local repository.</p>
 <p>Lastly, let’s add <strong>Developer B</strong> as a collaborator on our project. Return to the repos GitHub page, and click the Settings link on the right, followed by the collaborators link on the left. Add Beveloper B.</p>
 <h3 id="developer-b---cloning-the-remote-repository">Developer B - Cloning the remote repository</h3>
 <p><strong>(SLIDE 24 - Remote Repositories #2)</strong></p>
@@ -121,9 +119,6 @@ Already up-to-date.</code></pre>
 $ <span class="kw">mv</span> planets planets.old</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/vlad/planets.git</code></pre>
 <p><code>git clone</code> creates a fresh local copy of a remote repository.</p>
-<div class="figure">
-<img src="img/github-collaboration.svg" alt="After Creating Clone of Repository" /><p class="caption">After Creating Clone of Repository</p>
-</div>
 <p>Let check what we’ve got:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> planets
 $ <span class="kw">ls</span></code></pre>
@@ -146,6 +141,7 @@ Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/vlad/planets.git
    9272da5..29aba7c  master -&gt; master</code></pre>
 <p>Note that we didn’t have to create a remote called <code>origin</code>: Git does this automatically, using that name, when we clone a repository. (This is why <code>origin</code> was a sensible choice earlier when we were setting up remotes by hand.)</p>
+<p><strong>(SLIDE 25 - Collaboration: Remote Repositories #3)</strong></p>
 <h3 id="developer-a-pull-in-the-changes">Developer A: Pull in the changes</h3>
 <p>Developer A can now update their repository with the changes made by B:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> ~/planets
@@ -164,13 +160,13 @@ Fast-forward
 <p>Hey look: We’re collaborating!</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Two way collaboration</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Exercise: Two way collaboration</h2>
 </div>
 <div class="panel-body">
 <p>Now Developer A can share their thoughts on Neptune. Add / commit them to their local repository and push them to github. Developer B can pull the updates</p>
 </div>
 </section>
-<p><strong>(SLIDE 21 - Git Workflow Remote Repositories)</strong></p>
+<p><strong>(SLIDE 26 - Exercise - Remote Repositories #4)</strong></p>
 <p><a href="07-conflict.html">Next - Conflicts</a></p>
         </div>
       </div>

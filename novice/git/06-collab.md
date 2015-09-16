@@ -10,14 +10,14 @@ minutes: 55
 > *   Explain what happens when a remote repository is cloned.
 > *   Explain what happens when changes are pushed to or pulled from a remote repository.
 
-We've seen how Version control can help us track the changes we make to our files, and to revisit any point in their history.
+So far, we've seen how Version control can help us **track the changes** we make to our files, and to **revisit** any point in their history.
 
 **(SLIDE 20 - Git Workflow - Local Repo)**
 
 (there are a few extra commands we haven't covered today for you to look at).
 
-Version control really comes into its own
-when we begin to collaborate with other people.
+But, version control really comes into its own
+when we begin to **collaborate** with other people.
 
 
 
@@ -27,7 +27,7 @@ the only thing missing is to copy changes from one repository to another.
 
 **(SLIDE 21 Collaboration)**
 
-Systems like Git allow us to syncronise work between any two repositories.
+Systems like Git allow us to synchronise work between any two repositories.
 
 In practice,
 though, it's easiest to use one copy as a central hub,
@@ -44,7 +44,7 @@ But first let's explore the collaborative process.  Time to buddy up.
 
 **(SLIDE 22 Collaboration)**
 
-So far we have been working in splendid isolation.  We're going to use GitHub to set up a remote repository and start **"collaborating"** with our partners.
+So far we have been working in splendid isolation.  We're going to use **GitHub** to set up a remote repository and start **"collaborating"** with our partners.
 
 **Developer A** is going to take the role of the project originator. 
 **Developer B** is going to take now on the role of a colleague joining the project and collaborating in development. 
@@ -55,34 +55,38 @@ In your pairs, decide who will be Developer A and Developer B while Olivier and 
 
 ###Developer A - To GitHub ###
 
-**Now, Bs just wait for a moment and just watch A until told otherwise**
+**Now, Bs just sit back for a moment and watch A until told otherwise**
 
 **JUST A's**. Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
-then click on the icon in the top right corner to create a new repository called `planets`:
+then click on the icon in the top right corner to create a **new repository** called `planets`:
 
-You can optionally give it a friendly description and prove a README.md which is rendered on the front page of the web interface.
 
-Not that GitHub will host Public repositories free of charge, but makes a charge for Private ones.  You generally ensure that you really want to make your code publicly accessible, and that you're not breaching the terms of any license of shared code by making it publicly available.
 
-**BitBucket** offers free private repositories for teams of up to 5.  
 
 ![Creating a Repository on GitHub (Step 1)](img/github-create-repo-01.png)
 
-Name your repository "planets" and then click "Create Repository":
+
+**Name your repository** "planets" 
+You can optionally give it a friendly **description** and prove a **README.md** which is rendered on the front page of the web interface.
+
+GitHub will host **Publicly** accessible repositories **free** of charge, but makes a charge for Private ones.  **BitBucket** offers free private repositories for teams of up to 5.  
+
+You need to ensure that you really want to make your code publicly accessible, you've thought about **licensing**, and that you're not breaching the terms of any license of shared code by making it publicly available.
+
+and then click "Create Repository":
 
 ![Creating a Repository on GitHub (Step 2)](img/github-create-repo-02.png)
 
-We needs that URL from 
 
 **(SLIDE 23 - Remote Repositories #1)**
 
 ###Connecting the remote repository###
 
-Our local repository still contains our earlier work on `mars.txt`,
-but the remote repository on GitHub doesn't contain any files yet:
+Our **local** repository still contains our earlier work on `mars.txt`,
+but the **remote** repository on GitHub doesn't contain any files yet:
 
-The next step is to connect the two repositories.
+The next step is to **connect** the two repositories.
 
 We do this by making the GitHub repository a [remote](reference.html#remote)
 for the local repository.  A **remote** is a repository conected to another in such way that both can be kept in sync exchanging commits.
@@ -102,11 +106,12 @@ $ git remote add origin https://github.com/vlad/planets.git
 
 The name `origin` is a local nickname for your remote repository:
 we could use something else if we wanted to,
-but `origin` is conventional.
+but `origin` is conventional, and will come in useful later.
 
 Make sure to use the URL for your repository rather than Vlad's:
 the only difference should be your username instead of `vlad`.
-
+:
+Where to Find Repository URL on GitHub
 We can check that the command has worked by running `git remote -v`:
 
 ~~~ {.bash}
@@ -135,7 +140,7 @@ To https://github.com/vlad/planets
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
-The push command takes two arguments, the remote name ('origin') and a branch name ('master').
+The push command takes two arguments, the **remote name** ('origin') and a **branch name** ('master').
 
 We haven't yet discussed **branching** yet, and we won't have time to do so today.
 
@@ -145,11 +150,11 @@ and to continue to do work without messing with that main line.  The main (defau
 
 At a later time you can re-integrate branches to the master.
 
-Our local and remote repositories are now in sync.
+Our local and remote repositories are now **in sync**!
 
 ###Testing Pull###
 
-**Still as Dev. A** We can pull changes from the remote repository to the local one as well:
+**Still as Dev. A**  We can **pull** changes from the remote repository to the local one as well:
 
 ~~~ {.bash}
 $ git pull origin master
@@ -162,8 +167,7 @@ Already up-to-date.
 
 Pulling has no effect in this case
 because the two repositories are already **synchronized**.
-If someone else had pushed some changes to the repository on GitHub,
-though, this command would download them to our local repository.
+If someone else had pushed some changes to the repository on GitHub, this command would download them to our local repository.
 
 Lastly, let's add **Developer B** as a collaborator on our project.  Return to the repos GitHub page, and click the Settings link on the right, followed by the collaborators link on the left.  Add Beveloper B.
 
@@ -184,7 +188,6 @@ $ git clone https://github.com/vlad/planets.git
 
 `git clone` creates a fresh local copy of a remote repository.
 
-![After Creating Clone of Repository](img/github-collaboration.svg)
 
 Let check what we've got:
 
@@ -240,6 +243,8 @@ when we clone a repository.
 (This is why `origin` was a sensible choice earlier
 when we were setting up remotes by hand.)
 
+**(SLIDE 25 - Collaboration: Remote Repositories #3)**
+
 ###Developer A: Pull in the changes###
 
 Developer A can now update their repository with the changes made by B:
@@ -264,11 +269,11 @@ Fast-forward
 
 Hey look: We're collaborating!
 
-> ## Two way collaboration {.challenge}
+> ## Exercise: Two way collaboration {.challenge}
 > Now Developer A can share their thoughts on Neptune.  Add / commit them to their local repository and push them to github.
 > Developer B can pull the updates
 
-**(SLIDE 21 - Git Workflow Remote Repositories)**
+**(SLIDE 26 - Exercise - Remote Repositories #4)**
 
 [Next - Conflicts](07-conflict.html)
 

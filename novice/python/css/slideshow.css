@@ -647,7 +647,7 @@ div.figure p.caption {
   align-content: center;
 }
 .slide.image-stripes img {
-  height: 400px;
+  height: 250px;
   max-width: none;
   position: relative;
   left: 50%;

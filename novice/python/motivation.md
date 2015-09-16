@@ -56,7 +56,23 @@ subtitle: Why Python?
 -  how to correctly evaluate expressions: making choices using conditionals 
 -  why we should divide programs into small, single-purpose blocks of code: creating functions
 -  how to read data from standard input in a program so that it can be used in a pipeline
-     
+
+## Turning on Python Interpreter
+
+- The interpreter provides an interactive environment to play with the language
+- Open a terminal window and type **python3.4**     
+- If on windows open **Git Bash** (covered in Shell session)
+- At the prompt type 'hello world!'
+  ![](img/hello.png)
+
+## Python Overview
+
+*From Learning Python:*
+- Programs are composed of modules
+- Modules contain statements
+- Statements contain expressions
+- Expressions create and process objects
+
 ## Basics: Variables, Objects, types and Data Structures
 
 - Introduction to Python variables

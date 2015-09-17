@@ -132,6 +132,8 @@ subtitle: Why Python?
 ## NumPy Arrays
 
 -  NumPy arrays and operations on arrays of data
+   
+   ![](img/numpy_array_dims.png)
 
 ## NumPy arrays: Indexing and Slicing
 
@@ -148,10 +150,6 @@ subtitle: Why Python?
 ## Cont..
 
    ![](img/indexing2darray.png) 
-
-## Operations across axes (2D NumPy Array)
-
-    ![](img/python-operations-across-axes.svg)
    
 ## Data visualisation using libraries
 

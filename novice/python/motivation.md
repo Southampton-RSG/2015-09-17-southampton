@@ -179,4 +179,15 @@ subtitle: Why Python?
 -  Handling flags and files separately in a command-line program
 -  Reading data from standard input in a program 
 
+## Wrap-up Challenge: Joining the dots
+
+**Write a python script (function) for Fahrenheit to Celsius temperature conversion and stores the output in a file.**
+
+- Hint (Tools to be used):
+     + Unix pipes and filters
+     + Python functions
+     + Command-line programs
+     + Using Fahr_to_kelvin() and Kelvin_to_celsius() functions
+
+
 ##  Thank You!

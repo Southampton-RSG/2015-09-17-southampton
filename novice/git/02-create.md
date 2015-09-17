@@ -8,18 +8,18 @@ minutes: 10
 > 
 > *   Explain how to create a Git repository locally.
 
-**( SLIDE 12 - Creating a Repository)**
+![Creating a Repository](img/slides/version-control-with-git-slides - 12.jpg)
 
-Once Git is configured,
-we can start using it.
-Let's create a directory for our work.
+So, first Let's create a directory for our work.
 
 ~~~ {.bash}
 $ mkdir planets
 $ cd planets
 ~~~
+Once Git is configured,
+we can start using it.
 
-Now lets tell Git to make it a [repository](reference.html#repository)&mdash; A storage area where a version control system stores the full history of commits of a project and information about who changed what, when.
+Now, lets tell Git to create a [repository](reference.html#repository)&mdash; A storage area where git records the full history of commits of a project and information about **who** changed **what** and **when**.
 
 ~~~ {.bash}
 $ git init
@@ -32,7 +32,9 @@ it appears that nothing has changed:
 $ ls
 ~~~
 
-But if we add the `-a` flag to show everything,
+
+
+But, if we add the `-a` flag to show everything,
 we can see that Git has created a hidden directory called `.git`:
 
 ~~~ {.bash}
@@ -42,12 +44,12 @@ $ ls -a
 .	..	.git
 ~~~
 
-Git stores information about the project in this special sub-directory.
+Git stores information about the project in here.
 If we ever delete it,
 we will lose the project's history.
 
 We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+by asking Git to tell us the status of our project with the **status** command:
 
 ~~~ {.bash}
 $ git status
@@ -59,7 +61,7 @@ $ git status
 #
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
-A branch is an independent line of development.  We have only one, and the default name is **master**.
+A **branch** is an independent line of development.  We have only one, and the default name is **master**.
 
 
 [Next - Tracking Changes](03-changes.html)

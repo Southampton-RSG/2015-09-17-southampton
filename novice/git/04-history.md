@@ -10,18 +10,19 @@ minutes: 25
 > *   Compare files with old versions of themselves.
 > *   Restore old versions of files.
 
-**(SLIDE 17 - Git diff #2)**
+![Git diff #2](img/slides/version-control-with-git-slides - 17.jpg)
 
 ###Relative History###
 
-If we want to see what we changed when,
-we use `git diff` again,
+Let's look a bit deeper at how we can see **what we changed when**
+
+We use `git diff` again,
 but refer to old versions
 using the notation `HEAD~1`, `HEAD~2`, and so on.
 
-**HEAD** is the most recent end of the chain of revisions.
+**HEAD** is the conventional name used to refer to the **most recent** end of the chain of revisions.
 
-we can refer to previous revisions using the `~` notation,
+We can refer to previous revisions using the `~` notation,
 so `HEAD~1` (pronounced "head minus one")
 means "the previous revision",
 while `HEAD~123` goes back 123 revisions from where we are now.
@@ -54,11 +55,11 @@ index df0654a..b36abfd 100644
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
-And here we see the state before the last **two** commits, HEAD minus2 
+And here we see the state **before the last two commits**, HEAD minus2 
 
 ###Absolute History###
 
-We can also refer to revisions using
+So, that's useful as far as it goes, but we can also refer to revisions using
 those long strings of digits and letters
 that `git log` displays.
 
@@ -103,14 +104,14 @@ index df0654a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ~~~
 
-**(SLIDE 18 - Restoring Files)**
+![Restoring Files](img/slides/version-control-with-git-slides - 18.jpg)
+
 ###Restoring Files###
 
 All right:
-we can save changes to files and see what we've changed&mdash;how
-can we restore older versions of things?
+we can **save changes** to files and **see what we've changed** &mdash; suppose we need to **restore** older versions of things?
 
-Let's suppose we accidentally overwrite our file:
+Let's suppose we **accidentally** overwrite our file:
 
 ~~~ {.bash}
 $ nano mars.txt
@@ -167,9 +168,7 @@ we can use a revision identifier instead:
 $ git checkout <last but one rev> mars.txt
 ~~~
 
-**(SLIDE 19 - Restoration)**
-
-![The Git Staging Area](img/git-checkout.svg)
+![Restoring Files](img/slides/version-control-with-git-slides - 19.jpg)
 
 The fact that files can be reverted one by one
 tends to change the way people organize their work.

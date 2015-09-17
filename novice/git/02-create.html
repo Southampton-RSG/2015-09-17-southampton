@@ -40,26 +40,29 @@
 </ul>
 </div>
 </section>
-<p><strong>( SLIDE 12 - Creating a Repository)</strong></p>
-<p>Once Git is configured, we can start using it. Let’s create a directory for our work.</p>
+<div class="figure">
+<img src="img/slides/version-control-with-git-slides%20-%2012.jpg" alt="Creating a Repository" /><p class="caption">Creating a Repository</p>
+</div>
+<p>So, first Let’s create a directory for our work.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets</code></pre>
-<p>Now lets tell Git to make it a <a href="reference.html#repository">repository</a>— A storage area where a version control system stores the full history of commits of a project and information about who changed what, when.</p>
+<p>Once Git is configured, we can start using it.</p>
+<p>Now, lets tell Git to create a <a href="reference.html#repository">repository</a>— A storage area where git records the full history of commits of a project and information about <strong>who</strong> changed <strong>what</strong> and <strong>when</strong>.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre>
 <p>If we use <code>ls</code> to show the directory’s contents, it appears that nothing has changed:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
-<p>But if we add the <code>-a</code> flag to show everything, we can see that Git has created a hidden directory called <code>.git</code>:</p>
+<p>But, if we add the <code>-a</code> flag to show everything, we can see that Git has created a hidden directory called <code>.git</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -a</code></pre>
 <pre class="output"><code>.   ..  .git</code></pre>
-<p>Git stores information about the project in this special sub-directory. If we ever delete it, we will lose the project’s history.</p>
-<p>We can check that everything is set up correctly by asking Git to tell us the status of our project:</p>
+<p>Git stores information about the project in here. If we ever delete it, we will lose the project’s history.</p>
+<p>We can check that everything is set up correctly by asking Git to tell us the status of our project with the <strong>status</strong> command:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code># On branch master
 #
 # Initial commit
 #
 nothing to commit (create/copy files and use &quot;git add&quot; to track)</code></pre>
-<p>A branch is an independent line of development. We have only one, and the default name is <strong>master</strong>.</p>
+<p>A <strong>branch</strong> is an independent line of development. We have only one, and the default name is <strong>master</strong>.</p>
 <p><a href="03-changes.html">Next - Tracking Changes</a></p>
         </div>
       </div>

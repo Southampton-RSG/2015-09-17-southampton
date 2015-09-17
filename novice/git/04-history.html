@@ -42,11 +42,14 @@
 </ul>
 </div>
 </section>
-<p><strong>(SLIDE 17 - Git diff #2)</strong></p>
+<div class="figure">
+<img src="img/slides/version-control-with-git-slides%20-%2017.jpg" alt="Git diff #2" /><p class="caption">Git diff #2</p>
+</div>
 <h3 id="relative-history">Relative History</h3>
-<p>If we want to see what we changed when, we use <code>git diff</code> again, but refer to old versions using the notation <code>HEAD~1</code>, <code>HEAD~2</code>, and so on.</p>
-<p><strong>HEAD</strong> is the most recent end of the chain of revisions.</p>
-<p>we can refer to previous revisions using the <code>~</code> notation, so <code>HEAD~1</code> (pronounced “head minus one”) means “the previous revision”, while <code>HEAD~123</code> goes back 123 revisions from where we are now.</p>
+<p>Let’s look a bit deeper at how we can see <strong>what we changed when</strong></p>
+<p>We use <code>git diff</code> again, but refer to old versions using the notation <code>HEAD~1</code>, <code>HEAD~2</code>, and so on.</p>
+<p><strong>HEAD</strong> is the conventional name used to refer to the <strong>most recent</strong> end of the chain of revisions.</p>
+<p>We can refer to previous revisions using the <code>~</code> notation, so <code>HEAD~1</code> (pronounced “head minus one”) means “the previous revision”, while <code>HEAD~123</code> goes back 123 revisions from where we are now.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff HEAD~1 mars.txt</code></pre>
 <pre class="output"><code>diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
@@ -66,9 +69,9 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
-<p>And here we see the state before the last <strong>two</strong> commits, HEAD minus2</p>
+<p>And here we see the state <strong>before the last two commits</strong>, HEAD minus2</p>
 <h3 id="absolute-history">Absolute History</h3>
-<p>We can also refer to revisions using those long strings of digits and letters that <code>git log</code> displays.</p>
+<p>So, that’s useful as far as it goes, but we can also refer to revisions using those long strings of digits and letters that <code>git log</code> displays.</p>
 <p>These are unique IDs for the changes, and “unique” really does mean unique: every change to any set of files on any machine has a unique 40-character identifier. (A SHA-1 hash of the new, post-commit state of the repository).</p>
 <p>Our first commit was given the ID: <strong>(bottom ID from git log)</strong></p>
 <p>f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let’s try this:</p>
@@ -91,9 +94,12 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
-<p><strong>(SLIDE 18 - Restoring Files)</strong> ###Restoring Files###</p>
-<p>All right: we can save changes to files and see what we’ve changed—how can we restore older versions of things?</p>
-<p>Let’s suppose we accidentally overwrite our file:</p>
+<div class="figure">
+<img src="img/slides/version-control-with-git-slides%20-%2018.jpg" alt="Restoring Files" /><p class="caption">Restoring Files</p>
+</div>
+<h3 id="restoring-files">Restoring Files</h3>
+<p>All right: we can <strong>save changes</strong> to files and <strong>see what we’ve changed</strong> — suppose we need to <strong>restore</strong> older versions of things?</p>
+<p>Let’s suppose we <strong>accidentally</strong> overwrite our file:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
 $ <span class="kw">cat</span> mars.txt</code></pre>
 <pre class="output"><code>We will need to manufacture our own oxygen</code></pre>
@@ -118,9 +124,8 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <p>In this case, we’re telling Git that we want to recover the version of the file recorded in <code>HEAD</code>, which is the last saved revision.</p>
 <p>If we want to go back even further, we can use a revision identifier instead:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout <span class="kw">&lt;</span>last but one rev<span class="kw">&gt;</span> mars.txt</code></pre>
-<p><strong>(SLIDE 19 - Restoration)</strong></p>
 <div class="figure">
-<img src="img/git-checkout.svg" alt="The Git Staging Area" /><p class="caption">The Git Staging Area</p>
+<img src="img/slides/version-control-with-git-slides%20-%2019.jpg" alt="Restoring Files" /><p class="caption">Restoring Files</p>
 </div>
 <p>The fact that files can be reverted one by one tends to change the way people organize their work.</p>
 <p>If everything is in one large document, it’s hard (but not impossible) to undo changes to the introduction without also undoing changes made later to the conclusion.</p>

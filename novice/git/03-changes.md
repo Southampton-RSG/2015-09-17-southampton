@@ -9,7 +9,7 @@ minutes: 20
 > *   Go through the modify-add-commit cycle for single and multiple files.
 > *   Explain where information is stored at each stage.
 
-**( SLIDE 13 - Tracking changes to files)**
+![Tracking changes to files](img/slides/version-control-with-git-slides - 13.jpg)
 
 ###Create a file###
 
@@ -143,7 +143,7 @@ nothing to commit, working directory clean
 ~~~
 it tells us everything is up to date.
 
-**( SLIDE 14 - add and commit)**
+![Add and Commit](img/slides/version-control-with-git-slides - 14.jpg)
 
 Git has a special **staging** area
 where it keeps track of things that have been **added** to
@@ -152,7 +152,7 @@ but **not yet committed**.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit):
 
-**( SLIDE 15 - Exploring history #1)**
+![Exploring history #1](img/slides/version-control-with-git-slides - 15.jpg)
 
 ###Review the Log###
 If we want to know what we've done recently,
@@ -187,8 +187,8 @@ and the log message Git was given when the revision was created.
 > so that our filesystem doesn't become cluttered
 > (and so that we can't accidentally edit or delete an old version).
 
-###Modify the file###
-Now suppose Dracula adds more information to the file.
+###Modify the file (1)###
+Now suppose we add more information to the file:
 
 ~~~ {.bash}
 $ nano mars.txt
@@ -220,13 +220,14 @@ The last line is the key phrase:
 "no changes added to **commit**".
 
 
-We have changed this file,
+So, while we have changed this file,
 but we haven't told Git we will want to save those changes
 (which we do with `git add`)
 much less actually saved them (which we do with `git commit`).
-So let's do that now. 
 
-###Review Changes and Commit###
+**It's important to remember that git only stores changes when you make a commit**
+
+###Review Changes and Commit* ###
 It is good practice to always review
 our changes before saving them. We do this using `git diff`.
 This shows us the differences between the current state
@@ -293,6 +294,7 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
  1 file changed, 1 insertion(+)
 ~~~
 
+![Add and Commit](img/slides/version-control-with-git-slides - 14.jpg)
 ** Recapping add / commit**
 
 Git insists that we **add** files to the set we want to commit
@@ -307,10 +309,8 @@ and the corresponding addition to the bibliography,
 but *not* commit the work we're doing on the conclusion
 (which we haven't finished yet).
 
-**( SLIDE 14 - add and commit)** **Breifly BACK**
-**( SLIDE 15 Exploring history #1)** 
 
-![The Git Staging Area](img/git-committing.svg)
+![Exploring history #1](img/slides/version-control-with-git-slides - 15.jpg)
 
 ###One more addition###
 
@@ -344,7 +344,8 @@ index 315bf3a..b36abfd 100644
 So far, so good:
 we've added one line to the end of the file
 (shown with a `+` in the first column).
-Now let's put that change in the staging area
+
+Now let's put that change in the staging area (or **add it to the change set**)
 and see what `git diff` reports:
 
 ~~~ {.bash}
@@ -352,10 +353,13 @@ $ git add mars.txt
 $ git diff
 ~~~
 
-There is no output:
-as far as Git can tell,
-there's no difference between what it's been asked to save permanently
-and what's currently in the directory.
+~~~ {.output}
+~~~
+
+**There is no output**:
+
+**git diff** shows us the differences between the *working copy* and what's been added to the **change set** in staging area.
+
 However, if we do this:
 
 ~~~ {.bash}
@@ -372,13 +376,13 @@ index 315bf3a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ~~~
 
-it shows us the **difference between
-the last committed change
-and what's in the staging area**.
+it shows us the difference between
+the last **committed change**
+and what's in the **staging area**.
 
-**( SLIDE 16 - Git diff #1)**
+![Git diff #1](img/slides/version-control-with-git-slides - 16.jpg)
 
-Let's save our changes:
+Let's **commit** our changes:
 
 ~~~ {.bash}
 $ git commit -m "Discuss concerns about Mars's climate for Mummy"
@@ -398,7 +402,7 @@ $ git status
 nothing to commit, working directory clean
 ~~~
 
-and look at the history of what we've done so far:
+and now look at the history of what we've done so far:
 
 ~~~ {.bash}
 $ git log

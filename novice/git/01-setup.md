@@ -19,19 +19,22 @@ minutes: 10
 
 Lets walk through a (painfully contrived) little scenario to get some hands on experience using Git.
 
-**Linux and Mac users should open a terminal, windows users to should go to the Start Menu open GitBash from the Git group.**
+**Linux and Mac** users should open a **terminal**, windows users to should go to the Start Menu open GitBash from the Git group.
 
 **Post-Its**
 
-**(FULL SCREEN SLIDE 9 /10 - Monsters... / ...to Space)**
+![Monsters](img/slides/version-control-with-git-slides - 09.jpg)
+![in Space](img/slides/version-control-with-git-slides - 10.jpg)
+
 We've have been hired by the **Transylvanian Space Agency**
 to investigate if it is possible to send their next planetary lander to Mars.
 
 **Switch out of fullscreen**
-**Open Terminal**
+
+**Open Terminal** **Use other projector**
 
 
-**( SLIDE 11 - local configuration)**
+![Local Configuration](img/slides/version-control-with-git-slides - 11.jpg)
 
 **Working individually**, we’ll start by exploring how version control can be used to keep track of what *one person* did and when.
 

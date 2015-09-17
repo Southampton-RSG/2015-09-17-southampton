@@ -35,9 +35,10 @@ The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
 
-**(SLIDE 27 - Collaboration - conflicts #1)**
+###Developer A - Modify and Push###
 
-###Developer A###
+![Conflicts](img/slides/version-control-with-git-slides - 27.jpg)
+
 Let's add a line to Developer A's copy only:
 
 ~~~ {.bash}
@@ -74,11 +75,10 @@ To https://github.com/vlad/planets
    29aba7c..dabb4c8  master -> master
 ~~~
 
-**(SLIDE 28 - Collaboration - conflicts #2)**
+###Developer B - Modify and push without pull###
 
-###Developer B###
 Now let's have Developer B make a different change to their copy
-*without* updating from GitHub:
+*without* updating (pulling) from GitHub:
 
 ~~~ {.bash}
 $ nano mars.txt
@@ -117,15 +117,18 @@ hint: before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ~~~
 
-![The conflicting changes](img/conflict.svg)
+![Conflicts #2](img/slides/version-control-with-git-slides - 28.jpg)
 
-Git detects that the changes made in one copy overlap with those made in the other
-and stops us from trampling on our previous work.
-What we have to do is pull the changes from GitHub,
+Git **detects** that the **changes** made in one copy **overlap** with those made in the other
+and **stops us from trampling** on our collaborators work.
+
+What we have to do is **pull** the changes from GitHub,
 [merge](reference.html#merge) them into the copy we're currently working in,
-and then push that.
-Let's start by pulling:
+and **then push** that.
 
+###Developer B - Pull and resolve###
+
+Let's start by pulling:
 ~~~ {.bash}
 $ git pull origin master
 ~~~
@@ -141,7 +144,7 @@ CONFLICT (content): Merge conflict in mars.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 
-`git pull` tells us there's a conflict,
+`git pull` tells us there's a **conflict**,
 and marks that conflict in the affected file:
 
 ~~~ {.bash}
@@ -164,12 +167,14 @@ and marked the end of the content downloaded from GitHub with `>>>>>>>`.
 (The string of letters and digits after that marker
 identifies the revision we've just downloaded.)
 
-It is now up to us to edit this file to remove these markers
-and reconcile the changes.
-We can do anything we want: keep the change made in the local repository, keep
-the change made in the remote repository, write something new to replace both,
-or get rid of the change entirely.
-Let's replace both so that the file looks like this:
+It is now **up to us** to **edit** this file to **remove these markers**
+and **reconcile the changes**.
+
+We can do anything we want: **keep the change made in the local repository**, **keep
+the change made in the remote repository**, write something new to **replace both**,
+or **get rid of the change** entirely.
+
+Let's **replace** both so that the file looks like this:
 
 ~~~ {.bash}
 $ cat mars.txt
@@ -180,7 +185,7 @@ The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 We removed the conflict on this line
 ~~~
-
+###Developer B - Add, Commit and Push###
 To finish merging,
 we add `mars.txt` to the changes being made by the merge
 and then commit:
@@ -225,7 +230,7 @@ Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again
 when **Developer A** who made the first change pulls again:
 
-### Developer A###
+### Developer A Pull###
 
 ~~~ {.bash}
 $ git pull origin master
@@ -267,8 +272,9 @@ that they ought to clarify who's responsible for what,
 or find a way to divide the work up differently.
 
 > ## Reverse {.challenge}
->
-Reverse
+> Now, Each add another line (perhaps to Neptune or Pluto) and Developer B push first.
+> Developer A resolves the conflict
+> Get yourselves back in sync
 
 > ## Conflicts on Non-textual files {.challenge}
 >

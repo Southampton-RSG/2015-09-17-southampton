@@ -148,6 +148,10 @@ subtitle: Why Python?
 ## Cont..
 
    ![](img/indexing2darray.png) 
+
+## Operations across axes (2D NumPy Array)
+
+    ![](img/python-operations-across-axes.svg)
    
 ## Data visualisation using libraries
 
@@ -179,7 +183,7 @@ subtitle: Why Python?
 -  Handling flags and files separately in a command-line program
 -  Reading data from standard input in a program 
 
-## Wrap-up Challenge: Joining the dots
+## Wrap-up Challenge: Connecting the dots
 
 **Write a python script (function) for Fahrenheit to Celsius temperature conversion and stores the output in a file.**
 

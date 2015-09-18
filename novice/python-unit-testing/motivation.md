@@ -83,3 +83,15 @@ Letters – Retraction, Science 22 December 2006
 > * how to use a unit testing framework
 > * when it's useful to write tests *before* writing code
 > * how Python reports and handles errors
+
+## Challenge
+
+A colleague of yours has written a function that calculates the running total of all the values in a list, e.g., running([0, 1, 2]) produces the list [0, 1, 3]. 
+
+Write some unit test functions for it in a **test_running.py** file (including **from running import running** at the top), and then use **nosetests** to see what bugs you can find.
+
+## Challenge
+
+Write a function called **addnumbers** in **addnumbers.py** that passes the unit tests in **test_addnumbers.py**.
+
+All addnumbers should do is add together all the numbers in a list and return the result.

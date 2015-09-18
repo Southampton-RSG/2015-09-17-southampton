@@ -132,10 +132,28 @@
 <li class="fragment">how Python reports and handles errors</li>
 </ul>
 </section>
-<section id="challenge-1" class="slide level2">
-<h1>Challenge 1</h1>
+<section id="challenge" class="slide level2">
+<h1>Challenge</h1>
 <p>A colleague of yours has written a function that calculates the running total of all the values in a list, e.g., running([0, 1, 2]) produces the list [0, 1, 3].</p>
-<p>Write some unit test functions for it in a <em>test_running.py</em> file (including <em>from running import running</em> at the top), and then use <em>nosetests</em> to see what bugs you can find.</p>
+<p>Write some unit test functions for it in a <strong>test_running.py</strong> file (including <strong>from running import running</strong> at the top), and then use <strong>nosetests</strong> to see what bugs you can find.</p>
+</section>
+<section id="challenge-1" class="slide level2">
+<h1>Challenge</h1>
+<p>Write a function called <strong>addnumbers</strong> in <strong>addnumbers.py</strong> that passes the following unit tests: ``` from addnumbers import addnumbers</p>
+<pre><code> def test_empty():
+     assert addnumbers([]) == None
+
+ def test_single_value():
+     assert addnumbers([1]) == 1
+
+ def test_two_values():
+     assert addnumbers([1, 2]) == 3
+
+ def test_three_values():
+     assert addnumbers([1, 2, 3]) == 6
+
+ ```
+ (You can find this set of tests in **test_addnumbers.py**).</code></pre>
 </section>
     <!-- End slides. -->
 

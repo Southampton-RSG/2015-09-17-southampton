@@ -84,8 +84,29 @@ Letters – Retraction, Science 22 December 2006
 > * when it's useful to write tests *before* writing code
 > * how Python reports and handles errors
 
-## Challenge 1
+## Challenge
 
 A colleague of yours has written a function that calculates the running total of all the values in a list, e.g., running([0, 1, 2]) produces the list [0, 1, 3]. 
 
-Write some unit test functions for it in a *test_running.py* file (including *from running import running* at the top), and then use *nosetests* to see what bugs you can find.
+Write some unit test functions for it in a **test_running.py** file (including **from running import running** at the top), and then use **nosetests** to see what bugs you can find.
+
+## Challenge
+
+Write a function called **addnumbers** in **addnumbers.py** that passes the following unit tests:
+     ```
+     from addnumbers import addnumbers
+ 
+     def test_empty():
+         assert addnumbers([]) == None
+ 
+     def test_single_value():
+         assert addnumbers([1]) == 1
+ 
+     def test_two_values():
+         assert addnumbers([1, 2]) == 3
+ 
+     def test_three_values():
+         assert addnumbers([1, 2, 3]) == 6
+ 
+     ```
+     (You can find this set of tests in **test_addnumbers.py**).

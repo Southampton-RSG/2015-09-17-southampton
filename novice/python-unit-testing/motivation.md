@@ -92,8 +92,7 @@ Write some unit test functions for it in a **test_running.py** file (including *
 
 ## Challenge
 
-Write a function called **addnumbers** in **addnumbers.py** that passes the following unit tests:
-     ```
+Write a function called **addnumbers** that passes the following unit tests:
      from addnumbers import addnumbers
  
      def test_empty():
@@ -108,5 +107,4 @@ Write a function called **addnumbers** in **addnumbers.py** that passes the foll
      def test_three_values():
          assert addnumbers([1, 2, 3]) == 6
  
-     ```
      (You can find this set of tests in **test_addnumbers.py**).

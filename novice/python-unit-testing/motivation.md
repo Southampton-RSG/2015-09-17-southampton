@@ -92,4 +92,6 @@ Write some unit test functions for it in a **test_running.py** file (including *
 
 ## Challenge
 
-Write a function called **addnumbers** in **addnumbers.py** that passes the unit tests in **test_addnumbers.py**. All addnumbers should do is add together all the numbers in a list and return the result.
+Write a function called **addnumbers** in **addnumbers.py** that passes the unit tests in **test_addnumbers.py**.
+
+All addnumbers should do is add together all the numbers in a list and return the result.

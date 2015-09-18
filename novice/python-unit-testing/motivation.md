@@ -92,19 +92,4 @@ Write some unit test functions for it in a **test_running.py** file (including *
 
 ## Challenge
 
-Write a function called **addnumbers** that passes the following unit tests:
-     from addnumbers import addnumbers
- 
-     def test_empty():
-         assert addnumbers([]) == None
- 
-     def test_single_value():
-         assert addnumbers([1]) == 1
- 
-     def test_two_values():
-         assert addnumbers([1, 2]) == 3
- 
-     def test_three_values():
-         assert addnumbers([1, 2, 3]) == 6
- 
-     (You can find this set of tests in **test_addnumbers.py**).
+Write a function called **addnumbers** in **addnumbers.py** that passes the unit tests in **test_addnumbers.py**. All addnumbers should do is add together all the numbers in a list and return the result.

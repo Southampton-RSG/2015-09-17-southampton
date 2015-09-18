@@ -88,4 +88,4 @@ Letters – Retraction, Science 22 December 2006
 
 A colleague of yours has written a function that calculates the running total of all the values in a list, e.g., running([0, 1, 2]) produces the list [0, 1, 3]. 
 
-Write some unit test functions for it in a `test_running.py` file (including `from running import running` at the top), and then use nose to see what bugs you can find.
+Write some unit test functions for it in a **test_running.py** file (including **from running import running** at the top), and then use **nosetests to see what bugs you can find.
